@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if(!isset($_SESSION)){
+        session_start();
+    }
 
     $conn = mysqli_connect("localhost", "root", "", "zeeroxc");
 
@@ -18,11 +20,50 @@
         $username = ($data["username"]);
         $email = ($data["email"]);
         $pass = ($data["password"]);
-        $query = "INSERT INTO akun 
-                    VALUES ('', '$username', '$email', '$pass')
+
+        $cekEmail = mysqli_query($conn, "SELECT email FROM akun WHERE email = '$email'");
+        $cekUsername = mysqli_query($conn, "SELECT username FROM akun WHERE username = '$username'");
+
+        if(mysqli_num_rows($cekEmail) > 0){
+            echo"
+                <script>
+                    alert('email Sudah Ada!');
+                </script>
+            ";
+        }else if(mysqli_num_rows($cekUsername) > 0){
+            echo"
+                <script>
+                    alert('username Sudah Ada!');
+                </script>
+            ";
+        }else{
+            $query = "INSERT INTO akun 
+                        VALUES ('', '$username', '$email', '$pass')
+                    ";
+            mysqli_query($conn, $query);
+            /*echo"
+                <script>
+                    alert('registrasi berhasil!');
+                    document.location.href = 'inc/..';
+                </script>
+            ";*/
+            if(empty($_SESSION)){
+                echo"
+                    <script>
+                        alert('registrasi berhasil!');
+                        document.location.href = 'inc/..';
+                    </script>
                 ";
-        mysqli_query($conn, $query);
-        return mysqli_affected_rows($conn);
+            }else{
+                echo"
+                    <script>
+                        alert('registrasi berhasil!');
+                        document.location.href = '?p=admin';
+                    </script>
+                ";
+            }
+            return 0;
+        }
     }
 
     function hapus($id){
@@ -69,11 +110,11 @@
         var_dump($email);
         var_dump($pass);*/
         if($user_login == "ZeeroXc" && $pass_login == "1"){
-			header("Location: admin.php");
+			header("Location: ?p=admin");
 			$_SESSION['username'] = $user;
 			$_SESSION['email'] = $email;
 		}else if($user_login == $user && $pass_login == $pass){
-            header("Location: user.php");
+            header("Location: ?p=user");
 			$_SESSION['username'] = $user;
 			$_SESSION['email'] = $email;
         }else{

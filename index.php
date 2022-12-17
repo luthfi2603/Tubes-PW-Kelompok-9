@@ -1,3 +1,6 @@
+<?php
+    require "assets/includes/functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,15 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background-color: lightblue;
+            color: while;
+        }
+        .tombol {
+            width: 100% !important;
+        }
+    </style>
 </head>
 <body>
     <?php
