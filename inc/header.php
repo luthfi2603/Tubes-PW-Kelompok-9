@@ -8,19 +8,22 @@
                             <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
                             <ul class="nav justify-content-end">
                                 <a href="?p=login" class="text-white">Login</a>
-                            </ul>
-                            <?php
+                            </ul><?php
                             break;
-                        case"login":
-                            ?>
+                        case"login":?>
                             <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
                             <ul class="nav justify-content-end">
                                 <a href="?p=registrasi" class="text-white">Register</a>
                             </ul><?php
                             break;
+                        case"admin":
+                            header("Location: inc/..");
+                            break;
+                        case"user":
+                            header("Location: inc/..");
+                            break;
                     }
-                }else{
-                    ?>
+                }else{?>
                     <span class="navbar-brand h1 mb-0 text-light">ZeeroXc</span>
                     <ul class="nav justify-content-end">
                         <a href="?p=registrasi" class="nav-link text-light">Register</a>
@@ -37,6 +40,15 @@
                                 <ul class="nav justify-content-end">
                                     <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                     <a href="?p=registrasi" class="nav-link text-white">Tambah Data</a>
+                                    <a href="?p=user" class="nav-link text-white">User</a>
+                                    <a href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
+                                </ul><?php
+                                break;
+                            case"user":?>
+                                <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                <ul class="nav justify-content-end">
+                                    <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
+                                    <a href="?p=admin" class="nav-link text-white">Admin</a>
                                     <a href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
                                 </ul><?php
                                 break;
@@ -55,6 +67,11 @@
                                 </ul><?php
                                 break;
                         }
+                    }else{?>
+                        <span class="navbar-brand h1 mb-0 text-light">ZeeroXc</span>
+                        <ul class="nav justify-content-end">
+                            <a href="?p=admin" class="nav-link text-light">Admin</a>
+                        </ul><?php
                     }
                 }else{
                     if(@$_GET){
@@ -66,10 +83,17 @@
                                     <a href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
                                 </ul><?php
                                 break;
+                            case"admin":
+                                header("Location: ?p=user");
+                                break;
                         }
+                    }else{?>
+                        <span class="navbar-brand h1 mb-0 text-light">ZeeroXc</span>
+                        <ul class="nav justify-content-end">
+                            <a href="?p=user" class="nav-link text-light">User</a>
+                        </ul><?php
                     }
                 }
-            }
-        ?>
+            }?>
     </div>
 </div>
