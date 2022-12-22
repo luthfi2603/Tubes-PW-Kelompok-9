@@ -28,7 +28,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h3>Registrasi Akun</h3>
+    <h3>Registrasi akun2</h3>
     <form action="" method="post">
         <table>
             <tr>

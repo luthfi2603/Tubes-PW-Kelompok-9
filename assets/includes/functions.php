@@ -20,9 +20,10 @@
         $username = ($data["username"]);
         $email = ($data["email"]);
         $pass = ($data["password"]);
+        $img = ($data["img"]);
 
-        $cekEmail = mysqli_query($conn, "SELECT email FROM akun WHERE email = '$email'");
-        $cekUsername = mysqli_query($conn, "SELECT username FROM akun WHERE username = '$username'");
+        $cekEmail = mysqli_query($conn, "SELECT email FROM akun2 WHERE email = '$email'");
+        $cekUsername = mysqli_query($conn, "SELECT username FROM akun2 WHERE username = '$username'");
 
         if(mysqli_num_rows($cekEmail) > 0){
             echo"
@@ -37,8 +38,8 @@
                 </script>
             ";
         }else{
-            $query = "INSERT INTO akun 
-                        VALUES ('', '$username', '$email', '$pass')
+            $query = "INSERT INTO akun2 
+                        VALUES ('', '$img', '$username', '$email', '$pass')
                     ";
             mysqli_query($conn, $query);
             /*echo"
@@ -68,7 +69,7 @@
 
     function hapus($id){
         global $conn;
-        mysqli_query($conn, "DELETE FROM akun WHERE id = $id");
+        mysqli_query($conn, "DELETE FROM akun2 WHERE id = $id");
         return mysqli_affected_rows($conn);
     }
 
@@ -78,7 +79,7 @@
         $username = ($data["username"]);
         $email = ($data["email"]);
         $pass = ($data["password"]);
-        $query = "UPDATE akun SET
+        $query = "UPDATE akun2 SET
                     username = '$username',
                     email = '$email',
                     password = '$pass'
@@ -97,7 +98,7 @@
         $pass_login = $data["password"];
         /*var_dump($user_login);
         var_dump($pass_login);*/
-        $query = "SELECT * FROM akun WHERE username = '{$user_login}' AND password = '{$pass_login}'";
+        $query = "SELECT * FROM akun2 WHERE username = '{$user_login}' AND password = '{$pass_login}'";
         $hasil = mysqli_query($conn, $query);
         // var_dump($hasil);
         // $kosong = [];
@@ -125,5 +126,15 @@
             ";
 		}
         return 0;
+    }
+
+    function cari($keywoard){
+        $query = "SELECT * FROM akun2
+                    WHERE
+                  username LIKE '%$keywoard%' OR
+                  email LIKE '%$keywoard%' OR
+                  password LIKE '%$keywoard%'
+        ";
+        return tampilkan($query);
     }
 ?>

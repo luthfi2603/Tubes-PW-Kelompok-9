@@ -21,7 +21,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="text-primary">Email</label>
-                        <input id="email" type="text" class="form-control" name="email" placeholder="Masukkan username" required>
+                        <input id="email" type="text" class="form-control" name="email" placeholder="Masukkan email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="img" class="text-primary">Gambar</label>
+                        <input id="img" type="text" class="form-control" name="img" placeholder="Masukkan source gambar" required>
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="registrasi">Registrasi</button>

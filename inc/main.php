@@ -19,6 +19,9 @@
             case"edit":
                 include "page/edit.php";
                 break;
+            case"hasilSearch":
+                include "page/hasilSearch.php";
+                break;
         }
     }else{
         include "page/home.php";

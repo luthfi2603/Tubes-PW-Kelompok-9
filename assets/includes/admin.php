@@ -3,7 +3,7 @@
     if(empty($_SESSION['username']) or ($_SESSION['username'] != 'ZeeroXc')){
         header("Location: error.php");
     }
-    $data = tampilkan("SELECT * FROM akun");
+    $data = tampilkan("SELECT * FROM akun2");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
 </head>
 <body>
     <h3>Halaman Admin</h3>
-    <p><a href="tambah.php">registrasi akun</a> | <a href="logout.php" onclick="return confirm('Yakin?')">keluar</a></p>
+    <p><a href="tambah.php">registrasi akun2</a> | <a href="logout.php" onclick="return confirm('Yakin?')">keluar</a></p>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>

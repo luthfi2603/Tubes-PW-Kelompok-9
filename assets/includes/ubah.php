@@ -3,7 +3,7 @@
 
     $id = $_GET["id"];
 
-    $data = tampilkan("SELECT * FROM akun WHERE id = $id")[0];
+    $data = tampilkan("SELECT * FROM akun2 WHERE id = $id")[0];
 
     if(isset($_POST["ubah"])){
         if(ubah($_POST) > 0){
