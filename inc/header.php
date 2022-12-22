@@ -7,13 +7,13 @@
                         case"registrasi":?>
                             <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
                             <ul class="nav justify-content-end">
-                                <a href="?p=login" class="text-white">Login</a>
+                                <a href="?p=login" class="nav-link text-white">Login</a>
                             </ul><?php
                             break;
                         case"login":?>
                             <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
                             <ul class="nav justify-content-end">
-                                <a href="?p=registrasi" class="text-white">Register</a>
+                                <a href="?p=registrasi" class="nav-link text-white">Register</a>
                             </ul><?php
                             break;
                         case"admin":
@@ -56,14 +56,14 @@
                                 <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
                                 <ul class="nav justify-content-end">
                                     <span class="text-primary">Register</span>
-                                    <a href="?p=admin" class="text-white">Admin</a>
+                                    <a href="?p=admin" class="nav-link text-white">Admin</a>
                                 </ul><?php
                                 break;
                             case"edit":?>
                                 <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
                                 <ul class="nav justify-content-end">
                                     <span class="text-primary">Register</span>
-                                    <a href="?p=admin" class="text-white">Admin</a>
+                                    <a href="?p=admin" class="nav-link text-white">Admin</a>
                                 </ul><?php
                                 break;
                         }
