@@ -22,6 +22,9 @@
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="login">Login</button>
                     </div>
+                    <div class="d-grip gap-2">
+                        <a href="?p=konMail" class="btn btn-warning tombol mt-2" type="submit" name="login">Lupa Password</a>
+                    </div>
                 </form>
             </div>
         </div>

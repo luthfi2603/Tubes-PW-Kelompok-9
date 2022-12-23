@@ -1,28 +1,3 @@
-<!--<?php
-    if(isset($_POST["cari"])){
-        $inputan_user = $_POST["search"];
-        $sql = mysqli_query($conn, "SELECT * FROM akun2 WHERE '%$inputan_user%' LIKE username");
-        while($hasil = mysqli_fetch_assoc($sql)){
-            $user = $hasil["username"];
-            $email = $hasil["email"];
-            $pass = $hasil["password"];
-        }
-        // header("Location: ?p=hasilSearch");
-        /*echo"
-            <tr>
-                <td>
-                    ".$user."
-                </td>
-                <td>
-                    ".$email."
-                </td>
-                <td>
-                    ".$pass."
-                </td>
-        ";*/
-        var_dump($user);
-    }
-?>-->
 <div class="navbar bg-primary">
     <div class="container-fluid">
         <?php
@@ -46,6 +21,19 @@
                             break;
                         case"user":
                             header("Location: inc/..");
+                            break;
+                        case"konMail":?>
+                            <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
+                            <ul class="nav justify-content-end">
+                                <a href="?p=registrasi" class="nav-link text-light">Register</a>
+                                <a href="?p=login" class="nav-link text-light">Login</a>
+                            </ul><?php
+                            break;
+                        case"resetPass":?>
+                            <a href="?p=konMail" class="navbar-brand h1 mb-0 text-light">ZeeroXc</a>
+                            <ul class="nav justify-content-end">
+                                <span href="?p=registrasi" class="nav-link text-primary">Register</span>
+                            </ul><?php
                             break;
                     }
                 }else{?>

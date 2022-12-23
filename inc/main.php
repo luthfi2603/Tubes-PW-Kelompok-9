@@ -19,8 +19,11 @@
             case"edit":
                 include "page/edit.php";
                 break;
-            case"hasilSearch":
-                include "page/hasilSearch.php";
+            case"konMail":
+                include "page/konMail.php";
+                break;
+            case"resetPass":
+                include "page/resetPass.php";
                 break;
         }
     }else{

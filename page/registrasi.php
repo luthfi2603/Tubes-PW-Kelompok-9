@@ -20,8 +20,12 @@
                         <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan password" required>
                     </div>
                     <div class="mb-3">
+                        <label for="konPass" class="text-primary">Konfirmasi Password</label>
+                        <input id="konPass" type="konPass" class="form-control" name="konPass" placeholder="Masukkan konfirmasi password" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="email" class="text-primary">Email</label>
-                        <input id="email" type="text" class="form-control" name="email" placeholder="Masukkan email" required>
+                        <input id="email" type="email" class="form-control" name="email" placeholder="Masukkan email" required>
                     </div>
                     <div class="mb-3">
                         <label for="img" class="text-primary">Gambar</label>

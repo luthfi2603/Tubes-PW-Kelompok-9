@@ -1,13 +1,7 @@
 <?php
-    $data = tampilkan("SELECT * FROM akun2 ORDER BY id DESC");
+    $data = tampilkan("SELECT * FROM akun2 ORDER BY id ASC");
     if(isset($_POST["cari"])){
         $data = cari($_POST["keyword"]);
-        /*$sql = mysqli_query($conn, "SELECT * FROM akun2 WHERE '%$inputan_user%' LIKE username");
-        while($hasil = mysqli_fetch_assoc($sql)){
-            $user = $hasil["username"];
-            $email = $hasil["email"];
-            $pass = $hasil["password"];
-        }*/
     }
 ?>
 <div class="container">
@@ -47,14 +41,16 @@
             <?php $i = 1; ?>
             <?php foreach($data as $hadeh) : ?>
             <tr>
-                <td><?= $i; ?></td>
+                <td><p class="isiAdmin"><?= $i; ?></p></td>
                 <td><img src="assets/img/<?= $hadeh["img"] ?>" alt="" width="200px"></td>
-                <td><?= $hadeh["username"] ?></td>
-                <td><?= $hadeh["email"] ?></td>
-                <td><?= $hadeh["password"] ?></td>
+                <td><p class="isiAdmin"><?= $hadeh["username"] ?></p></td>
+                <td><p class="isiAdmin"><?= $hadeh["email"] ?></p></td>
+                <td><p class="isiAdmin"><?= $hadeh["password"] ?></p></td>
                 <td>
+                    <p class="isiAdmin">
                     <a href="?p=edit&id=<?= $hadeh["id"] ?>" class="btn btn-sm btn-success">ubah</a>
                     <a href="?p=hapus&id=<?= $hadeh["id"] ?>" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">hapus</a>
+                    </p>
                 </td>
             </tr>
             <?php $i++; ?>

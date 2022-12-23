@@ -20,6 +20,7 @@
         $username = ($data["username"]);
         $email = ($data["email"]);
         $pass = ($data["password"]);
+        $konPass = ($data["konPass"]);
         $img = ($data["img"]);
 
         $cekEmail = mysqli_query($conn, "SELECT email FROM akun2 WHERE email = '$email'");
@@ -35,6 +36,12 @@
             echo"
                 <script>
                     alert('username Sudah Ada!');
+                </script>
+            ";
+        }else if($pass != $konPass){
+            echo"
+                <script>
+                    alert('password beda');
                 </script>
             ";
         }else{
@@ -79,10 +86,12 @@
         $username = ($data["username"]);
         $email = ($data["email"]);
         $pass = ($data["password"]);
+        $img = $data["img"];
         $query = "UPDATE akun2 SET
                     username = '$username',
                     email = '$email',
-                    password = '$pass'
+                    password = '$pass',
+                    img = '$img'
                     WHERE id = $id
                 ";
         mysqli_query($conn, $query);
@@ -136,5 +145,63 @@
                   password LIKE '%$keywoard%'
         ";
         return tampilkan($query);
+    }
+
+    function rreset($data){
+        global $conn;
+        $emailkon = $data["konMail"];
+        $sql = "SELECT * FROM akun2 WHERE email = '$emailkon'";
+        $query = mysqli_query($conn, $sql);
+        foreach($query as $isi){
+            $email = $isi['email'];
+        }
+        if(isset($email)){
+            if($emailkon == $email){
+                header("Location: ?p=resetPass&email=$email");
+            }    
+        }
+        else{
+            echo"
+                <script>
+                    alert('email tidak ada!');
+                </script>
+            ";
+        }
+        return 0;
+    }
+    function rrreset($data){
+        global $conn;
+        $email = $_GET["email"];
+        $passRes = $data["password"];
+        $konPassRes = $data["konPass"];
+        if($passRes != $konPassRes){
+            echo"
+                <script>
+                    alert('password beda');
+                </script>
+            ";
+        }else{
+            if(isset($email)){
+                $sql = "UPDATE akun2 SET
+                        password = '$passRes'
+                        WHERE email = '$email'
+                        ";
+                $query = mysqli_query($conn, $sql);
+                if($query){
+                    echo"
+                        <script>
+                            alert('reset password berhasil');
+                            document.location.href = '?p=login';
+                        </script>
+                    ";
+                }else{
+                    echo"
+                        <script>
+                            alert('reset password gagal');
+                        </script>
+                    ";
+                }
+            }
+        }
     }
 ?>

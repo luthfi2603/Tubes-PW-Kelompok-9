@@ -19,6 +19,9 @@
         .tombol {
             width: 100% !important;
         }
+        .isiAdmin {
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
