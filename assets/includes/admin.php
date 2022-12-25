@@ -36,15 +36,15 @@
             </th>
         </tr>
         <?php $i = 1; ?>
-        <?php foreach($data as $hadeh) : ?>
+        <?php foreach($data as $row) : ?>
         <tr>
             <td><?= $i; ?></td>
-            <td><?= $hadeh["username"] ?></td>
-            <td><?= $hadeh["email"] ?></td>
-            <td><?= $hadeh["password"] ?></td>
+            <td><?= $row["username"] ?></td>
+            <td><?= $row["email"] ?></td>
+            <td><?= $row["password"] ?></td>
             <td>
-                <a href="ubah.php?id=<?= $hadeh["id"] ?>">ubah</a> |
-                <a href="hapus.php?id=<?= $hadeh["id"] ?>" onclick="return confirm('Yakin?')">hapus</a>
+                <a href="ubah.php?id=<?= $row["id"] ?>">ubah</a> |
+                <a href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('Yakin?')">hapus</a>
             </td>
         </tr>
         <?php $i++; ?>

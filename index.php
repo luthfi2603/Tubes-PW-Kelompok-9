@@ -20,7 +20,26 @@
             width: 100% !important;
         }
         .isiAdmin {
-            margin-top: 40px;
+            margin-top: 42px;
+        }
+        .isiAdmin2 {
+            margin-top: 42px;
+        }
+        .keTengah {
+            margin: 0 auto !important;
+        }
+        .regDanLog {
+            margin: 1.5rem auto !important;
+        }
+        .regDanLog2 {
+            margin-left: 364px !important;
+            margin-top: 1.5rem !important;
+        }
+        .marAdmin {
+            margin: 1.5rem auto!important;
+        }
+        .marAdmin2 {
+            margin: 1.5rem 0 0 132px !important;
         }
     </style>
 </head>

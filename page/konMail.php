@@ -5,7 +5,7 @@
 ?>
 <div class="container">
     <div class="form">
-        <div class="card col-md-4 offset-md-4 mt-3 p-0">
+        <div class="card col-md-4 regDanLog2 p-0">
             <div class="card-header bg-warning">
                 <h4 class="card-title text-center mb-0 text-light">Reset Password</h4>
             </div>

@@ -10,20 +10,32 @@
             case"admin":
                 include "page/admin.php";
                 break;
-            case"user":
-                include "page/user.php";
-                break;
             case"hapus":
                 include "page/hapus.php";
                 break;
-            case"edit":
-                include "page/edit.php";
+            case"ubah":
+                include "page/ubah.php";
                 break;
             case"konMail":
                 include "page/konMail.php";
                 break;
             case"resetPass":
                 include "page/resetPass.php";
+                break;
+            case"profil":
+                include "page/profil.php";
+                break;
+            case"adminAkun":
+                include "page/adminAkun.php";
+                break;
+            case"adminProduk":
+                include "page/adminProduk.php";
+                break;
+            case"tambahDataProduk":
+                include "page/tambahDataProduk.php";
+                break;
+            case"ubahDataProduk":
+                include "page/ubahDataProduk.php";
                 break;
         }
     }else{
