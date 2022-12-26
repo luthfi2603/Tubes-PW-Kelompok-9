@@ -1,0 +1,50 @@
+- navbar
+    # di home pertama kali ada registrasi dan login, brand gabisa
+    # di registrasi ada login, brand bisa
+    # di login ada registrasi, brand bisa
+    # setelah login ada sebagai user dan admin
+      sebagai user ada session username, profil, dan logout, brand gabisa
+      sebagai admin ada session username, user, dan logout, brand gabisa
+    # sebagai user, di profil ada session username dan logout, brand bisa
+    # sebagai admin, di user ada admin dan logout, brand gabisa
+    # sebagai admin,  di adminAkun ada tambah data dan admin untuk kembali ke halaman utama admin, brand gabisa
+    # sebagai admin, di tambah data ada adminAkun untuk kembali, brand gabisa
+    # sebagai admin, di adminProduk ada tambah produk dan admin untuk kembali ke halaman utama admin, 
+      brand gabisa
+    # sebagai admin, di tambah produk ada adminProduk untuk kembali, brand gabisa
+    # sebagai admin logout hanya di halaman admin utama
+- registrasi
+    # email harus beda
+    # username harus beda
+    # password ada konfirmasi dan harus sama
+    # bisa upload file gambar
+    # setelah registrasi akan kembali ke layar home
+- login
+    # bisa reset password
+    # harus memasukkan email yang mau direset password nya
+    # buat password baru dan konfirmasinya
+    # bisa login dengan akun admin dan akun user
+    # setelah login sebagai admin akan ke halaman admin
+    # setelah login sebagai user akan ke home
+    # setelah konfirmasi email ke halaman reset password
+    # setelah reset password ke halaman login
+    # setelah login ada alert
+- logout
+  # ada konfirmasi logout
+  # setelah logout ada alert
+- user
+    # bisa melihat home
+    # bisa ubah data akunnya
+    # bisa mengubah gambar ataupun tidak mengubah nya
+    # ada syarat-syarat upload gambar file harus ekstensi gambar, harus diupload, kurang dari 1 MB
+    # bisa hapus akunnya
+    # bisa logout dan layar kembali ke home
+- admin
+    # ada bebrapa tombol
+    # data akun untuk melihat semua akun yang sudah terdaftar, dapat menghapus, mengubah, dan menambah data.
+      ada input search untuk mencari data secara spesifik.
+      pada saat mengubah, gambar boleh diubah dan tidak diubah
+      pada saat menghapus dan mengubah, layar akan kembali ke admin akun
+    # data produk untuk melihat semua produk, dapat menghapus, mengubah, dan menambah produk.
+      pada saat mengubah, gambar boleh diubah dan tidak diubah
+      pada saat menghapus dan mengubah, layar akan kembali ke admin produk

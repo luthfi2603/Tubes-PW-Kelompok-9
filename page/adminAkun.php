@@ -5,13 +5,13 @@
     }
 ?>
 <div class="container">
-    <div class="card col-9 marAdmin p-0">
+    <div class="card col-12 marAdmin p-0">
         <div class="card-header bg-warning">
             <h4 class="card-title text-center mb-0 text-light">Halaman Admin Akun</h4>
         </div>
         <div class="card-body">
         <form method="POST" action="">
-            <input autocomplete="off" autofocus size="40" type="text" name="keyword" id="" placeholder="Search">
+            <input autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
             <button type="submit" name="cari">
                 Cari
             </button>
@@ -24,6 +24,9 @@
                 </th>
                 <th>
                     Gambar
+                </th>
+                <th>
+                    Source Gambar
                 </th>
                 <th>
                     Username
@@ -43,6 +46,7 @@
             <tr>
                 <td><p class="isiAdmin"><?= $i; ?></p></td>
                 <td><img src="assets/img/<?= $row["img"] ?>" alt="" width="200px"></td>
+                <td><p class="isiAdmin"><?= $row["img"] ?></p></td>
                 <td><p class="isiAdmin"><?= $row["username"] ?></p></td>
                 <td><p class="isiAdmin"><?= $row["email"] ?></p></td>
                 <td><p class="isiAdmin"><?= $row["password"] ?></p></td>

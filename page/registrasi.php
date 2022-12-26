@@ -1,6 +1,38 @@
 <?php
     if(isset($_POST["registrasi"])){
-        tambah($_POST);
+        // kalau belum login
+        if(empty($_SESSION)){
+            if(tambah($_POST) > 0){
+                echo"
+                    <script>
+                        alert('registrasi berhasil!');
+                        document.location.href = 'inc/..';
+                    </script>
+                ";
+            }else{
+                echo"
+                    <script>
+                        alert('registrasi gagal!');
+                    </script>
+                ";
+            }
+        // kalau login sebagai admin
+        }else{
+            if(tambah($_POST) > 0){
+                echo"
+                    <script>
+                        alert('registrasi berhasil!');
+                        document.location.href = '?p=adminAkun';
+                    </script>
+                ";
+            }else{
+                echo"
+                    <script>
+                        alert('registrasi gagal!');
+                    </script>
+                ";
+            }
+        }
     }
 ?>
 <div class="container">
@@ -10,7 +42,7 @@
                 <h4 class="card-title text-center text-white mb-0">Registrasi</h4>
             </div>
             <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="username" class="text-primary">Username</label>
                         <input autofocus id="username" type="text" class="form-control" name="username" placeholder="Masukkan username" required>
@@ -29,7 +61,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="img" class="text-primary">Gambar</label>
-                        <input  id="img" type="text" class="form-control" name="img" placeholder="Masukkan source gambar" required>
+                        <input  id="img" type="file" class="form-control" name="img" placeholder="Masukkan source gambar">
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="registrasi">Registrasi</button>

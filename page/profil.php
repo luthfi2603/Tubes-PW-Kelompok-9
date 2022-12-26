@@ -18,16 +18,34 @@
             ";
         }
     }
+    if(isset($_POST["hapus"])){
+        $id = $_POST["id"];
+        if(hapus($id) > 0){
+            echo"
+                <script>
+                    alert('akun berhasil dihapus!');
+                    document.location.href = 'assets/includes/logout.php';
+                </script>
+            ";
+        }else{
+            echo"
+                <script>
+                    alert('akun gagal dihapus!');
+                </script>
+            ";
+        }
+    }
 ?>
 <div class="container">
     <div class="form">
-        <div class="card col-md-4 offset-md-4 mt-4 p-0">
+        <div class="card col-md-4 offset-md-4 my-4 p-0">
             <div class="card-header bg-info">
-                <h4 class="card-title text-center text-white mb-0">Edit</h4>
+                <h4 class="card-title text-center text-white mb-0">Ubah Data</h4>
             </div>
             <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="" enctype="multipart/form-data">
                     <input hidden type="text" name="id" value="<?= $data["id"]; ?>">
+                    <input hidden type="text" name="gambarLama" value="<?= $data["img"]; ?>">
                     <div class="mb-3">
                         <label for="username" class="text-primary">Username</label>
                         <input id="username" type="text" class="form-control" name="username" placeholder="Masukkan username" required value="<?= $data["username"]; ?>">
@@ -41,11 +59,15 @@
                         <input id="email" type="email" class="form-control" name="email" placeholder="Masukkan username" required value="<?= $data["email"]; ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="img" class="text-primary">Gambar</label>
-                        <input id="img" type="text" class="form-control" name="img" placeholder="Masukkan source gambar" required value="<?= $data["img"]; ?>">
+                        <label for="img" class="text-primary">Gambar</label><br>
+                        <img src="assets/img/<?= $data["img"]; ?>" alt="" width="100">
+                        <input id="img" type="file" class="form-control mt-2" name="img" placeholder="Masukkan source gambar">
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="edit">Ubah</button>
+                    </div>
+                    <div class="d-grip gap-2">
+                        <button onclick="return confirm('Yakin?')" class="btn btn-danger tombol mt-2" type="submit" name="hapus">Hapus Akun</button>
                     </div>
                 </form>
             </div>

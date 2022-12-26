@@ -20,10 +20,7 @@
             width: 100% !important;
         }
         .isiAdmin {
-            margin-top: 42px;
-        }
-        .isiAdmin2 {
-            margin-top: 42px;
+            margin-top: 30px;
         }
         .keTengah {
             margin: 0 auto !important;
@@ -37,9 +34,6 @@
         }
         .marAdmin {
             margin: 1.5rem auto!important;
-        }
-        .marAdmin2 {
-            margin: 1.5rem 0 0 132px !important;
         }
     </style>
 </head>

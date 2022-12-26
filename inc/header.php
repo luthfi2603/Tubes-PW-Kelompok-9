@@ -64,7 +64,7 @@
                                 <ul class="nav justify-content-end">
                                     <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                     <a href="inc/.." class="nav-link text-white">User</a>
-                                    <a href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
+                                    <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
                                 </ul><?php
                                 break;
                             // sudah login sesi admin ketika di halaman registrasi
@@ -94,7 +94,7 @@
                             case"adminProduk":?>
                                 <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
                                 <ul class="nav justify-content-end">
-                                    <a href="?p=tambahDataProduk" class="nav-link text-white">Tambah Data</a>
+                                    <a href="?p=tambahDataProduk" class="nav-link text-white">Tambah Produk</a>
                                     <a href="?p=admin" class="nav-link text-white">Admin</a>
                                 </ul><?php
                                 break;
@@ -102,7 +102,7 @@
                             case"tambahDataProduk":?>
                                 <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
                                 <ul class="nav justify-content-end">
-                                    <a href="?p=adminProduk" class="nav-link text-white">Admin Akun</a>
+                                    <a href="?p=adminProduk" class="nav-link text-white">Admin Produk</a>
                                 </ul><?php
                                 break;
                             // sudah login sesi admin ketika di halaman ubah data produk
@@ -118,7 +118,7 @@
                         <span class="navbar-brand h1 mb-0 text-light">ZeeroXc</span>
                         <ul class="nav justify-content-end">
                             <a href="?p=admin" class="nav-link text-light">Admin</a>
-                            <a href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
+                            <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
                         </ul><?php
                     }
                 // header ketika session user
@@ -145,12 +145,20 @@
                             case"resetPass":
                                 header("Location: inc/..");
                                 break;
+                            // sesi user jika ke halaman konfirmasi email
+                            case"konMail":
+                                header("Location: inc/..");
+                                break;
+                            // sesi user jika ke halaman registrasi
+                            case"registrasi":
+                                header("Location: inc/..");
+                                break;
                             // sesi user ketika ke halaman profil
                             case"profil":?>
                                 <a href="../ZeeroXc" class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
                                 <ul class="nav justify-content-end">
                                     <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
-                                    <a href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
+                                    <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
                                 </ul><?php
                                 break;
                         }
@@ -158,9 +166,15 @@
                     }else{?>
                         <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
                         <ul class="nav justify-content-end">
+                            <form method="GET">
+                                <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
+                                <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                    Cari
+                                </button>
+                            </form>
                             <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                             <a href="?p=profil" class="text-white nav-link">Profil</a>
-                            <a href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
+                            <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
                         </ul><?php
                     }
                 }

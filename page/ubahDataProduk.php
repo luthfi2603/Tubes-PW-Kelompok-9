@@ -1,6 +1,5 @@
 <?php
     $id = $_GET["id"];
-
     $data = tampilkan("SELECT * FROM produk WHERE id_produk = $id")[0];
 
     if(isset($_POST["ubahProduk"])){
@@ -27,8 +26,9 @@
                 <h4 class="card-title text-center text-white mb-0">Ubah Data Produk</h4>
             </div>
             <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="" enctype="multipart/form-data">
                 <input hidden type="text" name="id" value="<?= $data["id_produk"]; ?>">
+                <input hidden type="text" name="gambarLama" value="<?= $data["img"]; ?>">
                     <div class="mb-3">
                         <label for="nama" class="text-primary">Nama Produk</label>
                         <input value="<?= $data["nama_produk"]; ?>" autofocus id="nama" type="text" class="form-control" name="nama" placeholder="Masukkan nama produk" required>
@@ -50,8 +50,9 @@
                         <textarea class="form-control" name="spesifikasi"><?= $data["spesifikasi_produk"]; ?></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="img" class="text-primary">Gambar</label>
-                        <input value="<?= $data["img"]; ?>" id="img" type="text" class="form-control" name="img" placeholder="Masukkan source gambar" required>
+                        <label for="img" class="text-primary">Gambar</label><br>
+                        <img src="assets/img/<?= $data["img"]; ?>" alt="" width="100">
+                        <input id="img" type="file" class="form-control mt-2" name="img" placeholder="Masukkan source gambar">
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="ubahProduk">Ubah</button>

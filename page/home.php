@@ -10,9 +10,11 @@
 <div class="container mt-4">
     <div class="row">
         <?php
-            $query = "SELECT * FROM produk";
-            $hasil = mysqli_query($conn, $query);
-            foreach($hasil as $row){
+            $data = tampilkan("SELECT * FROM produk");
+            if(isset($_GET["cari"])){
+                $data = cari2($_GET["keyword"]);
+            }
+            foreach($data as $row){
             ?><div class="col mb-4">
                 <div class="card keTengah" style="width: 261px;">
                     <div class="card-header text-center">

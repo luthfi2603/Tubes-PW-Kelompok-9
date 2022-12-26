@@ -22,7 +22,6 @@
         $email = ($data["email"]);
         $pass = ($data["password"]);
         $konPass = ($data["konPass"]);
-        $img = ($data["img"]);
 
         $cekEmail = mysqli_query($conn, "SELECT email FROM akun2 WHERE email = '$email'");
         $cekUsername = mysqli_query($conn, "SELECT username FROM akun2 WHERE username = '$username'");
@@ -46,33 +45,72 @@
                 </script>
             ";
         }else{
-            $query = "INSERT INTO akun2 
+            // upload gambar
+            $img = upload();
+
+            if(!$img){
+                return false;
+            }
+
+            $sql = "INSERT INTO akun2 
                         VALUES ('', '$img', '$username', '$email', '$pass')
                     ";
-            mysqli_query($conn, $query);
-            /*echo"
-                <script>
-                    alert('registrasi berhasil!');
-                    document.location.href = 'inc/..';
-                </script>
-            ";*/
-            if(empty($_SESSION)){
-                echo"
-                    <script>
-                        alert('registrasi berhasil!');
-                        document.location.href = 'inc/..';
-                    </script>
-                ";
-            }else{
-                echo"
-                    <script>
-                        alert('registrasi berhasil!');
-                        document.location.href = '?p=adminAkun';
-                    </script>
-                ";
-            }
-            return 0;
+            mysqli_query($conn, $sql);
+            
+            return mysqli_affected_rows($conn);
         }
+    }
+
+    // fungsi untuk upload gambar
+    function upload(){
+        $namaFile = $_FILES["img"]["name"];
+        $ukuranFile = $_FILES["img"]["size"];
+        $error = $_FILES["img"]["error"];
+        $tmpName = $_FILES["img"]["tmp_name"];
+
+        // cek apakah gambar sudah diupload
+        if($error === 4){
+            echo"
+                <script>
+                    alert('pilih gambar terlebih dahulu!');
+                </script>
+            ";
+            return false;
+        }
+
+        // cek apakah yang diupload adalah gambar
+        $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+        $ekstensiGambar = explode('.', $namaFile);
+        $ekstensiGambar = strtolower(end($ekstensiGambar));
+        if(!in_array($ekstensiGambar, $ekstensiGambarValid)){
+            echo"
+                <script>
+                    alert('file yang anda upload bukan gambar!');
+                </script>
+            ";
+            return false;
+        }
+
+        // cek apakah gambar ukurannya terlalu besar
+        if($ukuranFile > 1166400){
+            echo"
+                <script>
+                    alert('gambar yang anda upload terlalu besar!');
+                </script>
+            ";
+            return false;
+        }
+
+        // lolos pengecekan, gambar siap diupload
+        // generate nama gambar baru
+
+        $namaFileBaru = uniqid();
+        $namaFileBaru .= '.';
+        $namaFileBaru .= $ekstensiGambar;
+
+        move_uploaded_file($tmpName, 'assets/img/'. $namaFileBaru);
+
+        return $namaFileBaru;
     }
 
     // fungsi untuk menambah data produk
@@ -83,28 +121,20 @@
         $kategori = ($data["kategori"]);
         $merek = ($data["merek"]);
         $spesifikasi = ($data["spesifikasi"]);
-        $gambar = ($data["img"]);
+        
+        // upload gambar
+        $gambar = upload();
+
+        if(!$gambar){
+            return false;
+        }
 
         $sql = "INSERT INTO produk
                     VALUES ('', '$nama', '$harga', '$kategori', '$merek', '$spesifikasi', '$gambar')
                 ";
-        $query = mysqli_query($conn, $sql);
+        mysqli_query($conn, $sql);
 
-        if($query){
-            echo"
-                <script>
-                    alert('tambah produk berhasil!');
-                    document.location.href = '?p=adminProduk';
-                </script>
-            ";
-        }else{
-            echo"
-                <script>
-                    alert('tambah produk gagal!');
-                </script>
-            ";
-        }
-        return 0;
+        return mysqli_affected_rows($conn);
     }
 
     // fungsi untuk menghapus data akun
@@ -128,7 +158,17 @@
         $username = ($data["username"]);
         $email = ($data["email"]);
         $pass = ($data["password"]);
-        $img = $data["img"];
+        $gambarLama = $data["gambarLama"];
+
+        if($_FILES["img"]["error"] === 4){
+            $img = $gambarLama;
+        }else{
+            $img = upload();
+            if(!$img){
+                return false;
+            }
+        }
+
         $query = "UPDATE akun2 SET
                     username = '$username',
                     email = '$email',
@@ -149,7 +189,16 @@
         $kategori = ($data["kategori"]);
         $merek = ($data["merek"]);
         $spesifikasi = ($data["spesifikasi"]);
-        $gambar = ($data["img"]);
+        $gambarLama = $data["gambarLama"];
+
+        if($_FILES["img"]["error"] === 4){
+            $img = $gambarLama;
+        }else{
+            $img = upload();
+            if(!$img){
+                return false;
+            }
+        }
 
         $query = "UPDATE produk SET
                     nama_produk = '$nama',
@@ -157,7 +206,7 @@
                     kategori_produk = '$kategori',
                     merek_produk = '$merek',
                     spesifikasi_produk = '$spesifikasi',
-                    img = '$gambar'
+                    img = '$img'
                     WHERE id_produk = $id
                 ";
         mysqli_query($conn, $query);
@@ -172,41 +221,43 @@
         global $email;
         $user_login = $data["username"];
         $pass_login = $data["password"];
-        /*var_dump($user_login);
-        var_dump($pass_login);*/
         $query = "SELECT * FROM akun2 WHERE username = '{$user_login}' AND password = '{$pass_login}'";
         $hasil = mysqli_query($conn, $query);
-        // var_dump($hasil);
-        /*while($isi = mysqli_fetch_array($hasil)){
-            $user = $isi['username'];
-            $email = $isi['email'];
-            $pass = $isi['password'];
-        }*/
         foreach($hasil as $isi){
             $user = $isi['username'];
             $email = $isi['email'];
             $pass = $isi['password'];
         }
-        /*var_dump($user);
-        var_dump($email);
-        var_dump($pass);*/
         if($user_login == "ZeeroXc" && $pass_login == "1"){
-			header("Location: ?p=admin");
+            echo"
+                <script>
+                    alert('selamat datang admin');
+                    document.location.href = '?p=admin';
+                </script>
+            ";
+			// header("Location: ?p=admin");
 			$_SESSION['username'] = $user;
 			$_SESSION['email'] = $email;
 		}else if($user_login == $user && $pass_login == $pass){
-            header("Location: ../../ZeeroXc");
+            echo"
+                <script>
+                    alert('login berhasil');
+                    document.location.href = '../../ZeeroXc';
+                </script>
+            ";
+            // header("Location: ../../ZeeroXc");
 			$_SESSION['username'] = $user;
 			$_SESSION['email'] = $email;
         }else{
 			echo"
                 <script>
-                    alert('User tidak ditemukan');
+                    alert('User tidak ditemukan!');
                 </script>
             ";
 		}
         return 0;
     }
+
     // function untuk mencari di halaman data akun
     function cari($keywoard){
         $query = "SELECT * FROM akun2
@@ -231,6 +282,7 @@
         return tampilkan($query);
     }
     
+    // fungsi untuk konfirmasi email
     function rreset($data){
         global $conn;
         $emailkon = $data["konMail"];
@@ -253,6 +305,8 @@
         }
         return 0;
     }
+
+    // fungsi untuk reset password
     function rrreset($data){
         global $conn;
         $email = $_GET["email"];

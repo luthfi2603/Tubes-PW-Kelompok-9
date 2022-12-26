@@ -1,6 +1,11 @@
 <?php
     session_start();
     if(session_destroy()){
-        header("Location: ../../");
+        echo"
+            <script>
+                alert('logout berhasil');
+                document.location.href = '../../';
+            </script>
+        ";
     }
 ?>
