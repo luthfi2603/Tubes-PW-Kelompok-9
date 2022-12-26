@@ -4,7 +4,6 @@
             switch($_GET["cari"]){
                 case"":
                     include "page/home.php";
-                    ;
                     break;
             }
         }else{
