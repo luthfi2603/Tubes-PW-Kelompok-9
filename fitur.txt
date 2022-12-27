@@ -13,6 +13,7 @@
       brand gabisa
     # sebagai admin, di tambah produk ada adminProduk untuk kembali, brand gabisa
     # sebagai admin logout hanya di halaman admin utama
+    # sebagai user ada search
 - registrasi
     # email harus beda
     # username harus beda
@@ -20,6 +21,7 @@
     # bisa upload file gambar
     # setelah registrasi akan kembali ke layar home
 - login
+    # dapat login menggunakan username dan email
     # bisa reset password
     # harus memasukkan email yang mau direset password nya
     # buat password baru dan konfirmasinya
@@ -39,6 +41,7 @@
     # ada syarat-syarat upload gambar file harus ekstensi gambar, harus diupload, kurang dari 1 MB
     # bisa hapus akunnya
     # bisa logout dan layar kembali ke home
+    # bisa search di home
 - admin
     # ada bebrapa tombol
     # data akun untuk melihat semua akun yang sudah terdaftar, dapat menghapus, mengubah, dan menambah data.

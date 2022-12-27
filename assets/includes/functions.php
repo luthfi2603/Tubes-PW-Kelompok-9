@@ -92,7 +92,7 @@
         }
 
         // cek apakah gambar ukurannya terlalu besar
-        if($ukuranFile > 1166400){
+        if($ukuranFile > (5 * 1166400)){
             echo"
                 <script>
                     alert('gambar yang anda upload terlalu besar!');
@@ -104,9 +104,11 @@
         // lolos pengecekan, gambar siap diupload
         // generate nama gambar baru
 
-        $namaFileBaru = uniqid();
+        $namaFileBaru = substr(uniqid(), 5, 5);
         $namaFileBaru .= '.';
-        $namaFileBaru .= $ekstensiGambar;
+        $namaFileBaru .= $namaFile;
+        // $namaFileBaru .= '.';
+        // $namaFileBaru .= $ekstensiGambar;
 
         move_uploaded_file($tmpName, 'assets/img/'. $namaFileBaru);
 
@@ -219,16 +221,16 @@
         global $user;
         global $pass;
         global $email;
-        $user_login = $data["username"];
+        $user_login = $data["user"];
         $pass_login = $data["password"];
-        $query = "SELECT * FROM akun2 WHERE username = '{$user_login}' AND password = '{$pass_login}'";
+        $query = "SELECT * FROM akun2 WHERE (username = '{$user_login}' or email = '{$user_login}') AND password = '{$pass_login}'";
         $hasil = mysqli_query($conn, $query);
         foreach($hasil as $isi){
             $user = $isi['username'];
             $email = $isi['email'];
             $pass = $isi['password'];
         }
-        if($user_login == "ZeeroXc" && $pass_login == "1"){
+        if(($user_login == "ZeeroXc" or $user_login == 'luthfim904@gmail.com') && $pass_login == "1"){
             echo"
                 <script>
                     alert('selamat datang admin');
@@ -238,7 +240,7 @@
 			// header("Location: ?p=admin");
 			$_SESSION['username'] = $user;
 			$_SESSION['email'] = $email;
-		}else if($user_login == $user && $pass_login == $pass){
+		}else if(($user_login == $user or $user_login == $email) && $pass_login == $pass){
             echo"
                 <script>
                     alert('login berhasil');

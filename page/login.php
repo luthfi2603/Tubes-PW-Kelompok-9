@@ -12,8 +12,8 @@
             <div class="card-body">
                 <form method="POST" action="">
                     <div class="mb-3">
-                        <label for="username" class="text-primary">Username</label>
-                        <input autofocus id="username" type="text" class="form-control" name="username" placeholder="Masukkan username" required>
+                        <label for="username" class="text-primary">Username / Email</label>
+                        <input autofocus id="username" type="text" class="form-control" name="user" placeholder="Masukkan username/ email" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="text-primary">Password</label>
@@ -23,7 +23,7 @@
                         <button class="btn btn-dark tombol" type="submit" name="login">Login</button>
                     </div>
                     <div class="d-grip gap-2">
-                        <a href="?p=konMail" class="btn btn-warning tombol mt-2" type="submit" name="login">Lupa Password</a>
+                        <a href="?p=konMail" class="btn btn-warning tombol mt-2" type="submit">Lupa Password</a>
                     </div>
                 </form>
             </div>
