@@ -20,6 +20,7 @@
     # password ada konfirmasi dan harus sama
     # bisa upload file gambar
     # setelah registrasi akan kembali ke layar home
+    # hash 5 karakter nama gambar yang diupload
 - login
     # dapat login menggunakan username dan email
     # bisa reset password

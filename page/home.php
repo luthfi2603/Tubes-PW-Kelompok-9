@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-4">
     <div class="row">
         <div class="col">
             <h2 class="text-center">
@@ -16,12 +16,12 @@
             }
             foreach($data as $row){
             ?><div class="col mb-4">
-                <div class="card keTengah" style="width: 261px;">
+                <div class="card keTengah" style="width: 198px;">
                     <div class="card-header text-center">
                         <?= $row["nama_produk"]; ?>
                     </div>
                     <div class="card-body p-0">
-                        <img src="assets/img/<?= $row["img"]; ?>" alt="" width="258px">
+                        <img src="assets/img/<?= $row["img"]; ?>" alt="" width="196px">
                         <div class="row">
                             <div class="col-8 keTengah">
                                 <br>
@@ -34,7 +34,7 @@
                                     ";
                                 ?>
                                 <span>Deskripsi : </span>
-                                <p><?= $row["spesifikasi_produk"]; ?></p>
+                                <div style="margin-bottom:1.5rem;height:100px;overflow:hidden;" ><?= $row["spesifikasi_produk"]; ?></div>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@
             </button>
         </form>
         <br>
-        <table class="table table-bordered text-center">
+        <table class="table table-bordered text-center align-middle">
             <tr>
                 <th>
                     No.
@@ -50,19 +50,17 @@
             <?php $i = 1; ?>
             <?php foreach($data as $row) : ?>
             <tr>
-                <td><p class="isiAdmin"><?= $i; ?></p></td>
+                <td><?= $i; ?></td>
                 <td><img src="assets/img/<?= $row["img"] ?>" alt="" width="150px"></td>
-                <td><p class="isiAdmin"><?= $row["img"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["nama_produk"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["harga_produk"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["kategori_produk"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["merek_produk"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["spesifikasi_produk"] ?></p></td>
+                <td><?= $row["img"] ?></td>
+                <td><?= $row["nama_produk"] ?></td>
+                <td><?= $row["harga_produk"] ?></td>
+                <td><?= $row["kategori_produk"] ?></td>
+                <td><?= $row["merek_produk"] ?></td>
+                <td><?= $row["spesifikasi_produk"] ?></td>
                 <td>
-                    <p class="isiAdmin">
-                        <a href="?p=ubahDataProduk&id=<?= $row["id_produk"] ?>" class="btn btn-sm btn-success">ubah</a>
-                        <a href="?p=hapus&i=2&id=<?= $row["id_produk"] ?>" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">hapus</a>
-                    </p>
+                    <a href="?p=ubahDataProduk&id=<?= $row["id_produk"] ?>" class="btn btn-sm btn-success">ubah</a>
+                    <a href="?p=hapus&i=2&id=<?= $row["id_produk"] ?>" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">hapus</a>
                 </td>
             </tr>
             <?php $i++; ?>

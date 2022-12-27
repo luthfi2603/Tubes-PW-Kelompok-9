@@ -35,6 +35,10 @@
         .marAdmin {
             margin: 1.5rem auto!important;
         }
+        .avatarProfil {
+            width:40px;
+            height:40px;
+        }
     </style>
 </head>
 <body>

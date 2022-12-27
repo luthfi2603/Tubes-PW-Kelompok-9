@@ -46,7 +46,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="img" class="text-primary">Gambar</label>
-                        <input  id="img" type="file" class="form-control" name="img" placeholder="Masukkan source gambar" required>
+                        <input  id="img" type="file" class="form-control" name="img" placeholder="Masukkan source gambar">
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="tambah">Tambah</button>

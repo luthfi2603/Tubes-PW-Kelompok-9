@@ -138,6 +138,7 @@
                                     <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
                                     <ul class="nav justify-content-end">
                                         <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
+                                        <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
                                         <a href="inc/.." class="nav-link text-white">User</a>
                                         <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
                                     </ul><?php
@@ -211,7 +212,7 @@
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -221,6 +222,7 @@
                                         </form>
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <a href="?p=profil" class="text-white nav-link">Profil</a>
+                                        <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
                                         <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
                                     </ul><?php
                                     break;
@@ -261,6 +263,7 @@
                                     <a href="../ZeeroXc" class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
                                     <ul class="nav justify-content-end">
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
+                                        <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
                                         <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
                                     </ul><?php
                                     break;
@@ -278,6 +281,7 @@
                             </form>
                             <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                             <a href="?p=profil" class="text-white nav-link">Profil</a>
+                            <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
                             <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
                         </ul><?php
                     }

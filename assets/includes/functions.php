@@ -70,12 +70,12 @@
 
         // cek apakah gambar sudah diupload
         if($error === 4){
-            echo"
+            /*echo"
                 <script>
                     alert('pilih gambar terlebih dahulu!');
                 </script>
-            ";
-            return false;
+            ";*/
+            return 'no_photo.png';
         }
 
         // cek apakah yang diupload adalah gambar
@@ -105,7 +105,61 @@
         // generate nama gambar baru
 
         $namaFileBaru = substr(uniqid(), 5, 5);
-        $namaFileBaru .= '.';
+        $namaFileBaru .= '_';
+        $namaFileBaru .= $namaFile;
+        // $namaFileBaru .= '.';
+        // $namaFileBaru .= $ekstensiGambar;
+
+        move_uploaded_file($tmpName, 'assets/img/'. $namaFileBaru);
+
+        return $namaFileBaru;
+    }
+
+    // fungsi untuk upload gambar
+    function upload2(){
+        $namaFile = $_FILES["img"]["name"];
+        $ukuranFile = $_FILES["img"]["size"];
+        $error = $_FILES["img"]["error"];
+        $tmpName = $_FILES["img"]["tmp_name"];
+
+        // cek apakah gambar sudah diupload
+        if($error === 4){
+            /*echo"
+                <script>
+                    alert('pilih gambar terlebih dahulu!');
+                </script>
+            ";*/
+            return 'no_photo2.png';
+        }
+
+        // cek apakah yang diupload adalah gambar
+        $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+        $ekstensiGambar = explode('.', $namaFile);
+        $ekstensiGambar = strtolower(end($ekstensiGambar));
+        if(!in_array($ekstensiGambar, $ekstensiGambarValid)){
+            echo"
+                <script>
+                    alert('file yang anda upload bukan gambar!');
+                </script>
+            ";
+            return false;
+        }
+
+        // cek apakah gambar ukurannya terlalu besar
+        if($ukuranFile > (5 * 1166400)){
+            echo"
+                <script>
+                    alert('gambar yang anda upload terlalu besar!');
+                </script>
+            ";
+            return false;
+        }
+
+        // lolos pengecekan, gambar siap diupload
+        // generate nama gambar baru
+
+        $namaFileBaru = substr(uniqid(), 5, 5);
+        $namaFileBaru .= '_';
         $namaFileBaru .= $namaFile;
         // $namaFileBaru .= '.';
         // $namaFileBaru .= $ekstensiGambar;
@@ -125,7 +179,7 @@
         $spesifikasi = ($data["spesifikasi"]);
         
         // upload gambar
-        $gambar = upload();
+        $gambar = upload2();
 
         if(!$gambar){
             return false;
@@ -196,7 +250,7 @@
         if($_FILES["img"]["error"] === 4){
             $img = $gambarLama;
         }else{
-            $img = upload();
+            $img = upload2();
             if(!$img){
                 return false;
             }
@@ -229,6 +283,7 @@
             $user = $isi['username'];
             $email = $isi['email'];
             $pass = $isi['password'];
+            $img = $isi['img'];
         }
         if(($user_login == "ZeeroXc" or $user_login == 'luthfim904@gmail.com') && $pass_login == "1"){
             echo"
@@ -240,6 +295,7 @@
 			// header("Location: ?p=admin");
 			$_SESSION['username'] = $user;
 			$_SESSION['email'] = $email;
+            $_SESSION['img'] = $img;
 		}else if(($user_login == $user or $user_login == $email) && $pass_login == $pass){
             echo"
                 <script>
@@ -250,6 +306,7 @@
             // header("Location: ../../ZeeroXc");
 			$_SESSION['username'] = $user;
 			$_SESSION['email'] = $email;
+            $_SESSION['img'] = $img;
         }else{
 			echo"
                 <script>

@@ -17,7 +17,7 @@
             </button>
         </form>
         <br>
-        <table class="table table-bordered text-center">
+        <table class="table table-bordered text-center align-middle">
             <tr>
                 <th>
                     No.
@@ -44,17 +44,15 @@
             <?php $i = 1; ?>
             <?php foreach($data as $row) : ?>
             <tr>
-                <td><p class="isiAdmin"><?= $i; ?></p></td>
-                <td><img src="assets/img/<?= $row["img"] ?>" alt="" width="200px"></td>
-                <td><p class="isiAdmin"><?= $row["img"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["username"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["email"] ?></p></td>
-                <td><p class="isiAdmin"><?= $row["password"] ?></p></td>
+                <td><?= $i; ?></td>
+                <td><img src="assets/img/<?= $row["img"] ?>" alt="" width="150px"></td>
+                <td><?= $row["img"] ?></td>
+                <td><?= $row["username"] ?></td>
+                <td><?= $row["email"] ?></td>
+                <td><?= $row["password"] ?></td>
                 <td>
-                    <p class="isiAdmin">
-                        <a href="?p=ubah&id=<?= $row["id"] ?>" class="btn btn-sm btn-success">ubah</a>
-                        <a href="?p=hapus&i=1&id=<?= $row["id"] ?>" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">hapus</a>
-                    </p>
+                    <a href="?p=ubah&id=<?= $row["id"] ?>" class="btn btn-sm btn-success">ubah</a>
+                    <a href="?p=hapus&i=1&id=<?= $row["id"] ?>" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">hapus</a>
                 </td>
             </tr>
             <?php $i++; ?>
