@@ -427,6 +427,8 @@
                         </script>
                     ";
                 }
+            }else{
+                header("Location: ?p=profil");
             }
         }
         return 0;

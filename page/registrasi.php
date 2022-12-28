@@ -50,10 +50,12 @@
                     <div class="mb-3">
                         <label for="password" class="text-primary">Password</label>
                         <input  id="password" type="password" class="form-control" name="password" placeholder="Masukkan password" required>
+                        <div class="form-text"><span id="btn1" onclick="change(1)" class="btn btn-primary btn-sm">lihat</span></div>
                     </div>
                     <div class="mb-3">
                         <label for="konPass" class="text-primary">Konfirmasi Password</label>
                         <input  id="konPass" type="password" class="form-control" name="konPass" placeholder="Masukkan konfirmasi password" required>
+                        <div class="form-text"><span id="btn2" onclick="change(2)" class="btn btn-primary btn-sm">lihat</span></div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="text-primary">Email</label>

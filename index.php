@@ -47,15 +47,25 @@
         include "inc/main.php";
     ?>
     <script type="text/javascript">
-        function change(){
-            var x = document.getElementById('mypass').type;
-
-            if(x == 'password'){
-                document.getElementById('mypass').type = 'text';
-                document.getElementById('mybutton').innerHTML = 'lihat';
+        function change(i){
+            if(i == 1){
+                var x = document.getElementById('password').type;
+                if(x == 'password'){
+                    document.getElementById('password').type = 'text';
+                    document.getElementById('btn1').innerHTML = 'tutup';
+                }else{
+                    document.getElementById('password').type = 'password';
+                    document.getElementById('btn1').innerHTML = 'lihat';
+                }
             }else{
-                document.getElementById('mypass').type = 'password';
-                document.getElementById('mybutton').innerHTML = 'tutup';
+                var x = document.getElementById('konPass').type;
+                if(x == 'password'){
+                    document.getElementById('konPass').type = 'text';
+                    document.getElementById('btn2').innerHTML = 'tutup';
+                }else{
+                    document.getElementById('konPass').type = 'password';
+                    document.getElementById('btn2').innerHTML = 'lihat';
+                }
             }
         }
     </script>
