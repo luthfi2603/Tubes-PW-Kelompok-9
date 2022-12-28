@@ -64,6 +64,7 @@
                     <div class="mb-3">
                         <label for="img" class="text-primary">Gambar</label>
                         <input  id="img" type="file" class="form-control" name="img" placeholder="Masukkan source gambar">
+                        <div class="form-text">rasio gambar 1:1, ukuran kurang dari 2 MB</div>
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="registrasi">Registrasi</button>

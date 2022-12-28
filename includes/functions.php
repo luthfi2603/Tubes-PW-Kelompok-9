@@ -97,7 +97,7 @@
         }
 
         // cek apakah gambar ukurannya terlalu besar
-        if($ukuranFile > (5 * 1166400)){
+        if($ukuranFile > (2 * 1166400)){
             echo"
                 <script>
                     alert('gambar yang anda upload terlalu besar!');
@@ -151,7 +151,7 @@
         }
 
         // cek apakah gambar ukurannya terlalu besar
-        if($ukuranFile > (5 * 1166400)){
+        if($ukuranFile > (2 * 1166400)){
             echo"
                 <script>
                     alert('gambar yang anda upload terlalu besar!');
@@ -310,7 +310,7 @@
                 echo"
                     <script>
                         alert('login berhasil');
-                        document.location.href = '../../ZeeroXc';
+                        document.location.href = 'inc/..';
                     </script>
                 ";
                 $_SESSION['username'] = $user;
@@ -331,6 +331,11 @@
             ";
 		}
         return 0;
+    }
+
+    // fungsi logout
+    function keluar(){
+        session_destroy();
     }
 
     // function untuk mencari di halaman data akun

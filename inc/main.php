@@ -44,6 +44,9 @@
                 case"ubahDataProduk":
                     include "page/ubahDataProduk.php";
                     break;
+                case"logout":
+                    include "page/logout.php";
+                    break;
             }
         }
     }else{

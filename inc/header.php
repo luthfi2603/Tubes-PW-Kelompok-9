@@ -9,7 +9,7 @@
                     if(isset($_GET["cari"])){
                         switch($_GET["cari"]){
                             case"":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-light">ZeeroXc</a>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-light">kyuustore</a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -27,17 +27,21 @@
                         switch($_GET["p"]){
                             // belum login di halaman registrasi
                             case"registrasi":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">kyuustore</a>
                                 <ul class="nav justify-content-end">
                                     <a href="?p=login" class="nav-link text-white">Login</a>
                                 </ul><?php
                                 break;
                             // belum login di halaman login
                             case"login":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">kyuustore</a>
                                 <ul class="nav justify-content-end">
                                     <a href="?p=registrasi" class="nav-link text-white">Register</a>
                                 </ul><?php
+                                break;
+                            // belum login mau ke halaman logout
+                            case"logout":
+                                header("Location: inc/..");
                                 break;
                             // belum login mau ke halaman admin
                             case"admin":
@@ -73,7 +77,7 @@
                                 break;
                             // belum login mau konfirmasi email
                             case"konMail":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">kyuustore</a>
                                 <ul class="nav justify-content-end">
                                     <a href="?p=registrasi" class="nav-link text-light">Register</a>
                                     <a href="?p=login" class="nav-link text-light">Login</a>
@@ -86,7 +90,7 @@
                                     header("Location: ?p=konMail");
                                 // berada di halaman reset password
                                 }else{?>
-                                    <a href="?p=konMail" class="navbar-brand h1 mb-0 text-light">ZeeroXc</a>
+                                    <a href="?p=konMail" class="navbar-brand h1 mb-0 text-light">kyuustore</a>
                                     <ul class="nav justify-content-end">
                                         <span href="?p=registrasi" class="nav-link text-primary">Register</span>
                                     </ul><?php
@@ -96,7 +100,7 @@
                     }
                 // belum login tidak ada url
                 }else{?>
-                    <span class="navbar-brand h1 mb-0 text-light">ZeeroXc</span>
+                    <span class="navbar-brand h1 mb-0 text-light">kyuustore</span>
                     <ul class="nav justify-content-end">
                         <form method="GET">
                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -117,7 +121,7 @@
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">ZeeroXc</a>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">kyuustore</a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -126,7 +130,7 @@
                                             </button>
                                         </form>
                                         <a href="?p=admin" class="nav-link text-light">Admin</a>
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Logout</a>
                                     </ul><?php
                                     break;
                             }
@@ -135,24 +139,24 @@
                             switch($_GET["p"]){
                                 // sudah login sesi admin ketika di halaman admin
                                 case"admin":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                                     <ul class="nav justify-content-end">
                                         <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
                                         <a href="inc/.." class="nav-link text-white">User</a>
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Logout</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman tambah data akun
                                 case"registrasi":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminAkun" class="nav-link text-white">Admin Akun</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman ubah data akun
                                 case"ubah":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                                     <ul class="nav justify-content-end">
                                         <span class="text-primary">Register</span>
                                         <a href="?p=adminAkun" class="nav-link text-white">Admin Akun</a>
@@ -160,7 +164,7 @@
                                     break;
                                 // sudah login sesi admin ketika di halaman data akun
                                 case"adminAkun":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=registrasi" class="nav-link text-white">Tambah Data</a>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
@@ -168,7 +172,7 @@
                                     break;
                                 // sudah login sesi ketika admin di halaman data produk
                                 case"adminProduk":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=tambahDataProduk" class="nav-link text-white">Tambah Produk</a>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
@@ -176,14 +180,14 @@
                                     break;
                                 // sudah login sesi admin ketika di halaman tambah data produk
                                 case"tambahDataProduk":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminProduk" class="nav-link text-white">Admin Produk</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman ubah data produk
                                 case"ubahDataProduk":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                                    <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminProduk" class="nav-link text-white">Admin Akun</a>
                                     </ul><?php
@@ -192,7 +196,7 @@
                         }
                     // session admin ketika di home
                     }else{?>
-                        <span class="navbar-brand h1 mb-0 text-light">ZeeroXc</span>
+                        <span class="navbar-brand h1 mb-0 text-light">kyuustore</span>
                         <ul class="nav justify-content-end">
                             <form method="GET">
                                 <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -201,7 +205,7 @@
                                 </button>
                             </form>
                             <a href="?p=admin" class="nav-link text-light">Admin</a>
-                            <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="nav-link text-white">Logout</a>
+                            <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Logout</a>
                         </ul><?php
                     }
                 // header ketika udah login session user
@@ -212,7 +216,7 @@
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">kyuustore</a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -223,7 +227,7 @@
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <a href="?p=profil" class="text-white nav-link">Profil</a>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Logout</a>
                                     </ul><?php
                                     break;
                             }
@@ -248,7 +252,7 @@
                                     break;
                                 // sesi user jika ke halaman reset password
                                 case"resetPass":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">ZeeroXc</a>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">kyuustore</a>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=profil" class="nav-link text-light">Profil</a>
                                     </ul><?php
@@ -263,18 +267,18 @@
                                     break;
                                 // sesi user ketika ke halaman profil
                                 case"profil":?>
-                                    <a href="../ZeeroXc" class="navbar-brand h1 mb-0 text-white">ZeeroXc</a>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">kyuustore</a>
                                     <ul class="nav justify-content-end">
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Logout</a>
                                     </ul><?php
                                     break;
                             }
                         }
                     // sesi user ketika tidak ada apa-apa di url (home)
                     }else{?>
-                        <span class="navbar-brand h1 mb-0 text-white">ZeeroXc</span>
+                        <span class="navbar-brand h1 mb-0 text-white">kyuustore</span>
                         <ul class="nav justify-content-end">
                             <form method="GET">
                                 <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -285,7 +289,7 @@
                             <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                             <a href="?p=profil" class="text-white nav-link">Profil</a>
                             <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                            <a onclick="return confirm('Apakah anda yakin?')" href="assets/includes/logout.php" class="text-white nav-link">Logout</a>
+                            <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Logout</a>
                         </ul><?php
                     }
                 }

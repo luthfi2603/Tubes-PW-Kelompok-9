@@ -8,7 +8,7 @@
                 <script>
                     alert('data berhasil diubah!');
                     alert('silahkan login kembali');
-                    document.location.href = 'assets/includes/logout.php';
+                    document.location.href = '?p=logout';
                 </script>
             ";
         }else{
@@ -25,7 +25,7 @@
             echo"
                 <script>
                     alert('akun berhasil dihapus!');
-                    document.location.href = 'assets/includes/logout.php';
+                    document.location.href = '?p=logout';
                 </script>
             ";
         }else{
