@@ -35,9 +35,6 @@
                     Email
                 </th>
                 <th>
-                    Password
-                </th>
-                <th>
                     Aksi
                 </th>
             </tr>
@@ -49,10 +46,9 @@
                 <td><?= $row["img"] ?></td>
                 <td><?= $row["username"] ?></td>
                 <td><?= $row["email"] ?></td>
-                <td><?= $row["password"] ?></td>
                 <td>
                     <a href="?p=ubah&id=<?= $row["id"] ?>" class="btn btn-sm btn-success">ubah</a>
-                    <a href="?p=hapus&i=1&id=<?= $row["id"] ?>" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">hapus</a>
+                    <a href="?p=hapus&i=1&id=<?= $row["id"] ?>" onclick="return confirm('Apakah anda yakin?')" class="btn btn-sm btn-danger">hapus</a>
                 </td>
             </tr>
             <?php $i++; ?>

@@ -7,7 +7,7 @@
     <div class="form">
         <div class="card col-md-4 regDanLog2 p-0">
             <div class="card-header bg-warning">
-                <h4 class="card-title text-center mb-0 text-light">Reset Password</h4>
+                <h4 class="card-title text-center mb-0 text-light">Konfirmasi Email</h4>
             </div>
             <div class="card-body">
                 <form method="POST" action="">

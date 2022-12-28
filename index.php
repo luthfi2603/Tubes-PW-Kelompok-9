@@ -46,5 +46,18 @@
         include "inc/header.php";
         include "inc/main.php";
     ?>
+    <script type="text/javascript">
+        function change(){
+            var x = document.getElementById('mypass').type;
+
+            if(x == 'password'){
+                document.getElementById('mypass').type = 'text';
+                document.getElementById('mybutton').innerHTML = 'lihat';
+            }else{
+                document.getElementById('mypass').type = 'password';
+                document.getElementById('mybutton').innerHTML = 'tutup';
+            }
+        }
+    </script>
 </body>
 </html>

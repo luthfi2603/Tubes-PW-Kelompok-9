@@ -247,8 +247,11 @@
                                     header("Location: inc/..");
                                     break;
                                 // sesi user jika ke halaman reset password
-                                case"resetPass":
-                                    header("Location: inc/..");
+                                case"resetPass":?>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">ZeeroXc</a>
+                                    <ul class="nav justify-content-end">
+                                        <a href="?p=profil" class="nav-link text-light">Profil</a>
+                                    </ul><?php
                                     break;
                                 // sesi user jika ke halaman konfirmasi email
                                 case"konMail":

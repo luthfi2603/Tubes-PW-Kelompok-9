@@ -18,10 +18,12 @@
     // fungsi untuk menambah data akun
     function tambah($data){
         global $conn;
-        $username = ($data["username"]);
-        $email = ($data["email"]);
-        $pass = ($data["password"]);
-        $konPass = ($data["konPass"]);
+        // tidak boleh ada slash dan diubah ke huruf kecil
+        $username = strtolower(stripslashes($data["username"]));
+        // agar tanda kutip dapat menjadi password
+        $pass = mysqli_real_escape_string($conn, $data["password"]);
+        $konPass = mysqli_real_escape_string($conn, $data["konPass"]);
+        $email = strtolower($data["email"]); // agar diubah ke huruf kecil
 
         $cekEmail = mysqli_query($conn, "SELECT email FROM akun2 WHERE email = '$email'");
         $cekUsername = mysqli_query($conn, "SELECT username FROM akun2 WHERE username = '$username'");
@@ -29,22 +31,25 @@
         if(mysqli_num_rows($cekEmail) > 0){
             echo"
                 <script>
-                    alert('email Sudah Ada!');
+                    alert('email sudah terdaftar!');
                 </script>
             ";
         }else if(mysqli_num_rows($cekUsername) > 0){
             echo"
                 <script>
-                    alert('username Sudah Ada!');
+                    alert('username sudah terdaftar!');
                 </script>
             ";
-        }else if($pass != $konPass){
+        }else if($pass !== $konPass){
             echo"
                 <script>
-                    alert('password beda');
+                    alert('konfirmasi password berbeda!');
                 </script>
             ";
         }else{
+            // enkripsi password
+            $pass = password_hash($pass, PASSWORD_DEFAULT);
+
             // upload gambar
             $img = upload();
 
@@ -213,7 +218,7 @@
         $id = ($data["id"]);
         $username = ($data["username"]);
         $email = ($data["email"]);
-        $pass = ($data["password"]);
+        // $pass = ($data["password"]);
         $gambarLama = $data["gambarLama"];
 
         if($_FILES["img"]["error"] === 4){
@@ -228,10 +233,10 @@
         $query = "UPDATE akun2 SET
                     username = '$username',
                     email = '$email',
-                    password = '$pass',
                     img = '$img'
                     WHERE id = $id
                 ";
+        // password = '$pass',
         mysqli_query($conn, $query);
         return mysqli_affected_rows($conn);
     }
@@ -275,42 +280,53 @@
         global $user;
         global $pass;
         global $email;
-        $user_login = $data["user"];
-        $pass_login = $data["password"];
-        $query = "SELECT * FROM akun2 WHERE (username = '{$user_login}' or email = '{$user_login}') AND password = '{$pass_login}'";
+        $user_login = strtolower($data["user"]);
+        $pass_login = mysqli_real_escape_string($conn, $data["password"]);
+        $query = "SELECT * FROM akun2 WHERE (username = '{$user_login}' or email = '{$user_login}')";
+        // AND password = '{$pass_login}'
         $hasil = mysqli_query($conn, $query);
-        foreach($hasil as $isi){
-            $user = $isi['username'];
-            $email = $isi['email'];
-            $pass = $isi['password'];
-            $img = $isi['img'];
-        }
-        if(($user_login == "ZeeroXc" or $user_login == 'luthfim904@gmail.com') && $pass_login == "1"){
-            echo"
-                <script>
-                    alert('selamat datang admin');
-                    document.location.href = '?p=admin';
-                </script>
-            ";
-			// header("Location: ?p=admin");
-			$_SESSION['username'] = $user;
-			$_SESSION['email'] = $email;
-            $_SESSION['img'] = $img;
-		}else if(($user_login == $user or $user_login == $email) && $pass_login == $pass){
-            echo"
-                <script>
-                    alert('login berhasil');
-                    document.location.href = '../../ZeeroXc';
-                </script>
-            ";
-            // header("Location: ../../ZeeroXc");
-			$_SESSION['username'] = $user;
-			$_SESSION['email'] = $email;
-            $_SESSION['img'] = $img;
+
+        // cek username atau email
+        if(mysqli_num_rows($hasil) === 1){
+            foreach($hasil as $isi){
+                $user = $isi['username'];
+                $email = $isi['email'];
+                $pass = $isi['password'];
+                $img = $isi['img'];
+            }
+            // cek password
+            $admin = '$2y$10$NqcUGEWI6aV8WXPWK24Cre0owCsBWnIoU28bwcpDPS1SfDgY1XDc2';
+            if(password_verify($pass_login, $admin)){
+                echo"
+                    <script>
+                        alert('selamat datang admin');
+                        document.location.href = '?p=admin';
+                    </script>
+                ";
+                $_SESSION['username'] = $user;
+                $_SESSION['email'] = $email;
+                $_SESSION['img'] = $img;
+            }else if(password_verify($pass_login, $pass)){
+                echo"
+                    <script>
+                        alert('login berhasil');
+                        document.location.href = '../../ZeeroXc';
+                    </script>
+                ";
+                $_SESSION['username'] = $user;
+                $_SESSION['email'] = $email;
+                $_SESSION['img'] = $img;
+            }else{
+                echo"
+                    <script>
+                        alert('password salah!');
+                    </script>
+                ";    
+            }
         }else{
 			echo"
                 <script>
-                    alert('User tidak ditemukan!');
+                    alert('username / email tidak terdaftar!');
                 </script>
             ";
 		}
@@ -358,7 +374,7 @@
         else{
             echo"
                 <script>
-                    alert('email tidak ada!');
+                    alert('email tidak terdaftar!');
                 </script>
             ";
         }
@@ -369,28 +385,41 @@
     function rrreset($data){
         global $conn;
         $email = $_GET["email"];
-        $passRes = $data["password"];
-        $konPassRes = $data["konPass"];
-        if($passRes != $konPassRes){
+        $passRes = mysqli_real_escape_string($conn, $data["password"]);
+        $konPassRes = mysqli_real_escape_string($conn, $data["konPass"]);
+        if($passRes !== $konPassRes){
             echo"
                 <script>
-                    alert('password beda');
+                    alert('konfirmasi password berbeda!');
                 </script>
             ";
         }else{
             if(isset($email)){
+                // enkripsi password
+                $passRes = password_hash($passRes, PASSWORD_DEFAULT);
+
                 $sql = "UPDATE akun2 SET
                         password = '$passRes'
                         WHERE email = '$email'
                         ";
-                $query = mysqli_query($conn, $sql);
-                if($query){
-                    echo"
-                        <script>
-                            alert('reset password berhasil');
-                            document.location.href = '?p=login';
-                        </script>
-                    ";
+                mysqli_query($conn, $sql);
+                $hasil = mysqli_affected_rows($conn);
+                if($hasil > 0){
+                    if(isset($_SESSION["username"])){
+                        echo"
+                            <script>
+                                alert('ubah password berhasil');
+                                document.location.href = 'inc/..';
+                            </script>
+                        ";
+                    }else{
+                        echo"
+                            <script>
+                                alert('reset password berhasil');
+                                document.location.href = '?p=login';
+                            </script>
+                        ";
+                    }
                 }else{
                     echo"
                         <script>
@@ -400,5 +429,6 @@
                 }
             }
         }
+        return 0;
     }
 ?>

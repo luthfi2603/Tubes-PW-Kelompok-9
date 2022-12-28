@@ -7,7 +7,8 @@
             echo"
                 <script>
                     alert('data berhasil diubah!');
-                    document.location.href = 'inc/..';
+                    alert('silahkan login kembali');
+                    document.location.href = 'assets/includes/logout.php';
                 </script>
             ";
         }else{
@@ -50,10 +51,10 @@
                         <label for="username" class="text-primary">Username</label>
                         <input id="username" type="text" class="form-control" name="username" placeholder="Masukkan username" required value="<?= $data["username"]; ?>">
                     </div>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="password" class="text-primary">Password</label>
                         <input id="password" type="text" class="form-control" name="password" placeholder="Masukkan password" required value="<?= $data["password"]; ?>">
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label for="email" class="text-primary">Email</label>
                         <input id="email" type="email" class="form-control" name="email" placeholder="Masukkan username" required value="<?= $data["email"]; ?>">
@@ -67,7 +68,10 @@
                         <button class="btn btn-dark tombol" type="submit" name="edit">Ubah</button>
                     </div>
                     <div class="d-grip gap-2">
-                        <button onclick="return confirm('Yakin?')" class="btn btn-danger tombol mt-2" type="submit" name="hapus">Hapus Akun</button>
+                        <a href="?p=resetPass&email=<?= $_SESSION["email"]; ?>" class="btn btn-primary tombol mt-2">Ubah Password</a>
+                    </div>
+                    <div class="d-grip gap-2">
+                        <button onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger tombol mt-2" type="submit" name="hapus">Hapus Akun</button>
                     </div>
                 </form>
             </div>
