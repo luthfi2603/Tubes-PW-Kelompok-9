@@ -1,5 +1,5 @@
 <?php
-    $data = tampilkan("SELECT * FROM akun2 ORDER BY id ASC");
+    $data = tampilkan("SELECT * FROM akun ORDER BY id ASC");
     if(isset($_POST["cari"])){
         $data = cari($_POST["keyword"]);
     }

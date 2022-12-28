@@ -1,6 +1,6 @@
 <?php
     $user = $_SESSION["username"];
-    $data = tampilkan("SELECT * FROM akun2 WHERE username = '$user'")[0];
+    $data = tampilkan("SELECT * FROM akun WHERE username = '$user'")[0];
 
     if(isset($_POST["edit"])){
         if(ubah($_POST) > 0){

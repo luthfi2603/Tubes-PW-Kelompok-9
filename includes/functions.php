@@ -3,7 +3,7 @@
         session_start();
     }
 
-    $conn = mysqli_connect("localhost", "root", "", "zeeroxc");
+    $conn = mysqli_connect("localhost", "root", "", "kyuudent_store");
 
     function tampilkan($query){
         global $conn;
@@ -25,8 +25,8 @@
         $konPass = mysqli_real_escape_string($conn, $data["konPass"]);
         $email = strtolower($data["email"]); // agar diubah ke huruf kecil
 
-        $cekEmail = mysqli_query($conn, "SELECT email FROM akun2 WHERE email = '$email'");
-        $cekUsername = mysqli_query($conn, "SELECT username FROM akun2 WHERE username = '$username'");
+        $cekEmail = mysqli_query($conn, "SELECT email FROM akun WHERE email = '$email'");
+        $cekUsername = mysqli_query($conn, "SELECT username FROM akun WHERE username = '$username'");
 
         if(mysqli_num_rows($cekEmail) > 0){
             echo"
@@ -57,7 +57,7 @@
                 return false;
             }
 
-            $sql = "INSERT INTO akun2 
+            $sql = "INSERT INTO akun 
                         VALUES ('', '$img', '$username', '$email', '$pass')
                     ";
             mysqli_query($conn, $sql);
@@ -201,7 +201,7 @@
     // fungsi untuk menghapus data akun
     function hapus($id){
         global $conn;
-        mysqli_query($conn, "DELETE FROM akun2 WHERE id = $id");
+        mysqli_query($conn, "DELETE FROM akun WHERE id = $id");
         return mysqli_affected_rows($conn);
     }
 
@@ -230,7 +230,7 @@
             }
         }
 
-        $query = "UPDATE akun2 SET
+        $query = "UPDATE akun SET
                     username = '$username',
                     email = '$email',
                     img = '$img'
@@ -282,7 +282,7 @@
         global $email;
         $user_login = strtolower($data["user"]);
         $pass_login = mysqli_real_escape_string($conn, $data["password"]);
-        $query = "SELECT * FROM akun2 WHERE (username = '{$user_login}' or email = '{$user_login}')";
+        $query = "SELECT * FROM akun WHERE (username = '{$user_login}' or email = '{$user_login}')";
         // AND password = '{$pass_login}'
         $hasil = mysqli_query($conn, $query);
 
@@ -340,7 +340,7 @@
 
     // function untuk mencari di halaman data akun
     function cari($keywoard){
-        $query = "SELECT * FROM akun2
+        $query = "SELECT * FROM akun
                     WHERE
                   username LIKE '%$keywoard%' OR
                   email LIKE '%$keywoard%' OR
@@ -366,7 +366,7 @@
     function rreset($data){
         global $conn;
         $emailkon = $data["konMail"];
-        $sql = "SELECT * FROM akun2 WHERE email = '$emailkon'";
+        $sql = "SELECT * FROM akun WHERE email = '$emailkon'";
         $query = mysqli_query($conn, $sql);
         foreach($query as $isi){
             $email = $isi['email'];
@@ -403,7 +403,7 @@
                 // enkripsi password
                 $passRes = password_hash($passRes, PASSWORD_DEFAULT);
 
-                $sql = "UPDATE akun2 SET
+                $sql = "UPDATE akun SET
                         password = '$passRes'
                         WHERE email = '$email'
                         ";
