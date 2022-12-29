@@ -47,6 +47,9 @@
                 case"logout":
                     include "page/logout.php";
                     break;
+                case"":
+                    include "page/home.php";
+                    break;
             }
         }
     }else{

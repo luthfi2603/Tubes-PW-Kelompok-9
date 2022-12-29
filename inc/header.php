@@ -17,26 +17,40 @@
                                             Cari
                                         </button>
                                     </form>
-                                    <a href="?p=registrasi" class="nav-link text-light">Register</a>
-                                    <a href="?p=login" class="nav-link text-light">Login</a>
+                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
                                 </ul><?php
                                 break;
                         }
                     // ketika belum login tidak ada yang dicari
                     }else{
                         switch($_GET["p"]){
+                            // belum login pindah ke halaman lain (pagination)
+                            case"":?>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                <ul class="nav justify-content-end">
+                                    <form method="GET">
+                                        <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
+                                        <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                            Cari
+                                        </button>
+                                    </form>
+                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
+                                </ul><?php
+                                break;
                             // belum login di halaman registrasi
                             case"registrasi":?>
                                 <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
-                                    <a href="?p=login" class="nav-link text-white">Login</a>
+                                    <a href="?p=login" class="nav-link text-white">Masuk</a>
                                 </ul><?php
                                 break;
                             // belum login di halaman login
                             case"login":?>
                                 <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
-                                    <a href="?p=registrasi" class="nav-link text-white">Register</a>
+                                    <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
                                 </ul><?php
                                 break;
                             // belum login mau ke halaman logout
@@ -79,8 +93,8 @@
                             case"konMail":?>
                                 <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
-                                    <a href="?p=registrasi" class="nav-link text-light">Register</a>
-                                    <a href="?p=login" class="nav-link text-light">Login</a>
+                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
                                 </ul><?php
                                 break;
                             // belum login di halaman reset password
@@ -92,7 +106,7 @@
                                 }else{?>
                                     <a href="?p=konMail" class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
-                                        <span href="?p=registrasi" class="nav-link text-primary">Register</span>
+                                        <span href="?p=registrasi" class="nav-link text-primary">Daftar</span>
                                     </ul><?php
                                     break;
                                 }
@@ -108,8 +122,8 @@
                                 Cari
                             </button>
                         </form>
-                        <a href="?p=registrasi" class="nav-link text-light">Register</a>
-                        <a href="?p=login" class="nav-link text-light">Login</a>
+                        <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
+                        <a href="?p=login" class="nav-link text-light">Masuk</a>
                     </ul><?php
                 }
             // ketika sudah login
@@ -130,13 +144,27 @@
                                             </button>
                                         </form>
                                         <a href="?p=admin" class="nav-link text-light">Admin</a>
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
                                     </ul><?php
                                     break;
                             }
                         // ketika sesi admin tidak ada yang dicari
                         }else{
                             switch($_GET["p"]){
+                                // sudah login sesi admin pindah ke halaman lain (pagination)
+                                case"":?>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                    <ul class="nav justify-content-end">
+                                        <form method="GET">
+                                            <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
+                                            <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                                Cari
+                                            </button>
+                                        </form>
+                                        <a href="?p=admin" class="nav-link text-light">Admin</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
+                                    </ul><?php
+                                    break;
                                 // sudah login sesi admin ketika di halaman admin
                                 case"admin":?>
                                     <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
@@ -144,7 +172,7 @@
                                         <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
                                         <a href="inc/.." class="nav-link text-white">User</a>
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman tambah data akun
@@ -158,7 +186,7 @@
                                 case"ubah":?>
                                     <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
                                     <ul class="nav justify-content-end">
-                                        <span class="text-primary">Register</span>
+                                        <span class="text-primary">Daftar</span>
                                         <a href="?p=adminAkun" class="nav-link text-white">Admin Akun</a>
                                     </ul><?php
                                     break;
@@ -205,14 +233,14 @@
                                 </button>
                             </form>
                             <a href="?p=admin" class="nav-link text-light">Admin</a>
-                            <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Logout</a>
+                            <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
                         </ul><?php
                     }
-                // header ketika udah login session user
+                // header ketika udah login sesi user
                 }else{
-                    // udah login sebagai user ada url
+                    // udah login sesi user ada url
                     if(@$_GET){
-                        // session user ketika ada yang dicari
+                        // sesi user ketika ada yang dicari
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
@@ -227,13 +255,29 @@
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <a href="?p=profil" class="text-white nav-link">Profil</a>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Keluar</a>
                                     </ul><?php
                                     break;
                             }
-                        // session user ketika tidak ada yang dicari
+                        // sesi user ketika tidak ada yang dicari
                         }else{
                             switch($_GET["p"]){
+                                // sudah login sesi user pindah ke halaman lain (pagination)
+                                case"":?>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <ul class="nav justify-content-end">
+                                        <form method="GET">
+                                            <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
+                                            <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                                Cari
+                                            </button>
+                                        </form>
+                                        <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
+                                        <a href="?p=profil" class="text-white nav-link">Profil</a>
+                                        <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Keluar</a>
+                                    </ul><?php
+                                    break;
                                 // sesi user jika ke halaman admin
                                 case"admin":
                                     header("Location: inc/..");
@@ -271,7 +315,7 @@
                                     <ul class="nav justify-content-end">
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Logout</a>
+                                        <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Keluar</a>
                                     </ul><?php
                                     break;
                             }
@@ -289,7 +333,7 @@
                             <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                             <a href="?p=profil" class="text-white nav-link">Profil</a>
                             <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                            <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Logout</a>
+                            <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="text-white nav-link">Keluar</a>
                         </ul><?php
                     }
                 }

@@ -36,6 +36,14 @@
             width:40px;
             height:40px;
         }
+        .deskripsi {
+            margin-bottom:1.5rem;
+            height:100px;
+            overflow:hidden;
+        }
+        .deskAdminProduk {
+            text-align:justify;
+        }
     </style>
 </head>
 <body>

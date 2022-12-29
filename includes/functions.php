@@ -361,6 +361,19 @@
         ";
         return tampilkan($query);
     }
+
+    function cari3($keywoard, $x, $y){
+        $query = "SELECT * FROM produk
+                    WHERE
+                  nama_produk LIKE '%$keywoard%' OR
+                  harga_produk LIKE '%$keywoard%' OR
+                  kategori_produk LIKE '%$keywoard%' OR
+                  merek_produk LIKE '%$keywoard%' OR
+                  spesifikasi_produk LIKE '%$keywoard%'
+                  LIMIT $x, $y
+        ";
+        return tampilkan($query);
+    }
     
     // fungsi untuk konfirmasi email
     function rreset($data){

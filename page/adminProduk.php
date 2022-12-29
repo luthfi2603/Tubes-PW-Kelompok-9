@@ -57,7 +57,7 @@
                 <td><?= $row["harga_produk"] ?></td>
                 <td><?= $row["kategori_produk"] ?></td>
                 <td><?= $row["merek_produk"] ?></td>
-                <td><?= $row["spesifikasi_produk"] ?></td>
+                <td class="deskAdminProduk"><?= $row["spesifikasi_produk"] ?></td>
                 <td>
                     <a href="?p=ubahDataProduk&id=<?= $row["id_produk"] ?>" class="btn btn-sm btn-success">ubah</a>
                     <a href="?p=hapus&i=2&id=<?= $row["id_produk"] ?>" onclick="return confirm('Apakah anda yakin?')" class="btn btn-sm btn-danger">hapus</a>
