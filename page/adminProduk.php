@@ -4,7 +4,7 @@
         $data = cari2($_POST["keyword"]);
     }
 ?>
-<div class="container">
+<div class="container mtNav">
     <div class="card col-12 marAdmin p-0">
         <div class="card-header bg-warning">
             <h4 class="card-title text-center mb-0 text-light">Halaman Admin Produk</h4>
@@ -31,7 +31,7 @@
                 <th>
                     Nama Produk
                 </th>
-                <th>
+                <th width="110px">
                     Harga
                 </th>
                 <th>
@@ -41,7 +41,7 @@
                     Merek
                 </th>
                 <th>
-                    Spesifikasi
+                    Deskripsi
                 </th>
                 <th width="129px">
                     Aksi
@@ -51,10 +51,10 @@
             <?php foreach($data as $row) : ?>
             <tr>
                 <td><?= $i; ?></td>
-                <td><img src="assets/img/<?= $row["img"] ?>" alt="" width="150px"></td>
+                <td><img src="assets/img/<?= $row["img"] ?>" alt="" width="100px"></td>
                 <td><?= $row["img"] ?></td>
                 <td><?= $row["nama_produk"] ?></td>
-                <td><?= $row["harga_produk"] ?></td>
+                <td>Rp <?= number_format($row["harga_produk"],0,".",".") ?></td>
                 <td><?= $row["kategori_produk"] ?></td>
                 <td><?= $row["merek_produk"] ?></td>
                 <td class="deskAdminProduk"><?= $row["spesifikasi_produk"] ?></td>

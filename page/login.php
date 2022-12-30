@@ -3,11 +3,11 @@
         masuk($_POST);
     }
 ?>
-<div class="container">
+<div class="container mtNav">
     <div class="form">
         <div class="card col-md-4 regDanLog2 p-0">
             <div class="card-header bg-warning">
-                <h4 class="card-title text-center mb-0 text-light">Login</h4>
+                <h4 class="card-title text-center mb-0 text-light">Masuk</h4>
             </div>
             <div class="card-body">
                 <form method="POST" action="">
@@ -21,7 +21,7 @@
                         <div class="form-text"><span id="btn1" onclick="change(1)" class="btn btn-primary btn-sm">lihat</span></div>
                     </div>
                     <div class="d-grip gap-2">
-                        <button class="btn btn-dark tombol" type="submit" name="login">Login</button>
+                        <button class="btn btn-dark tombol" type="submit" name="login">Masuk</button>
                     </div>
                     <div class="d-grip gap-2">
                         <a href="?p=konMail" class="btn btn-warning tombol mt-2" type="submit">Lupa Password</a>

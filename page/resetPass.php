@@ -3,7 +3,7 @@
         rrreset($_POST);
     }
 ?>
-<div class="container">
+<div class="container mtNav">
     <div class="form">
         <div class="card col-md-4 regDanLog2 p-0">
             <div class="card-header bg-warning">
@@ -14,12 +14,12 @@
                     <input hidden type="text" name="ngamEmail" id="" value="<?= $email; ?>">
                     <div class="mb-3">
                         <label for="password" class="text-primary">Password</label>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan password" required>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan password" required minlength="8">
                         <div class="form-text"><span id="btn1" onclick="change(1)" class="btn btn-primary btn-sm">lihat</span></div>
                     </div>
                     <div class="mb-3">
                         <label for="konPass" class="text-primary">Konfirmasi Password</label>
-                        <input id="konPass" type="password" class="form-control" name="konPass" placeholder="Masukkan konfirmasi password" required>
+                        <input id="konPass" type="password" class="form-control" name="konPass" placeholder="Masukkan konfirmasi password" required minlength="8">
                         <div class="form-text"><span id="btn1" onclick="change(2)" class="btn btn-primary btn-sm">lihat</span></div>
                     </div>
                     <div class="d-grip gap-2">

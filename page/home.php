@@ -21,7 +21,7 @@
         $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
     }
 ?>
-<div class="container mt-4">
+<div class="container mtNav">
     <div class="row">
         <div class="col">
             <h2 class="text-center">
@@ -146,6 +146,7 @@
                                 ?>
                                 <span>Deskripsi : </span>
                                 <div class="deskripsi"><?= $row["spesifikasi_produk"]; ?></div>
+                                <a href="?p=detail&id=<?= $row["id_produk"]; ?>" class="btn btn-outline-secondary mb-4">Detail</a>
                             </div>
                         </div>
                     </div>

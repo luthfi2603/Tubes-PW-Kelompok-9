@@ -1,4 +1,4 @@
-<div class="navbar bg-primary">
+<div class="navbar bg-primary fixed-top">
     <div class="container-fluid">
         <?php
             // ketika belum login
@@ -132,6 +132,7 @@
                 if($_SESSION["username"] == 'zeeroxc'){
                     // udah login sebagai admin ada url
                     if(@$_GET){
+                        // sesi admin di home ada yang dicari
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
@@ -192,7 +193,7 @@
                                     break;
                                 // sudah login sesi admin ketika di halaman data akun
                                 case"adminAkun":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <a href="?p=adminAkun" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=registrasi" class="nav-link text-white">Tambah Data</a>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
@@ -200,7 +201,7 @@
                                     break;
                                 // sudah login sesi ketika admin di halaman data produk
                                 case"adminProduk":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <a href="?p=adminProduk" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=tambahDataProduk" class="nav-link text-white">Tambah Produk</a>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>

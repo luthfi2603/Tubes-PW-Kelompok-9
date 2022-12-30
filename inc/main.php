@@ -50,6 +50,9 @@
                 case"":
                     include "page/home.php";
                     break;
+                case"detail":
+                    include "page/detail.php";
+                    break;
             }
         }
     }else{

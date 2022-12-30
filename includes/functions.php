@@ -24,6 +24,13 @@
         $pass = mysqli_real_escape_string($conn, $data["password"]);
         $konPass = mysqli_real_escape_string($conn, $data["konPass"]);
         $email = strtolower($data["email"]); // agar diubah ke huruf kecil
+        $nama = $data["nama"];
+        $gender = $data["gender"];
+        $kota = $data["kota"];
+        $provinsi = $data["provinsi"];
+        $noHp = $data["noHp"];
+        $kodePos = $data["kodePos"];
+        $alamat = $data["alamat"];
 
         $cekEmail = mysqli_query($conn, "SELECT email FROM akun WHERE email = '$email'");
         $cekUsername = mysqli_query($conn, "SELECT username FROM akun WHERE username = '$username'");
@@ -58,7 +65,19 @@
             }
 
             $sql = "INSERT INTO akun 
-                        VALUES ('', '$img', '$username', '$email', '$pass')
+                        VALUES ('', 
+                        '$img', 
+                        '$username', 
+                        '$email', 
+                        '$pass',
+                        '$nama',
+                        '$gender',
+                        '$alamat',
+                        '$kota',
+                        '$provinsi',
+                        '$kodePos',
+                        '$noHp'
+                        )
                     ";
             mysqli_query($conn, $sql);
             
@@ -215,11 +234,17 @@
     // fungsi untuk mengubah data akun
     function ubah($data){
         global $conn;
-        $id = ($data["id"]);
-        $username = ($data["username"]);
-        $email = ($data["email"]);
-        // $pass = ($data["password"]);
+        $id = $data["id"];
+        $username = strtolower($data["username"]);
+        $email = strtolower($data["email"]);
         $gambarLama = $data["gambarLama"];
+        $nama = $data["nama"];
+        $gender = $data["gender"];
+        $kota = $data["kota"];
+        $provinsi = $data["provinsi"];
+        $noHp = $data["noHp"];
+        $kodePos = $data["kodePos"];
+        $alamat = $data["alamat"];
 
         if($_FILES["img"]["error"] === 4){
             $img = $gambarLama;
@@ -233,10 +258,16 @@
         $query = "UPDATE akun SET
                     username = '$username',
                     email = '$email',
-                    img = '$img'
+                    img = '$img',
+                    nama = '$nama',
+                    jenis_kelamin = '$gender',
+                    kota = '$kota',
+                    provinsi = '$provinsi',
+                    no_hp = '$noHp',
+                    kode_pos = '$kodePos',
+                    alamat = '$alamat'
                     WHERE id = $id
                 ";
-        // password = '$pass',
         mysqli_query($conn, $query);
         return mysqli_affected_rows($conn);
     }
@@ -362,6 +393,7 @@
         return tampilkan($query);
     }
 
+    // fungsi untuk mencari di home pada pagination
     function cari3($keywoard, $x, $y){
         $query = "SELECT * FROM produk
                     WHERE
@@ -427,7 +459,8 @@
                         echo"
                             <script>
                                 alert('ubah password berhasil');
-                                document.location.href = 'inc/..';
+                                alert('silahkan login kembali');
+                                document.location.href = '?p=logout';
                             </script>
                         ";
                     }else{

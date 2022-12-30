@@ -3,7 +3,7 @@
         rreset($_POST);
     }
 ?>
-<div class="container">
+<div class="container mtNav">
     <div class="form">
         <div class="card col-md-4 regDanLog2 p-0">
             <div class="card-header bg-warning">
