@@ -53,6 +53,26 @@
                 case"detail":
                     include "page/detail.php";
                     break;
+                case"keranjang":
+                    include "page/keranjang.php";
+                    break;
+                case"konPembayaran":
+                    include "page/konPembayaran.php";
+                    break;
+                case"buktiPembelian":
+                    include "page/buktiPembelian.php";
+                    break;
+                default:
+                    echo'
+                        <div class="container mtNav">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-center">Halaman Tidak Ditemukan</h2>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+                    break;
             }
         }
     }else{

@@ -72,8 +72,8 @@
                         <input id="kodePos" type="number" class="form-control" name="kodePos" placeholder="Masukkan kode pos anda" required>
                     </div>
                     <div class="mb-3">
-                        <label for="noHp" class="text-primary">No. Handphone</label>
-                        <input id="noHp" type="number" class="form-control" name="noHp" placeholder="Masukkan no HP anda" required>
+                        <label for="noHp" class="text-primary">No. Telepon</label>
+                        <input id="noHp" type="number" class="form-control" name="noHp" placeholder="Masukkan no HP anda" required min="0">
                     </div>
                     <div class="mb-3">
                         <label for="username" class="text-primary">Username</label>
@@ -82,16 +82,17 @@
                     <div class="mb-3">
                         <label for="password" class="text-primary">Password</label>
                         <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan password anda" required minlength="8">
-                        <div class="form-text"><span id="btn1" onclick="change(1)" class="btn btn-primary btn-sm">lihat</span></div>
+                        <div class="form-text"><span id="btn1" onclick="change(1)" class="btn btn-primary btn-sm">lihat</span> minimal 8 karakter</div>
                     </div>
                     <div class="mb-3">
                         <label for="konPass" class="text-primary">Konfirmasi Password</label>
                         <input id="konPass" type="password" class="form-control" name="konPass" placeholder="Masukkan konfirmasi password" required minlength="8">
-                        <div class="form-text"><span id="btn2" onclick="change(2)" class="btn btn-primary btn-sm">lihat</span></div>
+                        <div class="form-text"><span id="btn2" onclick="change(2)" class="btn btn-primary btn-sm">lihat</span> minimal 8 karakter</div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="text-primary">Email</label>
                         <input id="email" type="email" class="form-control" name="email" placeholder="Masukkan email anda" required>
+                        <div class="form-text">contoh : yourmail@gmail.com</div>
                     </div>
                     <div class="mb-3">
                         <label for="img" class="text-primary">Foto Profil</label>

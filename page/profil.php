@@ -47,6 +47,7 @@
                 <form method="POST" action="" enctype="multipart/form-data">
                     <input hidden type="text" name="id" value="<?= $data["id"]; ?>">
                     <input hidden type="text" name="gambarLama" value="<?= $data["img"]; ?>">
+                    <div class="form-text">dapat mengubah data akun dengan langsung mengetikkan yang mau diubah</div>
                     <div class="mb-3">
                         <label for="nama" class="text-primary">Nama</label>
                         <input value="<?= $data["nama"]; ?>" id="nama" type="text" class="form-control" name="nama" placeholder="Masukkan nama anda" required>
@@ -86,8 +87,8 @@
                         <input value="<?= $data["kode_pos"]; ?>" id="kodePos" type="number" class="form-control" name="kodePos" placeholder="Masukkan kode pos anda" required>
                     </div>
                     <div class="mb-3">
-                        <label for="noHp" class="text-primary">No. Handphone</label>
-                        <input value="<?= $data["no_hp"]; ?>" id="noHp" type="number" class="form-control" name="noHp" placeholder="Masukkan no HP anda" required>
+                        <label for="noHp" class="text-primary">No. Telepon</label>
+                        <input value="<?= $data["no_hp"]; ?>" id="noHp" type="number" class="form-control" name="noHp" placeholder="Masukkan no HP anda" required min="0">
                     </div>
                     <div class="mb-3">
                         <label for="username" class="text-primary">Username</label>
@@ -101,6 +102,7 @@
                         <label for="img" class="text-primary">Foto Profil</label><br>
                         <img src="assets/img/<?= $data["img"]; ?>" alt="" width="100">
                         <input id="img" type="file" class="form-control mt-2" name="img" placeholder="Masukkan source gambar">
+                        <div class="form-text">rasio gambar 1:1, ukuran kurang dari 2 MB</div>
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="edit">Ubah Profil</button>

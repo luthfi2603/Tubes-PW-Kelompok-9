@@ -31,6 +31,7 @@
         $noHp = $data["noHp"];
         $kodePos = $data["kodePos"];
         $alamat = $data["alamat"];
+        $level = 2;
 
         $cekEmail = mysqli_query($conn, "SELECT email FROM akun WHERE email = '$email'");
         $cekUsername = mysqli_query($conn, "SELECT username FROM akun WHERE username = '$username'");
@@ -69,14 +70,15 @@
                         '$img', 
                         '$username', 
                         '$email', 
-                        '$pass',
                         '$nama',
                         '$gender',
                         '$alamat',
                         '$kota',
                         '$provinsi',
                         '$kodePos',
-                        '$noHp'
+                        '$noHp',
+                        '$level',
+                        '$pass'
                         )
                     ";
             mysqli_query($conn, $sql);
@@ -320,6 +322,7 @@
         // cek username atau email
         if(mysqli_num_rows($hasil) === 1){
             foreach($hasil as $isi){
+                $id = $isi['id'];
                 $user = $isi['username'];
                 $email = $isi['email'];
                 $pass = $isi['password'];
@@ -337,6 +340,7 @@
                 $_SESSION['username'] = $user;
                 $_SESSION['email'] = $email;
                 $_SESSION['img'] = $img;
+                $_SESSION['id'] = $id;
             }else if(password_verify($pass_login, $pass)){
                 echo"
                     <script>
@@ -347,6 +351,7 @@
                 $_SESSION['username'] = $user;
                 $_SESSION['email'] = $email;
                 $_SESSION['img'] = $img;
+                $_SESSION['id'] = $id;
             }else{
                 echo"
                     <script>
@@ -484,4 +489,17 @@
         }
         return 0;
     }
+
+    // fungsi membuat nomor id
+    function autoNumber($id, $table){
+        global $conn;
+		$qry = 'SELECT MAX(RIGHT('.$id.', 4)) as max_id FROM '.$table.' ORDER BY '.$id;
+		$result = mysqli_query($conn, $qry);
+		$data = mysqli_fetch_array($result);
+		$id_max = $data['max_id'];
+		$sort_num = (int) substr($id_max, 1, 4);
+		$sort_num++;
+		$new_code = sprintf("%04s", $sort_num);
+		return $new_code;
+	}
 ?>

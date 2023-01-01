@@ -76,6 +76,9 @@
             stroke-linejoin: round;
             stroke-linecap: round;
         }
+        .detail {
+            margin: 80px auto 1.5rem auto;
+        }
     </style>
 </head>
 <body>
@@ -126,6 +129,13 @@
                 backToTop.classList.remove('show');
             }
         });
+        function PrintDiv(divName){
+            var printContents = document.getElementById(divName).innerHTML;
+            var orginialContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = orginialContents;
+        }
     </script>
 </body>
 </html>

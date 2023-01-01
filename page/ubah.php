@@ -31,7 +31,7 @@
                     <input hidden type="text" name="gambarLama" value="<?= $data["img"]; ?>">
                     <div class="mb-3">
                         <label for="nama" class="text-primary">Nama</label>
-                        <input value="<?= $data["nama"]; ?>" id="nama" type="text" class="form-control" name="nama" placeholder="Masukkan nama anda" required>
+                        <input value="<?= $data["nama"]; ?>" id="nama" type="text" class="form-control" name="nama" required>
                     </div>
                     <div class="mb-3">
                         <label for="gender" class="text-primary">Jenis Kelamin</label><br>
@@ -53,36 +53,36 @@
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="text-primary">Alamat</label>
-                        <input value="<?= $data["alamat"]; ?>" id="alamat" type="text" class="form-control" name="alamat" placeholder="Masukkan alamat anda" required>
+                        <input value="<?= $data["alamat"]; ?>" id="alamat" type="text" class="form-control" name="alamat" required>
                     </div>
                     <div class="mb-3">
                         <label for="kota" class="text-primary">Kota</label>
-                        <input value="<?= $data["kota"]; ?>" id="kota" type="text" class="form-control" name="kota" placeholder="Masukkan nama Kota atau Kabupaten" required>
+                        <input value="<?= $data["kota"]; ?>" id="kota" type="text" class="form-control" name="kota" required>
                     </div>
                     <div class="mb-3">
                         <label for="provinsi" class="text-primary">Provinsi</label>
-                        <input value="<?= $data["provinsi"]; ?>" id="provinsi" type="text" class="form-control" name="provinsi" placeholder="Masukkan Provinsi anda" required>
+                        <input value="<?= $data["provinsi"]; ?>" id="provinsi" type="text" class="form-control" name="provinsi" required>
                     </div>
                     <div class="mb-3">
                         <label for="kodePos" class="text-primary">Kode Pos</label>
-                        <input value="<?= $data["kode_pos"]; ?>" id="kodePos" type="number" class="form-control" name="kodePos" placeholder="Masukkan kode pos anda" required>
+                        <input value="<?= $data["kode_pos"]; ?>" id="kodePos" type="number" class="form-control" name="kodePos" required>
                     </div>
                     <div class="mb-3">
-                        <label for="noHp" class="text-primary">No. Handphone</label>
-                        <input value="<?= $data["no_hp"]; ?>" id="noHp" type="number" class="form-control" name="noHp" placeholder="Masukkan no HP anda" required>
+                        <label for="noHp" class="text-primary">No. Telepon</label>
+                        <input value="<?= $data["no_hp"]; ?>" id="noHp" type="number" class="form-control" name="noHp" required min="0">
                     </div>
                     <div class="mb-3">
                         <label for="username" class="text-primary">Username</label>
-                        <input value="<?= $data["username"]; ?>" id="username" type="text" class="form-control" name="username" placeholder="Masukkan username anda" required>
+                        <input value="<?= $data["username"]; ?>" id="username" type="text" class="form-control" name="username" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="text-primary">Email</label>
-                        <input value="<?= $data["email"]; ?>" id="email" type="email" class="form-control" name="email" placeholder="Masukkan email anda" required>
+                        <input value="<?= $data["email"]; ?>" id="email" type="email" class="form-control" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="img" class="text-primary">Foto Profil</label><br>
                         <img src="assets/img/<?= $data["img"]; ?>" alt="" width="100">
-                        <input id="img" type="file" class="form-control mt-2" name="img" placeholder="Masukkan source gambar">
+                        <input id="img" type="file" class="form-control mt-2" name="img">
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="edit">Ubah</button>
