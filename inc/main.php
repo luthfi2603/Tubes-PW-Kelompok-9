@@ -62,6 +62,15 @@
                 case"buktiPembelian":
                     include "page/buktiPembelian.php";
                     break;
+                case"adminPesanan":
+                    include "page/adminPesanan.php";
+                    break;
+                case"editPembelian":
+                    include "page/editPembelian.php";
+                    break;
+                case"printPembelian":
+                    include "page/printPembelian.php";
+                    break;
                 default:
                     echo'
                         <div class="container mtNav">

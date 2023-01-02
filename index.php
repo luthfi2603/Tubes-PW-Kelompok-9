@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- #FFEFD6 -->
     <style>
         body {
-            background-color: lightblue;
-            color: while;
+            background-color: #ACC8E5;
+            color: #112A46;
         }
         .tombol {
             width: 100% !important;
@@ -28,6 +29,7 @@
         .regDanLog2 {
             margin-left: 364px !important;
             margin-top: 1.5rem !important;
+            margin-bottom: 1.5rem !important;
         }
         .marAdmin {
             margin: 1.5rem auto!important;
@@ -86,6 +88,7 @@
     <?php
         include "inc/header.php";
         include "inc/main.php";
+        // include "inc/footer.php";
     ?>
     <div class='back-to-top'>
         <svg viewBox="0 0 20 20">

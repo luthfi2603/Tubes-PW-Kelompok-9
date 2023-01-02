@@ -10,6 +10,9 @@
             <div class="col">
                 <a class="btn btn-primary text-white" href="?p=adminProduk">Data Produk</a>
             </div>
+            <div class="col">
+                <a class="btn btn-success text-white" href="?p=adminPesanan">Pesanan</a>
+            </div>
         </div>
     </div>
 </div>

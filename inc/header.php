@@ -241,7 +241,28 @@
                                 case"ubahDataProduk":?>
                                     <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
                                     <ul class="nav justify-content-end">
-                                        <a href="?p=adminProduk" class="nav-link text-white">Admin Akun</a>
+                                        <a href="?p=adminProduk" class="nav-link text-white">Admin Produk</a>
+                                    </ul><?php
+                                    break;
+                                // sudah login sesi admin ketika di halaman pesanan
+                                case"adminPesanan":?>
+                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <ul class="nav justify-content-end">
+                                        <a href="?p=admin" class="nav-link text-white">Admin</a>
+                                    </ul><?php
+                                    break;
+                                // sudah login sesi admin ketika di halaman edit pembelian
+                                case"editPembelian":?>
+                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <ul class="nav justify-content-end">
+                                        <a href="?p=adminPesanan" class="nav-link text-white">Admin Pesanan</a>
+                                    </ul><?php
+                                    break;
+                                // sudah login sesi admin ketika di halaman print pembelian
+                                case"printPembelian":?>
+                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <ul class="nav justify-content-end">
+                                        <a href="?p=adminPesanan" class="nav-link text-white">Admin Pesanan</a>
                                     </ul><?php
                                     break;
                                 // jika halaman tidak ada
