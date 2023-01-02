@@ -29,7 +29,7 @@
         if($_POST['bayar'] != $_POST['hidden_total']){
             echo"
                 <script>
-                    alert('Isi total tersebut tidak boleh di kurangi. Mohon bayar sesuai dengan total pembayaran.');
+                    alert('Mohon bayar sesuai dengan total pembayaran.');
                     document.location.href = '?p=konPembayaran';
                 </script>
             ";
@@ -165,7 +165,7 @@
                         <label for="jumlahBayar" class="text-primary">Jumlah bayar</label>
                         <input id="jumlahBayar" type="number" class="form-control" name="bayar" required placeholder="Masukkan nominal">
                         <div class="form-text">
-                            Masukkan nominal sesuai dengan total transaksi untuk pembayaran tanpa titik
+                            Masukkan nominal sesuai dengan total transaksi untuk pembayaran, tanpa titik
                         </div>
                     </div>
                     <div class="mb-3">

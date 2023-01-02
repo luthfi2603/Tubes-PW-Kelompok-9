@@ -3,7 +3,7 @@
     $data = tampilkan("SELECT * FROM akun WHERE id = $id")[0];
 
     if(isset($_POST["edit"])){
-        if(ubah($_POST) > 0){
+        if(ubah3($_POST) > 0){
             echo"
                 <script>
                     alert('data berhasil diubah!');
@@ -83,6 +83,24 @@
                         <label for="img" class="text-primary">Foto Profil</label><br>
                         <img src="assets/img/<?= $data["img"]; ?>" alt="" width="100">
                         <input id="img" type="file" class="form-control mt-2" name="img">
+                    </div>
+                    <div class="mb-3">
+                        <label for="level" class="text-primary">level</label> <br>
+                        <select name="level" id="level" class="form-control">
+                            <option value="blank">level</option>
+                            <?php
+                                if($data['level'] == 1){
+                                    echo "<option value='1' selected>admin</option>";
+                                    echo "<option value='2'>user</option>";
+                                }else if($data['level'] == 2){
+                                    echo "<option value='1'>admin</option>";
+                                    echo "<option value='2' selected>user</option>";
+                                }else{
+                                    echo "<option value='1'>admin</option>";
+                                    echo "<option value='2'>user</option>";
+                                }
+                            ?>
+                        </select>
                     </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="edit">Ubah</button>

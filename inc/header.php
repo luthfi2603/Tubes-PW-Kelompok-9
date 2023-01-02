@@ -152,7 +152,7 @@
             // ketika sudah login
             }else{
                 // header ketika sesi admin
-                if($_SESSION["username"] == 'zeeroxc'){
+                if($_SESSION["level"] == 1){
                     // udah login sebagai admin ada url
                     if(@$_GET){
                         // sesi admin di home ada yang dicari

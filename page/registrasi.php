@@ -1,5 +1,15 @@
 <?php
     if(isset($_POST["registrasi"])){
+        $gender = $_POST["gender"];
+        if($gender == 'blank'){
+            echo"
+                <script>
+                    alert('silahkan pilih gender anda');
+                    document.location.href = '?p=registrasi';
+                </script>
+            ";
+            die;
+        }
         // kalau belum login
         if(empty($_SESSION)){
             if(tambah($_POST) > 0){

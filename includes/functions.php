@@ -307,6 +307,49 @@
         return mysqli_affected_rows($conn);
     }
 
+    // fungsi untuk mengubah data akun
+    function ubah3($data){
+        global $conn;
+        $id = $data["id"];
+        $username = strtolower($data["username"]);
+        $email = strtolower($data["email"]);
+        $gambarLama = $data["gambarLama"];
+        $nama = $data["nama"];
+        $gender = $data["gender"];
+        $kota = $data["kota"];
+        $provinsi = $data["provinsi"];
+        $noHp = $data["noHp"];
+        $kodePos = $data["kodePos"];
+        $alamat = $data["alamat"];
+        $level = $data["level"];
+
+        if($_FILES["img"]["error"] === 4){
+            $img = $gambarLama;
+        }else{
+            $img = upload();
+            if(!$img){
+                return false;
+            }
+        }
+
+        $query = "UPDATE akun SET
+                    username = '$username',
+                    email = '$email',
+                    img = '$img',
+                    nama = '$nama',
+                    jenis_kelamin = '$gender',
+                    kota = '$kota',
+                    provinsi = '$provinsi',
+                    no_hp = '$noHp',
+                    kode_pos = '$kodePos',
+                    alamat = '$alamat',
+                    level = '$level'
+                    WHERE id = $id
+                ";
+        mysqli_query($conn, $query);
+        return mysqli_affected_rows($conn);
+    }
+
     // fungsi untuk login
     function masuk($data){
         global $conn;
@@ -327,31 +370,35 @@
                 $email = $isi['email'];
                 $pass = $isi['password'];
                 $img = $isi['img'];
+                $level = $isi['level'];
             }
             // cek password
-            $admin = '$2y$10$NqcUGEWI6aV8WXPWK24Cre0owCsBWnIoU28bwcpDPS1SfDgY1XDc2';
-            if(password_verify($pass_login, $admin)){
-                echo"
-                    <script>
-                        alert('selamat datang admin');
-                        document.location.href = '?p=admin';
-                    </script>
-                ";
-                $_SESSION['username'] = $user;
-                $_SESSION['email'] = $email;
-                $_SESSION['img'] = $img;
-                $_SESSION['id'] = $id;
-            }else if(password_verify($pass_login, $pass)){
-                echo"
-                    <script>
-                        alert('login berhasil');
-                        document.location.href = 'inc/..';
-                    </script>
-                ";
-                $_SESSION['username'] = $user;
-                $_SESSION['email'] = $email;
-                $_SESSION['img'] = $img;
-                $_SESSION['id'] = $id;
+            if(password_verify($pass_login, $pass)){
+                if($level == 1){
+                    echo"
+                        <script>
+                            alert('selamat datang admin');
+                            document.location.href = '?p=admin';
+                        </script>
+                    ";
+                    $_SESSION['username'] = $user;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['img'] = $img;
+                    $_SESSION['id'] = $id;
+                    $_SESSION['level'] = $level;
+                }else{
+                    echo"
+                        <script>
+                            alert('login berhasil');
+                            document.location.href = 'inc/..';
+                        </script>
+                    ";
+                    $_SESSION['username'] = $user;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['img'] = $img;
+                    $_SESSION['id'] = $id;
+                    $_SESSION['level'] = $level;
+                }
             }else{
                 echo"
                     <script>
