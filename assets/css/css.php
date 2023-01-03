@@ -1,3 +1,72 @@
+/*body {
+    background-color: #ACC8E5;
+    color: #112A46;
+}*/
+.tombol {
+    width: 100% !important;
+}
+.keTengah {
+    margin: 0 auto !important;
+}
+.regDanLog {
+    margin: 1.5rem auto !important;
+}
+.regDanLog2 {
+    margin-left: 364px !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+.marAdmin {
+    margin: 1.5rem auto!important;
+}
+.avatarProfil {
+    width:40px;
+    height:40px;
+}
+.deskripsi {
+    margin-bottom: 0.5rem;
+    height:100px;
+    overflow:hidden;
+}
+.deskAdminProduk {
+    text-align:justify;
+}
+.mtNav {
+    margin-top:80px;
+}
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: #17a2b8;
+    opacity: 0;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+    z-index: 20px;
+}
+/* Untuk memunculkan tombol */
+.back-to-top.show {
+    bottom: 20px;
+    opacity: 1;
+}
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+.detail {
+    margin: 80px auto 1.5rem auto;
+}
+
 @charset "UTF-8";
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
@@ -29,7 +98,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #7D8F69;
+  --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -8174,9 +8243,19 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
 }
 
+.bg-bg-custom {
+    --bs-bg-opacity: 1;
+    background-color: #EAE7B1 !important;
+}
+
+.bg-bg-navbar {
+    --bs-bg-opacity: 1;
+    background-color: #61876E !important;
+}
+
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: #7D8F69 !important;
+  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-secondary {

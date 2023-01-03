@@ -1,4 +1,4 @@
-<div class="navbar bg-primary fixed-top">
+<div class="navbar bg-bg-navbar fixed-top">
     <div class="container-fluid">
         <?php
             // ketika belum login

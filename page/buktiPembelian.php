@@ -26,17 +26,17 @@
 						$tanggal = ''.$row['tanggal_pembelian'].'';
 						$tanggal_detail = date('Y-m-d', strtotime($tanggal));
 						$pelanggan_detail = '
-						'.$row['nama'].' <br>
-						'.$row['alamat'].' <br>
-						'.$row['kota'].' <br>
-						'.$row['provinsi'].' <br>
-						'.$row['kode_pos'].' <br>
-						No.HP '.$row['no_hp'].'
+							Nama :     '.$row['nama'].' <br>
+							Alamat :   '.$row['alamat'].' <br>
+							Kota :     '.$row['kota'].' <br>
+							Provinsi : '.$row['provinsi'].' <br>
+							Kode Pos : '.$row['kode_pos'].' <br>
+							No. HP :   '.$row['no_hp'].'
 						';
 						$bayar_detail = '
-						'.$row['nama'].' <br>
-						'.$row['e-money'].' <br>
-						'.$row['e-money_number'].' <br>
+							'.$row['nama'].' <br>
+							'.$row['e-money'].' <br>
+							'.$row['e-money_number'].' <br>
 						';
 					}
 				}
@@ -47,7 +47,7 @@
 			</div>
 			<hr>
 		</div>
-		<div class="row mb-2">
+		<div class="row">
 			<div class="col-6">
 				<strong>Detail Pemesan</strong>
 				<address>
@@ -56,15 +56,15 @@
 			</div>
 			<div class="col-6 text-end">
 				<strong>Tanggal Pemesanan</strong> <br>
-				<?= $tanggal_detail ?> <br>
+					<?= $tanggal_detail ?> <br>
 				<strong>Detail Pembayaran</strong> <br>
-				<?= $bayar_detail ?>
+					<?= $bayar_detail ?>
 			</div>
 		</div>
 		<div class="col-lg-12">
 			<table width="100%" class="table table-bordered text-center align-middle border-dark">
 				<thead>
-					<tr class="bg-info text-white">
+					<tr class="bg-info">
 						<th>No</th>
 						<th colspan="2">Produk</th>
 						<th>Jumlah</th>
@@ -81,7 +81,7 @@
 						$total = $total + $subtotal;
 				?>
 					<tr class="bg-white">
-						<td align="center"><?= $no ?></td>
+						<td><?= $no ?></td>
 						<td>
                             <img src="assets/img/<?= $row['img'] ?>" width="80px">
 						</td>
@@ -89,17 +89,17 @@
                             Kode : <?= $row['id_produk'] ?> <br>
                             Nama : <?= $row['nama'] ?>
                         </td>
-						<td align="center"><?= $row['jumlah'] ?></td>
-						<td align="center"><?= 'Rp '.number_format($row['harga'],0,".",".") ?></td>
-						<td align="center"><?= 'Rp '.number_format($subtotal,0,".",".") ?></td>
+						<td><?= $row['jumlah'] ?></td>
+						<td><?= 'Rp '.number_format($row['harga'],0,".",".") ?></td>
+						<td><?= 'Rp '.number_format($subtotal,0,".",".") ?></td>
 					</tr>
 				<?php
 					$no++;
 					}
 				?>
 					<tr class="bg-white">
-						<td colspan="5" align="right">Total</td>
-						<td align="center"><?= 'Rp '.number_format($total,0,".",".") ?></td>
+						<td colspan="5">T  o  t  a  l</td>
+						<td><?= 'Rp '.number_format($total,0,".",".") ?></td>
 					</tr>
 			</table>
 		<div class="col-lg-12">
