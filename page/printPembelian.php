@@ -61,9 +61,9 @@
                 </div>
             </div>
             <div class="col-12">
-                <table width="100%" class="table table-bordered text-center align-middle border-dark">
+                <table width="100%" class="table table-bordered text-center align-middle border-dark mb-5">
                     <thead>
-                        <tr class="bg-bg-navbar">
+                        <tr class="bg-ijo">
                             <th>No</th>
                             <th colspan="2">Produk</th>
                             <th>Jumlah</th>

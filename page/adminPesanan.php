@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="card col-11 p-0 detail">
+    <div class="card col-12 p-0 detail">
         <div class="card-header bg-warning">
-            <h4 class="card-title text-center mb-0 text-light">Pesanan</h4>
+            <h4 class="card-title text-center mb-0 text-white">Pesanan</h4>
         </div>
         <div class="card-body">
             <table class="table table-bordered align-middle text-center">

@@ -1,4 +1,4 @@
-<div class="navbar bg-bg-navbar fixed-top">
+<div class="navbar bg-ijo fixed-top">
     <div class="container-fluid">
         <?php
             // ketika belum login
@@ -9,7 +9,7 @@
                     if(isset($_GET["cari"])){
                         switch($_GET["cari"]){
                             case"":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -17,8 +17,8 @@
                                             Cari
                                         </button>
                                     </form>
-                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
-                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
+                                    <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-white">Masuk</a>
                                 </ul><?php
                                 break;
                         }
@@ -27,7 +27,7 @@
                         switch($_GET["p"]){
                             // belum login pindah ke halaman lain (pagination)
                             case"":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -35,8 +35,8 @@
                                             Cari
                                         </button>
                                     </form>
-                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
-                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
+                                    <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-white">Masuk</a>
                                 </ul><?php
                                 break;
                             // belum login di halaman registrasi
@@ -57,12 +57,16 @@
                             case"resetPass":
                                 // belum memasukkan email yang sesuai
                                 if(empty($_GET["email"])){
-                                    header("Location: ?p=konMail");
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=konMail';
+                                        </script>
+                                    ";
                                 // berada di halaman reset password
                                 }else{?>
-                                    <a href="?p=konMail" class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                    <a href="?p=konMail" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
-                                        <span href="?p=registrasi" class="nav-link text-primary">Daftar</span>
+                                        <span class="nav-link text-ijo">invisible</span>
                                     </ul><?php
                                     break;
                                 }
@@ -70,8 +74,8 @@
                             case"konMail":?>
                                 <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
-                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
-                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
+                                    <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-white">Masuk</a>
                                 </ul><?php
                                 break;
                             // belum login ke halaman detail produk
@@ -79,49 +83,125 @@
                             case"detail":?>
                                 <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
-                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
-                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
+                                    <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-white">Masuk</a>
                                 </ul><?php
                                 break;
                             // belum login mau ke halaman logout
                             case"logout":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman admin
                             case"admin":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman admin akun
                             case"adminAkun":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
+                                break;
+                            // belum login mau ke halaman admin pesanan
+                            case"adminPesanan":
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman admin produk
                             case"adminProduk":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
+                                break;
+                            // belum login mau ke halaman bukti pembelian
+                            case"buktiPembelian":
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
+                                break;
+                            // belum login mau ke halaman edit pembelian
+                            case"editPembelian":
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman hapus
                             case"hapus":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
+                                break;
+                            // belum login mau ke halaman konfirmasi pembayaran
+                            case"konPembayaran":
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
+                                break;
+                            // belum login mau ke halaman print pembelian
+                            case"printPembelian":
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman profil
                             case"profil":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman tambah data produk
                             case"tambahDataProduk":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman ubah di admin
                             case"ubah":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // belum login mau ke halaman ubah data produk
                             case"ubahDataProduk":
-                                header("Location: inc/..");
+                                echo"
+                                    <script>
+                                        document.location.href = 'inc/..';
+                                    </script>
+                                ";
                                 break;
                             // jika halaman tidak ada
                             default:?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -129,15 +209,15 @@
                                             Cari
                                         </button>
                                     </form>
-                                    <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
-                                    <a href="?p=login" class="nav-link text-light">Masuk</a>
+                                    <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
+                                    <a href="?p=login" class="nav-link text-white">Masuk</a>
                                 </ul><?php
                                 break;
                         }
                     }
                 // belum login tidak ada url
                 }else{?>
-                    <span class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</span>
+                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
                     <ul class="nav justify-content-end">
                         <form method="GET">
                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -145,8 +225,8 @@
                                 Cari
                             </button>
                         </form>
-                        <a href="?p=registrasi" class="nav-link text-light">Daftar</a>
-                        <a href="?p=login" class="nav-link text-light">Masuk</a>
+                        <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
+                        <a href="?p=login" class="nav-link text-white">Masuk</a>
                     </ul><?php
                 }
             // ketika sudah login
@@ -159,7 +239,7 @@
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -167,7 +247,7 @@
                                                 Cari
                                             </button>
                                         </form>
-                                        <a href="?p=admin" class="nav-link text-light">Admin</a>
+                                        <a href="?p=admin" class="nav-link text-white">Admin</a>
                                         <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
                                     </ul><?php
                                     break;
@@ -177,7 +257,7 @@
                             switch($_GET["p"]){
                                 // sudah login sesi admin pindah ke halaman lain (pagination)
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -185,7 +265,7 @@
                                                 Cari
                                             </button>
                                         </form>
-                                        <a href="?p=admin" class="nav-link text-light">Admin</a>
+                                        <a href="?p=admin" class="nav-link text-white">Admin</a>
                                         <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
                                     </ul><?php
                                     break;
@@ -210,7 +290,6 @@
                                 case"ubah":?>
                                     <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
                                     <ul class="nav justify-content-end">
-                                        <span class="text-primary">Daftar</span>
                                         <a href="?p=adminAkun" class="nav-link text-white">Admin Akun</a>
                                     </ul><?php
                                     break;
@@ -265,9 +344,72 @@
                                         <a href="?p=adminPesanan" class="nav-link text-white">Admin Pesanan</a>
                                     </ul><?php
                                     break;
+                                // sudah login sesi admin ketika di halaman detail
+                                case"detail":?>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <ul class="nav justify-content-end">
+                                        <a href="?p=admin" class="nav-link text-white">Admin</a>
+                                    </ul><?php
+                                    break;
+                                // sudah login sesi admin ketika di halaman bukti pembelian
+                                case"buktiPembelian":
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=admin';
+                                        </script>
+                                    ";
+                                    break;
+                                // sudah login sesi admin ketika di halaman keranjang
+                                case"keranjang":
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=admin';
+                                        </script>
+                                    ";
+                                    break;
+                                // sudah login sesi admin ketika di halaman konfirmasi email
+                                case"konMail":
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=admin';
+                                        </script>
+                                    ";
+                                    break;
+                                // sudah login sesi admin ketika di halaman konfirmasi pembayaran
+                                case"konPembayaran":
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=admin';
+                                        </script>
+                                    ";
+                                    break;
+                                // sudah login sesi admin ketika di halaman login
+                                case"login":
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=admin';
+                                        </script>
+                                    ";
+                                    break;
+                                // sudah login sesi admin ketika di halaman login
+                                case"profil":
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=admin';
+                                        </script>
+                                    ";
+                                    break;
+                                // sudah login sesi admin ketika di halaman reset password
+                                case"resetPass":
+                                    echo"
+                                        <script>
+                                            document.location.href = '?p=admin';
+                                        </script>
+                                    ";
+                                    break;
                                 // jika halaman tidak ada
                                 default:?>
-                                    <a href="?p=admin" class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                    <a href="?p=admin" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
                                         <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -278,7 +420,7 @@
                         }
                     // sesi admin ketika di home
                     }else{?>
-                        <span class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</span>
+                        <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
                         <ul class="nav justify-content-end">
                             <form method="GET">
                                 <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -286,7 +428,7 @@
                                     Cari
                                 </button>
                             </form>
-                            <a href="?p=admin" class="nav-link text-light">Admin</a>
+                            <a href="?p=admin" class="nav-link text-white">Admin</a>
                             <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
                         </ul><?php
                     }
@@ -351,51 +493,147 @@
                                     </ul><?php
                                     break;
                                 // sudah login sesi user ke halaman konfirmasi pembayaran
-                                case"konPembayaran":?>
-                                    <a href="?p=keranjang" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
-                                    <ul class="nav justify-content-end">
-                                        <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
-                                        <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                                    </ul><?php
+                                case"konPembayaran":
+                                    if(!isset($_SESSION["keranjang"])){
+                                        echo"
+                                            <script>
+                                                document.location.href = 'inc/..';
+                                            </script>
+                                        ";
+                                    }else{?>
+                                        <a href="?p=keranjang" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                        <ul class="nav justify-content-end">
+                                            <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
+                                            <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
+                                        </ul><?php
+                                    }
                                     break;
                                 // sudah login sesi user ke halaman bukti pembelian
-                                case"buktiPembelian":?>
-                                    <a href="?p=konPembayaran" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
-                                    <ul class="nav justify-content-end">
-                                        <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
-                                        <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                                    </ul><?php
+                                case"buktiPembelian":
+                                    if(!isset($_SESSION["id_pembelian"])){
+                                        echo"
+                                            <script>
+                                                document.location.href = 'inc/..';
+                                            </script>
+                                        ";
+                                    }else{?>
+                                        <a href="?p=konPembayaran" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                        <ul class="nav justify-content-end">
+                                            <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
+                                            <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
+                                        </ul><?php
+                                    }
                                     break;
                                 // sesi user jika ke halaman admin
                                 case"admin":
-                                    header("Location: inc/..");
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
                                     break;
                                 // sesi user jika ke halaman admin akun
                                 case"adminAkun":
-                                    header("Location: inc/..");
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
+                                    break;
+                                // sesi user jika ke halaman admin pesanan
+                                case"adminPesanan":
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
                                     break;
                                 // sesi user jika ke halaman admin produk
                                 case"adminProduk":
-                                    header("Location: inc/..");
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
+                                    break;
+                                // sesi user jika ke halaman edit pembelian
+                                case"editPembelian":
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
+                                    break;
+                                // sesi user jika ke halaman hapus
+                                case"hapus":
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
                                     break;
                                 // sesi user jika ke halaman tambah data produk
                                 case"tambahDataProduk":
-                                    header("Location: inc/..");
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
                                     break;
                                 // sesi user jika ke halaman reset password
                                 case"resetPass":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-light">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
                                     <ul class="nav justify-content-end">
-                                        <a href="?p=profil" class="nav-link text-light">Profil</a>
+                                        <a href="?p=profil" class="nav-link text-white">Profil</a>
                                     </ul><?php
                                     break;
                                 // sesi user jika ke halaman konfirmasi email
                                 case"konMail":
-                                    header("Location: inc/..");
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
                                     break;
                                 // sesi user jika ke halaman registrasi
                                 case"registrasi":
-                                    header("Location: inc/..");
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
+                                    break;
+                                // sesi user jika ke halaman login
+                                case"login":
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
+                                    break;
+                                // sesi user jika ke halaman print pembelian
+                                case"printPembelian":
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
+                                    break;
+                                // sesi user jika ke halaman ubah
+                                case"ubah":
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
+                                    break;
+                                // sesi user jika ke halaman ubah data produk
+                                case"ubahDataProduk":
+                                    echo"
+                                        <script>
+                                            document.location.href = 'inc/..';
+                                        </script>
+                                    ";
                                     break;
                                 // sesi user ketika ke halaman profil
                                 case"profil":?>

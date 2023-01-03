@@ -3,7 +3,7 @@
         if(tambah2($_POST) > 0){
             echo"
                 <script>
-                    alert('tambah produk berhasil!');
+                    alert('tambah produk berhasil');
                     document.location.href = '?p=adminProduk';
                 </script>
             ";

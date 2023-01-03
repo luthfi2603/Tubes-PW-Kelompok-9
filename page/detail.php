@@ -13,13 +13,13 @@
         if($error){
             echo"
                 <script>
-                    alert('Isikan Jumlah yang ingin anda beli');
+                    alert('isikan jumlah yang ingin anda beli');
                 </script>
             ";
         }else if(!isset($_SESSION['username'])){
             echo"
                 <script>
-                    alert('Anda belum login, silahkan login terlebih dahulu');
+                    alert('anda belum masuk, silahkan masuk terlebih dahulu');
                     document.location.href = '?p=login';
                 </script>
             ";
@@ -56,7 +56,7 @@
             }
             echo"
                 <script>
-                    alert('Produk berhasil dimasukkan ke keranjang');
+                    alert('produk berhasil dimasukkan ke keranjang');
                     document.location.href = '?p=keranjang';
                 </script>
             ";
@@ -65,7 +65,7 @@
 ?>
 <div class="card col-11 p-0 detail">
     <div class="card-header bg-info">
-        <h4 class="card-title text-center mb-0 text-light">Detail Produk</h4>
+        <h4 class="card-title text-center mb-0 text-white">Detail Produk</h4>
     </div>
     <div class="card-body">
         <div class="row mt-3">

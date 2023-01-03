@@ -3,7 +3,7 @@
 	if(empty($_SESSION['keranjang']) OR !isset($_SESSION["keranjang"])){
         echo"
             <script>
-                alert('Anda tidak memiliki isi keranjang, silahkan berbelanja terlebih dahulu');
+                alert('anda tidak memiliki isi keranjang, silahkan berbelanja terlebih dahulu');
                 document.location.href = 'inc/..';
             </script>
         ";
@@ -12,7 +12,7 @@
 <div class="container mtNav">
     <div class="card col-12 marAdmin p-0">
         <div class="card-header bg-info">
-            <h4 class="card-title text-center mb-0 text-light">Keranjang Belanja</h4>
+            <h4 class="card-title text-center mb-0 text-white">Keranjang Belanja</h4>
         </div>
         <div class="card-body">
             <table class="table table-bordered text-center align-middle">

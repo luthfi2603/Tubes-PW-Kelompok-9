@@ -67,6 +67,7 @@
     margin: 80px auto 1.5rem auto;
 }
 
+/*bootstrap*/
 @charset "UTF-8";
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
@@ -75,6 +76,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --bs-badan: #EAE7B1;
+  --bs-ijo: #61876E;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -8152,6 +8155,11 @@ textarea.form-control-lg {
 }
 
 /* rtl:end:remove */
+.text-ijo {
+  --bs-text-opacity: 1;
+  color: var(--bs-ijo) !important;
+}
+
 .text-primary {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
@@ -8243,14 +8251,14 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
 }
 
-.bg-bg-custom {
+.bg-badan {
     --bs-bg-opacity: 1;
-    background-color: #EAE7B1 !important;
+    background-color: var(--bs-badan) !important;
 }
 
-.bg-bg-navbar {
+.bg-ijo {
     --bs-bg-opacity: 1;
-    background-color: #61876E !important;
+    background-color: var(--bs-ijo) !important;
 }
 
 .bg-primary {

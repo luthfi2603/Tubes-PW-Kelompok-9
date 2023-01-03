@@ -7,7 +7,7 @@
 <div class="container mtNav">
     <div class="card col-12 marAdmin p-0">
         <div class="card-header bg-warning">
-            <h4 class="card-title text-center mb-0 text-light">Halaman Admin Produk</h4>
+            <h4 class="card-title text-center mb-0 text-white">Halaman Admin Produk</h4>
         </div>
         <div class="card-body">
         <form method="POST" action="">

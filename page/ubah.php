@@ -6,7 +6,7 @@
         if(ubah3($_POST) > 0){
             echo"
                 <script>
-                    alert('data berhasil diubah!');
+                    alert('data berhasil diubah');
                     document.location.href = '?p=adminAkun';
                 </script>
             ";

@@ -10,7 +10,7 @@
         if($tujuan == 'blank'){
             echo"
                 <script>
-                    alert('silahkan pilih tujuan pembayaran');
+                    alert('silahkan pilih e-money!');
                     document.location.href = '?p=konPembayaran';
                 </script>
             ";
@@ -29,7 +29,7 @@
         if($_POST['bayar'] != $_POST['hidden_total']){
             echo"
                 <script>
-                    alert('Mohon bayar sesuai dengan total pembayaran.');
+                    alert('mohon bayar sesuai dengan total pembayaran!');
                     document.location.href = '?p=konPembayaran';
                 </script>
             ";
@@ -62,6 +62,7 @@
                     unset($_SESSION['keranjang']);
                     echo"
                         <script>
+                            alert('pembayaran diterima');
                             document.location.href = '?p=buktiPembelian';
                         </script>
                     ";
@@ -89,7 +90,7 @@
     <div class="form">
         <div class="card col-4 marAdmin p-0">
             <div class="card-header bg-info">
-                <h4 class="card-title text-center mb-0 text-light">Konfirmasi Pembayaran</h4>
+                <h4 class="card-title text-center mb-0 text-white">Konfirmasi Pembayaran</h4>
             </div>
             <div class="card-body">
                 <form method="POST" action="">
@@ -129,7 +130,7 @@
                         <input id="namaPembeli" type="text" class="form-control" name="namaPembeli" required placeholder="Isikan nama anda" autofocus>
                     </div>
                     <div class="mb-3">
-                        <label for="tujuan" class="text-primary">Tujuan Pembayaran</label>
+                        <label for="tujuan" class="text-primary">e-money</label>
                         <select name="tujuan" id="tujuan" class="form-control">
                             <option value="blank">Pilih</option>
                             <option value="DANA">DANA</option>

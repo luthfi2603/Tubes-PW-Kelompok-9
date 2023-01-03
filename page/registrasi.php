@@ -4,7 +4,7 @@
         if($gender == 'blank'){
             echo"
                 <script>
-                    alert('silahkan pilih gender anda');
+                    alert('silahkan pilih gender anda!');
                     document.location.href = '?p=registrasi';
                 </script>
             ";
@@ -15,14 +15,14 @@
             if(tambah($_POST) > 0){
                 echo"
                     <script>
-                        alert('registrasi berhasil!');
+                        alert('pendaftaran akun berhasil');
                         document.location.href = 'inc/..';
                     </script>
                 ";
             }else{
                 echo"
                     <script>
-                        alert('registrasi gagal!');
+                        alert('pendaftaran akun gagal!');
                     </script>
                 ";
             }
@@ -31,14 +31,14 @@
             if(tambah($_POST) > 0){
                 echo"
                     <script>
-                        alert('registrasi berhasil!');
+                        alert('pendaftaran akun berhasil');
                         document.location.href = '?p=adminAkun';
                     </script>
                 ";
             }else{
                 echo"
                     <script>
-                        alert('registrasi gagal!');
+                        alert('pendaftaran akun gagal!');
                     </script>
                 ";
             }

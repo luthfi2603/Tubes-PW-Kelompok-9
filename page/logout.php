@@ -2,7 +2,7 @@
     keluar();
     echo"
         <script>
-            alert('logout berhasil');
+            alert('berhasil keluar');
             document.location.href = 'inc/..';
         </script>
     ";

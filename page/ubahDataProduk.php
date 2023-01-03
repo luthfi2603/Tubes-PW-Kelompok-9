@@ -6,7 +6,7 @@
         if(ubah2($_POST) > 0){
             echo"
                 <script>
-                    alert('data produk berhasil diubah!');
+                    alert('data produk berhasil diubah');
                     document.location.href = '?p=adminProduk';
                 </script>
             ";

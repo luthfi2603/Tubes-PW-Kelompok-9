@@ -24,16 +24,52 @@
 <div class="container mtNav">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">
+            <h2 class="text-center text-ijo">
                 Selamat Datang
             </h2>
         </div>
     </div>
 </div>
 <div class="container mt-4">
+    <div class="row">
+        <?php
+            $data = tampilkan("SELECT * FROM produk LIMIT $awalData, $jumlahDataPerHalaman");
+            if(isset($_GET["cari"])){
+                $data = cari3($_GET["keyword"], $awalData, $jumlahDataPerHalaman);
+            }
+            foreach($data as $row){
+            ?><div class="col mb-4">
+                <div class="card keTengah" style="width: 198px;">
+                    <div class="card-header text-center">
+                        <?= $row["nama_produk"]; ?>
+                    </div>
+                    <div class="card-body p-0">
+                        <img src="assets/img/<?= $row["img"]; ?>" alt="" width="196px">
+                        <div class="row">
+                            <div class="col-8 keTengah">
+                                <br>
+                                <span>harga : </span>
+                                <?php
+                                    echo"
+                                        <p>
+                                            <span>Rp ".number_format($row["harga_produk"],0,".",".")."</span>
+                                        </p>
+                                    ";
+                                ?>
+                                <span>Deskripsi : </span>
+                                <div class="deskripsi"><?= $row["spesifikasi_produk"]; ?></div>
+                                <a href="?p=detail&id=<?= $row["id_produk"]; ?>" class="btn btn-outline-secondary mb-4">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><?php
+            }
+        ?>
+    </div>
     <!-- navigasi -->
     <nav aria-label="...">
-        <ul class="pagination">
+        <ul class="pagination mb-4">
             <li class="page-item">
                 <a href="
                 <?php
@@ -119,40 +155,4 @@
             </li>
         </ul>
     </nav>
-    <div class="row">
-        <?php
-            $data = tampilkan("SELECT * FROM produk LIMIT $awalData, $jumlahDataPerHalaman");
-            if(isset($_GET["cari"])){
-                $data = cari3($_GET["keyword"], $awalData, $jumlahDataPerHalaman);
-            }
-            foreach($data as $row){
-            ?><div class="col mb-4">
-                <div class="card keTengah" style="width: 198px;">
-                    <div class="card-header text-center">
-                        <?= $row["nama_produk"]; ?>
-                    </div>
-                    <div class="card-body p-0">
-                        <img src="assets/img/<?= $row["img"]; ?>" alt="" width="196px">
-                        <div class="row">
-                            <div class="col-8 keTengah">
-                                <br>
-                                <span>harga : </span>
-                                <?php
-                                    echo"
-                                        <p>
-                                            <span>Rp ".number_format($row["harga_produk"],0,".",".")."</span>
-                                        </p>
-                                    ";
-                                ?>
-                                <span>Deskripsi : </span>
-                                <div class="deskripsi"><?= $row["spesifikasi_produk"]; ?></div>
-                                <a href="?p=detail&id=<?= $row["id_produk"]; ?>" class="btn btn-outline-secondary mb-4">Detail</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><?php
-            }
-        ?>
-    </div>
 </div>

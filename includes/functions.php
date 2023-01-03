@@ -389,7 +389,7 @@
                 }else{
                     echo"
                         <script>
-                            alert('login berhasil');
+                            alert('berhasil masuk');
                             document.location.href = 'inc/..';
                         </script>
                     ";
@@ -470,7 +470,11 @@
         }
         if(isset($email)){
             if($emailkon == $email){
-                header("Location: ?p=resetPass&email=$email");
+                echo"
+                    <script>
+                        document.location.href = '?p=resetPass&email=$email';
+                    </script>
+                ";
             }    
         }
         else{
@@ -511,14 +515,14 @@
                         echo"
                             <script>
                                 alert('ubah password berhasil');
-                                alert('silahkan login kembali');
+                                alert('silahkan masuk kembali');
                                 document.location.href = '?p=logout';
                             </script>
                         ";
                     }else{
                         echo"
                             <script>
-                                alert('reset password berhasil');
+                                alert('ubah password berhasil');
                                 document.location.href = '?p=login';
                             </script>
                         ";
@@ -526,12 +530,16 @@
                 }else{
                     echo"
                         <script>
-                            alert('reset password gagal');
+                            alert('ubah password gagal!');
                         </script>
                     ";
                 }
             }else{
-                header("Location: ?p=profil");
+                echo"
+                    <script>
+                        document.location.href = '?p=profil';
+                    </script>
+                ";
             }
         }
         return 0;

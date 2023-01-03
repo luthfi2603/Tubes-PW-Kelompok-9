@@ -34,7 +34,7 @@
         }else{
             echo"
                 <script>
-                    alert('data pesanan gagal diubah');
+                    alert('data pesanan gagal diubah!');
                 </script>
             ";
         }
@@ -44,7 +44,7 @@
     <div class="form">
         <div class="card col-4 p-0 detail">
             <div class="card-header bg-warning">
-                <h4 class="card-title text-center mb-0 text-light">Edit Pembelian</h4>
+                <h4 class="card-title text-center mb-0 text-white">Edit Pembelian</h4>
             </div>
             <div class="card-body">
                 <form method="POST" action="">

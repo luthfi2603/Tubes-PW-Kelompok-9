@@ -6,8 +6,8 @@
         if(ubah($_POST) > 0){
             echo"
                 <script>
-                    alert('data berhasil diubah!');
-                    alert('silahkan login kembali');
+                    alert('data berhasil diubah');
+                    alert('silahkan masuk kembali!');
                     document.location.href = '?p=logout';
                 </script>
             ";
@@ -24,7 +24,7 @@
         if(hapus($id) > 0){
             echo"
                 <script>
-                    alert('akun berhasil dihapus!');
+                    alert('akun berhasil dihapus');
                     document.location.href = '?p=logout';
                 </script>
             ";

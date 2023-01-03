@@ -11,7 +11,7 @@
 					Email : bagindaharahap355@gmail.com
 				</address>
 			</div>
-			<?php 
+			<?php
 				if(isset($_SESSION['id_pembelian'])){
 					$tanggal_detail = '';
 					$pelanggan_detail = '';
@@ -129,9 +129,10 @@
 	</div>
 	<?php
 		if(isset($_POST['finish'])){
-			unset($_SESSION['order_id']);
+			unset($_SESSION['id_pembelian']);
 			echo"
 				<script>
+					alert('terima kasih telah belanja di KyuuDent_Store');
 					document.location.href = 'inc/..';
 				</script>
 			";
