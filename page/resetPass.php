@@ -5,7 +5,7 @@
 ?>
 <div class="container mtNav">
     <div class="form">
-        <div class="card col-md-4 regDanLog2 p-0">
+        <div class="card col-md-4 regDanLog23 p-0">
             <div class="card-header bg-warning">
                 <h4 class="card-title text-center mb-0 text-white">Reset Password</h4>
             </div>

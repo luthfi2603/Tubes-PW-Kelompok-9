@@ -6,7 +6,7 @@
         <div id="divToPrint">
             <div class="row mt-4">
                 <div class="col">
-                    <img src="assets/img/d41a6_x-chan.jpg" width="90px">
+                    <img src="assets/img/print.png" width="170px">
                 </div>
                 <div class="col text-end">
                     <address>

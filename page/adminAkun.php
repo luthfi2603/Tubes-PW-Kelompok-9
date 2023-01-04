@@ -6,7 +6,7 @@
 ?>
 <div class="container">
     <div class="card col-12 p-0 detail">
-        <div class="card-header bg-warning">
+        <div class="card-header bg-ijo2">
             <h4 class="card-title text-center mb-0 text-white">Halaman Admin Akun</h4>
         </div>
         <div class="card-body">

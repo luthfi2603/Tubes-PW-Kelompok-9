@@ -2,6 +2,12 @@
     background-color: #ACC8E5;
     color: #112A46;
 }*/
+
+.kataKata {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .tombol {
     width: 100% !important;
 }
@@ -12,10 +18,29 @@
     margin: 1.5rem auto !important;
 }
 .regDanLog2 {
-    margin-left: 364px !important;
+    margin-left: 372px !important;
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
 }
+
+.regDanLog21 {
+    margin-left: 372px !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 114px !important;
+}
+
+.regDanLog22 {
+    margin-left: 372px !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 233px !important;
+}
+
+.regDanLog23 {
+    margin-left: 372px !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 125px !important;
+}
+
 .marAdmin {
     margin: 1.5rem auto!important;
 }
@@ -32,8 +57,13 @@
     text-align:justify;
 }
 .mtNav {
-    margin-top:80px;
+    margin-top:100px;
 }
+
+.mtNav2 {
+    margin:76px auto 0;
+}
+
 .back-to-top {
     position: fixed;
     right: 20px;
@@ -64,7 +94,7 @@
     stroke-linecap: round;
 }
 .detail {
-    margin: 80px auto 1.5rem auto;
+    margin: 100px auto 1.5rem auto;
 }
 
 /*bootstrap*/
@@ -76,6 +106,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --bs-ijo2: #A6BB8D;
+  --bs-huruf: #3C6255;
   --bs-badan: #EAE7B1;
   --bs-ijo: #61876E;
   --bs-blue: #0d6efd;
@@ -8155,6 +8187,16 @@ textarea.form-control-lg {
 }
 
 /* rtl:end:remove */
+.text-badan {
+  --bs-text-opacity: 1;
+  color: var(--bs-badan) !important;
+}
+
+.text-huruf {
+  --bs-text-opacity: 1;
+  color: var(--bs-huruf) !important;
+}
+
 .text-ijo {
   --bs-text-opacity: 1;
   color: var(--bs-ijo) !important;
@@ -8249,6 +8291,11 @@ textarea.form-control-lg {
 
 .text-opacity-100 {
   --bs-text-opacity: 1;
+}
+
+.bg-ijo2 {
+    --bs-bg-opacity: 1;
+    background-color: var(--bs-ijo2) !important;
 }
 
 .bg-badan {

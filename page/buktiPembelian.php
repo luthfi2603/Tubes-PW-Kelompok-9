@@ -2,7 +2,7 @@
 	<div class="container mtNav">
 		<div class="row">
 			<div class="col">
-				<img src="assets/img/d41a6_x-chan.jpg" width="90px">
+				<img src="assets/img/print.png" width="170px">
 			</div>
 			<div class="col text-end">
 				<address>
@@ -64,7 +64,7 @@
 		<div class="col-lg-12">
 			<table width="100%" class="table table-bordered text-center align-middle border-dark">
 				<thead>
-					<tr class="bg-info">
+					<tr class="bg-ijo2">
 						<th>No</th>
 						<th colspan="2">Produk</th>
 						<th>Jumlah</th>
@@ -123,7 +123,7 @@
 <div class="container mb-4">
 	<div class="row text-end">
 		<form action="?p=buktiPembelian" method="POST">
-			<input type="button" value="Print" class="btn btn-warning text-white" onclick="PrintDiv('divToPrint')">
+			<input type="button" value="Print" class="btn btn-success text-white" onclick="PrintDiv('divToPrint')">
 			<input type="submit" name="finish" value="Selesai" class="btn btn-dark">
 		</form>
 	</div>

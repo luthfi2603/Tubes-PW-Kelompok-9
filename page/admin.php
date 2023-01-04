@@ -1,6 +1,6 @@
 <div class="container mtNav">
     <div class="card col-9 marAdmin p-0">
-        <div class="card-header bg-warning">
+        <div class="card-header bg-ijo2">
             <h4 class="card-title text-center mb-0 text-white">Halaman Admin</h4>
         </div>
         <div class="row my-4 text-center">

@@ -11,11 +11,11 @@
 ?>
 <div class="container mtNav">
     <div class="card col-12 marAdmin p-0">
-        <div class="card-header bg-info">
+        <div class="card-header bg-ijo2">
             <h4 class="card-title text-center mb-0 text-white">Keranjang Belanja</h4>
         </div>
         <div class="card-body">
-            <table class="table table-bordered text-center align-middle">
+            <table class="table table-bordered text-center align-middle text-huruf">
                 <tr>
                     <th>Produk</th>
                     <th>Jumlah</th>
@@ -64,7 +64,7 @@
                         ";
                     }
                 ?>
-            <div class="card mb-3">
+            <div class="card mb-3 text-huruf">
                 <div class="row">
                     <div class="col ms-4 col-4">
                         Total semua:

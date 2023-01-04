@@ -64,10 +64,10 @@
     }
 ?>
 <div class="card col-11 p-0 detail">
-    <div class="card-header bg-info">
+    <div class="card-header bg-ijo2">
         <h4 class="card-title text-center mb-0 text-white">Detail Produk</h4>
     </div>
-    <div class="card-body">
+    <div class="card-body text-huruf">
         <div class="row mt-3">
             <div class="col col-4">
                 <img src="assets/img/<?= $data["img"]; ?>" width="100%">

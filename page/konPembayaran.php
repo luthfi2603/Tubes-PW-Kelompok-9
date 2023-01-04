@@ -89,10 +89,10 @@
 <div class="container mtNav">
     <div class="form">
         <div class="card col-4 marAdmin p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-ijo2">
                 <h4 class="card-title text-center mb-0 text-white">Konfirmasi Pembayaran</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body text-huruf">
                 <form method="POST" action="">
                     <legend>Data Diri</legend>
                     <div class="mb-3">
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-warning" name="checkout">Bayar Sekarang</button>
+                        <button type="submit" class="btn btn-dark" name="checkout">Bayar Sekarang</button>
                         <a href="inc/.." class="btn btn-outline-dark">Batal</a>
                     </div>
                 </form>

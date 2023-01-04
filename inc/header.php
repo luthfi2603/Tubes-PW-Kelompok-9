@@ -9,7 +9,7 @@
                     if(isset($_GET["cari"])){
                         switch($_GET["cari"]){
                             case"":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -27,7 +27,7 @@
                         switch($_GET["p"]){
                             // belum login pindah ke halaman lain (pagination)
                             case"":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -41,14 +41,14 @@
                                 break;
                             // belum login di halaman registrasi
                             case"registrasi":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <a href="?p=login" class="nav-link text-white">Masuk</a>
                                 </ul><?php
                                 break;
                             // belum login di halaman login
                             case"login":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
                                 </ul><?php
@@ -64,7 +64,7 @@
                                     ";
                                 // berada di halaman reset password
                                 }else{?>
-                                    <a href="?p=konMail" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="?p=konMail" class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <span class="nav-link text-ijo">invisible</span>
                                     </ul><?php
@@ -72,7 +72,7 @@
                                 }
                             // belum login mau konfirmasi email
                             case"konMail":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
                                     <a href="?p=login" class="nav-link text-white">Masuk</a>
@@ -81,7 +81,7 @@
                             // belum login ke halaman detail produk
                             // &quot;javascript:history.go(-1)&quot;
                             case"detail":?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <a href="?p=registrasi" class="nav-link text-white">Daftar</a>
                                     <a href="?p=login" class="nav-link text-white">Masuk</a>
@@ -201,7 +201,7 @@
                                 break;
                             // jika halaman tidak ada
                             default:?>
-                                <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -217,7 +217,7 @@
                     }
                 // belum login tidak ada url
                 }else{?>
-                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                     <ul class="nav justify-content-end">
                         <form method="GET">
                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -239,7 +239,7 @@
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -257,7 +257,7 @@
                             switch($_GET["p"]){
                                 // sudah login sesi admin pindah ke halaman lain (pagination)
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -271,7 +271,7 @@
                                     break;
                                 // sudah login sesi admin ketika di halaman admin
                                 case"admin":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -281,21 +281,21 @@
                                     break;
                                 // sudah login sesi admin ketika di halaman tambah data akun
                                 case"registrasi":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminAkun" class="nav-link text-white">Admin Akun</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman ubah data akun
                                 case"ubah":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminAkun" class="nav-link text-white">Admin Akun</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman data akun
                                 case"adminAkun":?>
-                                    <a href="?p=adminAkun" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="?p=adminAkun" class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=registrasi" class="nav-link text-white">Tambah Data</a>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
@@ -303,7 +303,7 @@
                                     break;
                                 // sudah login sesi ketika admin di halaman data produk
                                 case"adminProduk":?>
-                                    <a href="?p=adminProduk" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="?p=adminProduk" class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=tambahDataProduk" class="nav-link text-white">Tambah Produk</a>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
@@ -311,42 +311,42 @@
                                     break;
                                 // sudah login sesi admin ketika di halaman tambah data produk
                                 case"tambahDataProduk":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminProduk" class="nav-link text-white">Admin Produk</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman ubah data produk
                                 case"ubahDataProduk":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminProduk" class="nav-link text-white">Admin Produk</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman pesanan
                                 case"adminPesanan":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman edit pembelian
                                 case"editPembelian":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminPesanan" class="nav-link text-white">Admin Pesanan</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman print pembelian
                                 case"printPembelian":?>
-                                    <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=adminPesanan" class="nav-link text-white">Admin Pesanan</a>
                                     </ul><?php
                                     break;
                                 // sudah login sesi admin ketika di halaman detail
                                 case"detail":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
                                     </ul><?php
@@ -409,7 +409,7 @@
                                     break;
                                 // jika halaman tidak ada
                                 default:?>
-                                    <a href="?p=admin" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="?p=admin" class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -420,7 +420,7 @@
                         }
                     // sesi admin ketika di home
                     }else{?>
-                        <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                        <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                         <ul class="nav justify-content-end">
                             <form method="GET">
                                 <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -440,7 +440,7 @@
                         if(isset($_GET["cari"])){
                             switch($_GET["cari"]){
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -461,7 +461,7 @@
                             switch($_GET["p"]){
                                 // sudah login sesi user pindah ke halaman lain (pagination)
                                 case"":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -478,7 +478,7 @@
                                     break;
                                 // sudah login sesi user ke halaman keranjang
                                 case"keranjang":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -486,7 +486,7 @@
                                     break;
                                 // sudah login sesi user ke halaman detail produk
                                 case"detail":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -501,7 +501,7 @@
                                             </script>
                                         ";
                                     }else{?>
-                                        <a href="?p=keranjang" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                        <a href="?p=keranjang" class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                         <ul class="nav justify-content-end">
                                             <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                             <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -517,7 +517,7 @@
                                             </script>
                                         ";
                                     }else{?>
-                                        <a href="?p=konPembayaran" class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                        <a href="?p=konPembayaran" class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                         <ul class="nav justify-content-end">
                                             <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                             <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -582,7 +582,7 @@
                                     break;
                                 // sesi user jika ke halaman reset password
                                 case"resetPass":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <a href="?p=profil" class="nav-link text-white">Profil</a>
                                     </ul><?php
@@ -637,7 +637,7 @@
                                     break;
                                 // sesi user ketika ke halaman profil
                                 case"profil":?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <span class="text-white nav-link"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
@@ -646,7 +646,7 @@
                                     break;
                                 // jika halaman tidak ada
                                 default:?>
-                                    <a href="inc/.." class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</a>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
@@ -665,7 +665,7 @@
                         }
                     // sesi user ketika tidak ada apa-apa di url (home)
                     }else{?>
-                        <span class="navbar-brand h1 mb-0 text-white">KyuuDent_Store</span>
+                        <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                         <ul class="nav justify-content-end">
                             <form method="GET">
                                 <input style="margin-top: 5px;" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">

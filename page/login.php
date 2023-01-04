@@ -5,8 +5,8 @@
 ?>
 <div class="container mtNav">
     <div class="form">
-        <div class="card col-md-4 regDanLog2 p-0">
-            <div class="card-header bg-warning">
+        <div class="card col-md-4 regDanLog21 p-0">
+            <div class="card-header bg-ijo2">
                 <h4 class="card-title text-center mb-0 text-white">Masuk</h4>
             </div>
             <div class="card-body">
