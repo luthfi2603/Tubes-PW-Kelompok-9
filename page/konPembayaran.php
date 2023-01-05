@@ -169,7 +169,7 @@
                             Masukkan nominal sesuai dengan total transaksi untuk pembayaran, tanpa titik
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="">
                         <button type="submit" class="btn btn-dark" name="checkout">Bayar Sekarang</button>
                         <a href="inc/.." class="btn btn-outline-dark">Batal</a>
                     </div>

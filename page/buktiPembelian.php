@@ -103,7 +103,7 @@
 					</tr>
 			</table>
 		<div class="col-lg-12">
-			<p style="font-size:18px;">
+			<p class="bukti1">
 				Silahkan Melakukan Pembayaran sebesar <?= 'Rp '.number_format($total,0,".",".") ?>,- ke <br>
 				<strong>
 					DANA 08983874300 A/N KyuuDent_Store. <br>
@@ -112,7 +112,7 @@
 				jika ada keluhan, kritik, dan saran hubungi Customer service KyuuDent_Store di nomor : 08983874300
 			</p>
 			<p>
-				<strong style="font-size:15px;"> NB:</strong>
+				<strong class="bukti2"> NB:</strong>
 				simpan bukti pembelian ini sampai barang sudah terkirim kepada anda.
 			</p>
 		</div>

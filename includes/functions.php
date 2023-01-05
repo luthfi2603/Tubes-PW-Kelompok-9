@@ -439,8 +439,7 @@
                   nama_produk LIKE '%$keywoard%' OR
                   harga_produk LIKE '%$keywoard%' OR
                   kategori_produk LIKE '%$keywoard%' OR
-                  merek_produk LIKE '%$keywoard%' OR
-                  spesifikasi_produk LIKE '%$keywoard%'
+                  merek_produk LIKE '%$keywoard%'
         ";
         return tampilkan($query);
     }
@@ -452,8 +451,7 @@
                   nama_produk LIKE '%$keywoard%' OR
                   harga_produk LIKE '%$keywoard%' OR
                   kategori_produk LIKE '%$keywoard%' OR
-                  merek_produk LIKE '%$keywoard%' OR
-                  spesifikasi_produk LIKE '%$keywoard%'
+                  merek_produk LIKE '%$keywoard%'
                   LIMIT $x, $y
         ";
         return tampilkan($query);

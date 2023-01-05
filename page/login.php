@@ -28,6 +28,9 @@
                     </div>
                 </form>
             </div>
+            <div class="text-center text-huruf">
+                <p>Belum punya akun? silahkan <a href="?p=registrasi">daftar</a></p>
+            </div>
         </div>
     </div>
 </div>

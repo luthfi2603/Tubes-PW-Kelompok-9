@@ -61,6 +61,17 @@
                     </tr>
                     <?php $i++; ?>
                     <?php endforeach; ?>
+                    <?php
+                        if(empty($data)){
+                            echo"
+                                <tr>
+                                    <td colspan='13'>
+                                        <h5 class='text-huruf'>tidak ditemukan!<h5>
+                                    </td>
+                                </tr>
+                            ";
+                        }
+                    ?>
                 </table>
             </div>
         </div>

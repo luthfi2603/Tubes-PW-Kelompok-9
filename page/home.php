@@ -22,7 +22,7 @@
     }
 ?>
 <div class="container">
-    <div id="carouselExampleControls" class="carousel slide carousel-fade mtNav2" data-bs-ride="carousel" style="width:calc((100vh - 76px) * 2);">
+    <div id="carouselExampleControls" class="gambarDepan carousel slide carousel-fade mtNav2" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="4000">
                 <img src="assets/img/slide1.jpeg" class="d-block w-100">
@@ -76,18 +76,20 @@
             if(empty($data)){
                 echo"
                     <div class='text-center'>
-                        <h5 class='text-huruf'>tidak ditemukan!<h5>
+                        <h5 class='text-huruf mb-4'>tidak ditemukan!<h5>
                     </div>
                 ";
             }
             foreach($data as $row){?>
             <div class="col mb-4">
-                <div class="card keTengah bg-ijo2 text-white" style="width: 198px;">
+                <div class="card keTengah bg-ijo2 text-white gambarProduk">
                     <div class="card-header text-center bg-ijo">
-                        <?= $row["nama_produk"]; ?>
+                        <div class="namaProduk">
+                            <?= $row["nama_produk"]; ?>
+                        </div>
                     </div>
                     <div class="card-body p-0">
-                        <img src="assets/img/<?= $row["img"]; ?>" alt="" width="196px">
+                        <img src="assets/img/<?= $row["img"]; ?>" alt="" width="196px" class="bg-white">
                         <div class="row">
                             <div class="col-8 keTengah">
                                 <br>
@@ -112,7 +114,7 @@
     </div>
     <!-- navigasi -->
     <nav aria-label="...">
-        <ul class="pagination mb-0">
+        <ul class="pagination mb-0 justify-content-center">
             <li class="page-item">
                 <a href="
                 <?php

@@ -114,6 +114,9 @@
                     </div>
                 </form>
             </div>
+            <div class="text-center text-huruf">
+                <p>Sudah punya akun? silahkan <a href="?p=login">masuk</a></p>
+            </div>
         </div>
     </div>
 </div>

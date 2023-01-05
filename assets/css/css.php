@@ -1,3 +1,60 @@
+.cari {
+  margin-top: 5px;
+}
+
+.namaProduk {
+  height:24px;
+  overflow:hidden;
+}
+
+.gambarProduk {
+  width: 198px;
+}
+
+.gambarDepan {
+  width:calc((100vh - 76px) * 2);
+}
+
+.jumlah {
+  padding-left:10px;
+  width:55px;
+}
+
+.harga {
+  font-size:20px;
+}
+
+.bukti2 {
+  font-size:15px;
+}
+
+.bukti1 {
+  font-size:18px;
+}
+.infoFooter2 {
+  padding: 0 50px 0 50px;
+  text-align:justify;
+}
+
+.logo {
+  width:250px;
+}
+
+.kontak {
+  padding-left:100px;
+}
+
+.infoFooter {
+  padding: 0 50px 0 50px;
+  text-align:justify;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.font-mars {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 /*body {
     background-color: #ACC8E5;
     color: #112A46;
@@ -50,7 +107,7 @@
 }
 .deskripsi {
     margin-bottom: 0.5rem;
-    height:100px;
+    height:98px;
     overflow:hidden;
 }
 .deskAdminProduk {

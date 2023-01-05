@@ -40,7 +40,7 @@
                     <td><?= 'Rp '.number_format($values['harga'],0,".","."); ?></td>
                     <td><?= 'Rp '.number_format($subtotal,0,".","."); ?></td>
                     <td>
-                        <a class="btn btn-sm btn-danger" href="?p=keranjang&item=<?= $values['product_id'] ?>">
+                        <a class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin?')" href="?p=keranjang&item=<?= $values['product_id'] ?>">
                             Hapus
                         </a>
                     </td>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <a class="btn btn-dark" href="inc/..">Lanjut Belanja</a>
-            <a class="btn btn-dark" href="?p=keranjang&act=clear">Hapus Semua</a>
+            <a onclick="return confirm('Apakah anda yakin?')" class="btn btn-dark" href="?p=keranjang&act=clear">Hapus Semua</a>
                 <?php
                     if(isset($_SESSION['username'])){
                         echo'

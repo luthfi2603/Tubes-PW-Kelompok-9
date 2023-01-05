@@ -76,11 +76,11 @@
                 <form method="POST" action="?p=detail&id=<?= $id; ?>">
                     <h3 class="text-center"><?= $data["nama_produk"]; ?></h3>
                     <h4 class="m-0">Harga</h4>
-                        <span style="font-size:20px;">Rp <?= number_format($data["harga_produk"],0,".",".") ?></span>
+                        <span class="harga">Rp <?= number_format($data["harga_produk"],0,".",".") ?></span>
                     <h4 class="mt-2 mb-0">Deskripsi</h4>
-                        <span class="m-0" style="font-size:20px;"><?= $data["spesifikasi_produk"]; ?></span>
+                        <p class="m-0 deskAdminProduk" class="harga"><?= $data["spesifikasi_produk"]; ?></p>
                     <h4 class="mt-2 mb-0">Jumlah</h4>
-                        <input style="padding-left:10px;width:55px;" type="number" name="qty" min="1"><br>
+                        <input class="jumlah" type="number" name="qty" min="1"><br>
                     <input class="btn btn-dark mt-2" type="submit" name="keranjang" value="Tambah Ke keranjang">
                     <input type="hidden" name="hidden_id" value="<?= $id; ?>">
                     <input type="hidden" name="hidden_img" value="<?= $data["img"]; ?>">

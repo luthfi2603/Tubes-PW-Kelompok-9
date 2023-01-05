@@ -22,7 +22,7 @@
 <div class="container mtNav">
     <div class="form">
         <div class="card col-md-4 regDanLog p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-ijo2">
                 <h4 class="card-title text-center text-white mb-0">Ubah Data Produk</h4>
             </div>
             <div class="card-body">

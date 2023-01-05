@@ -17,7 +17,7 @@
         ?>
     </style>
 </head>
-<body class="bg-badan">
+<body class="bg-badan font-mars">
     <?php
         // memasukkan navbar dan isi halaman
         include "inc/header.php";
