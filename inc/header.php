@@ -271,11 +271,10 @@
                                     break;
                                 // sudah login sesi admin ketika di halaman admin
                                 case"admin":?>
-                                    <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
+                                    <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <span class="nav-link text-white"><?= $_SESSION['username']; ?></span>
                                         <img src="assets/img/<?= $_SESSION["img"]; ?>" alt="" class="rounded-circle avatarProfil">
-                                        <a href="inc/.." class="nav-link text-white">User</a>
                                         <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
                                     </ul><?php
                                     break;

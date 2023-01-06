@@ -6,9 +6,9 @@
 			</div>
 			<div class="col text-end">
 				<address>
-					Jl. Universitas No. 9 Pintu 1 USU <br>
-					Telepon : 021 23456789 <br>
-					Email : bagindaharahap355@gmail.com
+					Jalan Makmur Gang Bakti No. 16b <br>
+					Telepon : 08983874300 <br>
+					Email : luthfim904@gmail.com
 				</address>
 			</div>
 			<?php
