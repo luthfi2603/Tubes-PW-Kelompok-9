@@ -1,3 +1,8 @@
+.pesan {
+	display: none;
+  color: red;
+}
+
 .cari {
   margin-top: 5px;
 }

@@ -1,3 +1,21 @@
+// validasi form
+$(document).ready(function() {
+    // ketika disubmit, mengambil dari class form
+    $('.validasiForm').submit(function() {
+        // deklarasi variabel nama dan panjang nya
+        var username = $('#username').val().length;	
+        var password = $('#password').val().length;	
+        // cek jika tidak diisi
+        if(username == 0){
+            $(".pesan-username").css('display','block');
+            return false;
+        }if(password == 0){
+            $(".pesan-password").css('display','block');
+            return false;
+        }
+    });
+});
+
 // untuk tombol lihat dan tutup password
 function change(i){
     if(i == 1){

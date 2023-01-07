@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KyuuDent_Store</title>
     <link rel="shortcut icon" href="assets/img/favicon3.ico" type="image/x-icon">
+    <script>
+        <?php
+            // memasukkan jquery
+            include "assets/js/jquery.php";
+        ?>
+    </script>
     <style>
         <?php
             // memasukkan custom css
