@@ -114,7 +114,13 @@
     </div>
     <!-- navigasi -->
     <nav aria-label="...">
-        <ul class="pagination mb-0 justify-content-center">
+        <ul class="pagination justify-content-center
+            <?php
+                if(isset($_SESSION["level"]) == 1){
+                    echo"mb-5";
+                }
+            ?>
+        ">
             <li class="page-item">
                 <a href="
                 <?php

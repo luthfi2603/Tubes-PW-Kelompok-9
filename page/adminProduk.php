@@ -11,7 +11,7 @@
         </div>
         <div class="card-body">
             <form method="POST" action="">
-                <input autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Search">
+                <input autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
                 <button type="submit" name="cari">
                     Cari
                 </button>
