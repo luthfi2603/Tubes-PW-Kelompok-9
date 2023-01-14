@@ -66,7 +66,7 @@
                             echo"
                                 <tr>
                                     <td colspan='13'>
-                                        <h5 class='text-huruf'>tidak ditemukan!<h5>
+                                        <h5 class='text-huruf mb-0'>tidak ditemukan!</h5>
                                     </td>
                                 </tr>
                             ";

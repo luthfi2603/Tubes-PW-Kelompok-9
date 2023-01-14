@@ -76,7 +76,7 @@
             if(empty($data)){
                 echo"
                     <div class='text-center'>
-                        <h5 class='text-huruf mb-4'>tidak ditemukan!<h5>
+                        <h5 class='text-huruf mb-4'>tidak ditemukan!</h5>
                     </div>
                 ";
             }
@@ -121,6 +121,7 @@
                 }
             ?>
         ">
+            <!-- tombol awal -->
             <li class="page-item">
                 <a href="
                 <?php
@@ -132,6 +133,7 @@
                 ?>
                 " class="page-link">awal</a>
             </li>
+            <!-- tombol kurang -->
             <li class="page-item">
                 <a href="
                 <?php
@@ -151,6 +153,7 @@
             </li>
             <?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
                 <?php if($i == $halamanAktif) : ?>
+                    <!-- halaman aktif -->
                     <li class="page-item active" aria-current="page">
                         <a class="page-link" href="
                         <?php
@@ -163,6 +166,7 @@
                         "><?= $i; ?></a>
                     </li>
                 <?php else : ?>
+                    <!-- halaman biasa -->
                     <li class="page-item">
                         <a class="page-link" href="
                         <?php
@@ -176,6 +180,7 @@
                     </li>
                 <?php endif; ?>
             <?php endfor; ?>
+            <!-- tombol tambah -->
             <li class="page-item">
                 <a href="
                 <?php
@@ -189,15 +194,20 @@
                 <?php
                     if($halamanAktif == $jumlahHalaman){
                         echo"disabled";
+                    }else if(empty($data)){
+                        echo"disabled";
                     }
                 ?>
                 ">&raquo;</a>
             </li>
+            <!-- tombol akhir -->
             <li class="page-item">
                 <a href="
                 <?php
                     if(!isset($_GET["keyword"])){
                         echo"?p=&hal=".$jumlahHalaman."";
+                    }else if(empty($data)){
+                        echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=1";
                     }else{
                         echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".$jumlahHalaman."";
                     }

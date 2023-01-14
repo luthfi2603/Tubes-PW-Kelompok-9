@@ -38,7 +38,20 @@
             // memasukkan custom javascript
             include "assets/js/js.php";
             if(@$_GET){
-                if(isset($_GET["cari"]) or isset($_GET["hal"])){
+                if(isset($_GET['p'])){
+                    switch($_GET['p']){
+                        case"adminProduk":
+                            
+                            break;
+                        case"":
+                            if(isset($_GET['hal'])){
+                                echo"
+                                    window.scrollTo(0, 680);
+                                ";
+                            }
+                            break;
+                    }
+                }else{
                     echo"
                         window.scrollTo(0, 680);
                     ";

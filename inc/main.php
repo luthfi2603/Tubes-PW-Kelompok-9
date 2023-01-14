@@ -76,7 +76,7 @@
                         <div class="container mtNav">
                             <div class="row">
                                 <div class="col-12">
-                                    <h2 class="text-center">Halaman Tidak Ditemukan</h2>
+                                    <h2 class="text-center text-huruf">Halaman Tidak Ditemukan</h2>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                 $_SESSION['img'] = $isi['img'];
                 $_SESSION['id'] = $isi['id'];
                 $_SESSION['level'] = $isi['level'];
-                // echo"<meta http-equiv='refresh' content='0; url = index.php'>";
+                // echo"<meta http-equiv='refresh' content='0'>";
             }
         }
         include "page/home.php";
