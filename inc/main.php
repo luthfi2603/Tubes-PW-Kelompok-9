@@ -85,6 +85,25 @@
             }
         }
     }else{
+        // cek cookie
+        if(isset($_COOKIE['id']) && isset($_COOKIE['key'])){
+            $id = $_COOKIE['id'];
+            $key = $_COOKIE['key'];
+
+            // ambil username berdasarkan id
+            $hasil = mysqli_query($conn, "SELECT * FROM akun WHERE id = $id");
+            $isi = mysqli_fetch_assoc($hasil);
+
+            // cek cookie dan username
+            if($key === hash('sha256', $isi['username'])){
+                $_SESSION['username'] = $isi['username'];
+                $_SESSION['email'] = $isi['email'];
+                $_SESSION['img'] = $isi['img'];
+                $_SESSION['id'] = $isi['id'];
+                $_SESSION['level'] = $isi['level'];
+                // echo"<meta http-equiv='refresh' content='0; url = index.php'>";
+            }
+        }
         include "page/home.php";
     }
 ?>

@@ -14,7 +14,7 @@
                     <input hidden type="text" name="ngamEmail" id="" value="<?= $email; ?>">
                     <div class="mb-3">
                         <label for="password" class="text-primary">Password</label>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan password" required minlength="8">
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan password" required minlength="8" autofocus>
                         <div class="form-text"><span id="btn1" onclick="change(1)" class="btn btn-primary btn-sm">lihat</span></div>
                     </div>
                     <div class="mb-3">

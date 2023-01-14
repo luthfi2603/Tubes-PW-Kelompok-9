@@ -1,4 +1,6 @@
 <?php
+    ob_start();
+
     // memasukkan file fungsi
     require "includes/functions.php";
 ?>

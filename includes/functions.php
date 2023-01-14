@@ -374,30 +374,63 @@
             }
             // cek password
             if(password_verify($pass_login, $pass)){
-                if($level == 1){
-                    echo"
-                        <script>
-                            alert('selamat datang admin');
-                            document.location.href = '?p=admin';
-                        </script>
-                    ";
-                    $_SESSION['username'] = $user;
-                    $_SESSION['email'] = $email;
-                    $_SESSION['img'] = $img;
-                    $_SESSION['id'] = $id;
-                    $_SESSION['level'] = $level;
+                // cek ingat saya
+                if(isset($data['ingat'])){
+                    // buat cookie
+                    setcookie('id', $id, time() + (60 * 60 * 24 * 30));
+                    setcookie('key', hash('sha256', $user), time() + (60 * 60 * 24 * 30));
+
+                    if($level == 1){
+                        echo"
+                            <script>
+                                alert('selamat datang admin');
+                                document.location.href = '?p=admin';
+                            </script>
+                        ";
+                        $_SESSION['username'] = $user;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['img'] = $img;
+                        $_SESSION['id'] = $id;
+                        $_SESSION['level'] = $level;
+                    }else{
+                        echo"
+                            <script>
+                                alert('berhasil masuk');
+                                document.location.href = 'inc/..';
+                            </script>
+                        ";
+                        $_SESSION['username'] = $user;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['img'] = $img;
+                        $_SESSION['id'] = $id;
+                        $_SESSION['level'] = $level;
+                    }
                 }else{
-                    echo"
-                        <script>
-                            alert('berhasil masuk');
-                            document.location.href = 'inc/..';
-                        </script>
-                    ";
-                    $_SESSION['username'] = $user;
-                    $_SESSION['email'] = $email;
-                    $_SESSION['img'] = $img;
-                    $_SESSION['id'] = $id;
-                    $_SESSION['level'] = $level;
+                    if($level == 1){
+                        echo"
+                            <script>
+                                alert('selamat datang admin');
+                                document.location.href = '?p=admin';
+                            </script>
+                        ";
+                        $_SESSION['username'] = $user;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['img'] = $img;
+                        $_SESSION['id'] = $id;
+                        $_SESSION['level'] = $level;
+                    }else{
+                        echo"
+                            <script>
+                                alert('berhasil masuk');
+                                document.location.href = 'inc/..';
+                            </script>
+                        ";
+                        $_SESSION['username'] = $user;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['img'] = $img;
+                        $_SESSION['id'] = $id;
+                        $_SESSION['level'] = $level;
+                    }
                 }
             }else{
                 echo"
@@ -418,7 +451,13 @@
 
     // fungsi logout
     function keluar(){
+        session_start();
+        $_SESSION = [];
+        session_unset();
         session_destroy();
+
+        setcookie('id', '', time() - 3600);
+        setcookie('key', '', time() - 3600);
     }
 
     // function untuk mencari di halaman data akun

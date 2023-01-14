@@ -13,7 +13,7 @@
                 <form method="POST" action="">
                     <div class="mb-3">
                         <label for="konMail" class="text-primary">Email</label>
-                        <input id="konMail" type="email" class="form-control" name="konMail" placeholder="Masukkan email" required>
+                        <input id="konMail" type="email" class="form-control" name="konMail" placeholder="Masukkan email" required autofocus>
                     </div>
                     <div class="d-grip gap-2">
                         <p>Masukkan email anda</p>

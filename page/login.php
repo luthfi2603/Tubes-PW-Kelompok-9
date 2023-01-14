@@ -22,11 +22,15 @@
                         <div class="form-text"><span id="btn1" onclick="change(1)" class="btn btn-primary btn-sm">lihat</span></div>
                         <span class="pesan pesan-password">Isi password!</span>
                     </div>
+                    <div class="mb-3">
+                        <input type="checkbox" name="ingat" id="ingat">
+                        <label for="ingat" class="text-huruf">Ingat saya</label>
+                    </div>
                     <div class="d-grip gap-2">
                         <button class="btn btn-dark tombol" type="submit" name="login">Masuk</button>
                     </div>
                     <div class="d-grip gap-2">
-                        <a href="?p=konMail" class="btn btn-warning tombol mt-2" type="submit">Lupa Password</a>
+                        <a href="?p=konMail" class="btn btn-warning tombol mt-2">Lupa Password</a>
                     </div>
                 </form>
             </div>
