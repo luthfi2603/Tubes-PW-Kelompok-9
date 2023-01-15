@@ -37,6 +37,8 @@
         <?php
             // memasukkan custom javascript
             include "assets/js/js.php";
+            
+            // scroll logic
             if(@$_GET){
                 if(isset($_GET['p'])){
                     switch($_GET['p']){

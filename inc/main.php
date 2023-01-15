@@ -1,11 +1,14 @@
 <?php
+    // ketika ada di url
     if(@$_GET){
+        // ketika ada yang dicari
         if(isset($_GET["cari"])){
             switch($_GET["cari"]){
                 case"":
                     include "page/home.php";
                     break;
             }
+        // ketika tidak ada yang dicari
         }else{
             switch($_GET["p"]){
                 case"registrasi":
@@ -84,24 +87,37 @@
                     break;
             }
         }
+    // ketika tidak ada di url
     }else{
-        // cek cookie
-        if(isset($_COOKIE['id']) && isset($_COOKIE['key'])){
-            $id = $_COOKIE['id'];
-            $key = $_COOKIE['key'];
-
-            // ambil username berdasarkan id
-            $hasil = mysqli_query($conn, "SELECT * FROM akun WHERE id = $id");
-            $isi = mysqli_fetch_assoc($hasil);
-
-            // cek cookie dan username
-            if($key === hash('sha256', $isi['username'])){
-                $_SESSION['username'] = $isi['username'];
-                $_SESSION['email'] = $isi['email'];
-                $_SESSION['img'] = $isi['img'];
-                $_SESSION['id'] = $isi['id'];
-                $_SESSION['level'] = $isi['level'];
-                // echo"<meta http-equiv='refresh' content='0'>";
+        if(empty($_SESSION)){
+            // cek cookie
+            if(isset($_COOKIE['id']) && isset($_COOKIE['key'])){
+                $id = $_COOKIE['id'];
+                $key = $_COOKIE['key'];
+    
+                // ambil username berdasarkan id
+                $hasil = mysqli_query($conn, "SELECT * FROM akun WHERE id = $id");
+                $isi = mysqli_fetch_assoc($hasil);
+    
+                // cek cookie dan username
+                if($key === hash('sha256', $isi['username'])){
+                    $level = $isi['level'];
+                    if($level == 1){
+                        $_SESSION['username'] = $isi['username'];
+                        $_SESSION['email'] = $isi['email'];
+                        $_SESSION['img'] = $isi['img'];
+                        $_SESSION['id'] = $isi['id'];
+                        $_SESSION['level'] = $isi['level'];
+                        header("Location: ?p=admin");
+                    }else{
+                        $_SESSION['username'] = $isi['username'];
+                        $_SESSION['email'] = $isi['email'];
+                        $_SESSION['img'] = $isi['img'];
+                        $_SESSION['id'] = $isi['id'];
+                        $_SESSION['level'] = $isi['level'];
+                        header("Location: inc/..");
+                    }
+                }
             }
         }
         include "page/home.php";
