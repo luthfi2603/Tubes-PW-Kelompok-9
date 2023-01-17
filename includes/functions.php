@@ -461,36 +461,36 @@
     }
 
     // function untuk mencari di halaman data akun
-    function cari($keywoard){
+    function cari($keyword){
         $query = "SELECT * FROM akun
                     WHERE
-                  username LIKE '%$keywoard%' OR
-                  email LIKE '%$keywoard%' OR
-                  password LIKE '%$keywoard%'
+                  username LIKE '%$keyword%' OR
+                  email LIKE '%$keyword%' OR
+                  password LIKE '%$keyword%'
         ";
         return tampilkan($query);
     }
 
     // function untuk mencari di halaman data produk
-    function cari2($keywoard){
+    function cari2($keyword){
         $query = "SELECT * FROM produk
                     WHERE
-                  nama_produk LIKE '%$keywoard%' OR
-                  harga_produk LIKE '%$keywoard%' OR
-                  kategori_produk LIKE '%$keywoard%' OR
-                  merek_produk LIKE '%$keywoard%'
+                  nama_produk LIKE '%$keyword%' OR
+                  harga_produk LIKE '%$keyword%' OR
+                  kategori_produk LIKE '%$keyword%' OR
+                  merek_produk LIKE '%$keyword%'
         ";
         return tampilkan($query);
     }
 
     // fungsi untuk mencari di home pada pagination
-    function cari3($keywoard, $x, $y){
+    function cari3($keyword, $x, $y){
         $query = "SELECT * FROM produk
                     WHERE
-                  nama_produk LIKE '%$keywoard%' OR
-                  harga_produk LIKE '%$keywoard%' OR
-                  kategori_produk LIKE '%$keywoard%' OR
-                  merek_produk LIKE '%$keywoard%'
+                  nama_produk LIKE '%$keyword%' OR
+                  harga_produk LIKE '%$keyword%' OR
+                  kategori_produk LIKE '%$keyword%' OR
+                  merek_produk LIKE '%$keyword%'
                   LIMIT $x, $y
         ";
         return tampilkan($query);

@@ -35,9 +35,6 @@
     ?>
     <script type="text/javascript">
         <?php
-            // memasukkan custom javascript
-            include "assets/js/js.php";
-            
             // scroll logic
             if(@$_GET){
                 if(isset($_GET['p'])){
@@ -48,17 +45,45 @@
                         case"":
                             if(isset($_GET['hal'])){
                                 echo"
-                                    window.scrollTo(0, 680);
+                                    document.getElementById('scroll').scrollIntoView();
                                 ";
                             }
                             break;
                     }
                 }else{
                     echo"
-                        window.scrollTo(0, 680);
+                        document.getElementById('scroll').scrollIntoView();
                     ";
                 }
             }
+        ?>
+
+        // ambil elemen-elemen yang dibutuhkan
+        var keyword = document.getElementById('keyword');
+        var tombolCari = document.getElementById('tombol-cari');
+        var bungkus = document.getElementById('bungkus');
+
+        // tambahkan event ketika keyword ditulis
+        keyword.addEventListener('keyup', function(){
+            // buat objek ajax (asynchronus javascript and xml)
+            var xhr = new XMLHttpRequest();
+
+            // cek kesiapan ajax
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    bungkus.innerHTML = xhr.responseText;
+                }
+            }
+
+            // eksekusi ajax
+            xhr.open('GET', './assets/ajax/hasilSearch.php?keyword=' + keyword.value, true); /*parameter 1 metode nya post atau get, parameter 2 sumber
+            datanya dari mana, parameter 3 true atau false, true untuk asinkornus dan false untuk sinkronus*/
+            xhr.send();
+        });
+
+        <?php
+            // memasukkan custom javascript
+            include "assets/js/js.php";
         ?>
     </script>
 </body>
