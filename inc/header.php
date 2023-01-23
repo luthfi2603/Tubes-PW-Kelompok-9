@@ -12,8 +12,15 @@
                                 <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
-                                        <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                        <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                        <input
+                                            id="keyword2"
+                                            class="cari"
+                                            autocomplete="off"
+                                            size="40" type="text"
+                                            name="keyword"
+                                            placeholder="Cari..."
+                                        >
+                                        <button hidden type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
                                             Cari
                                         </button>
                                     </form>
@@ -30,8 +37,8 @@
                                 <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
-                                        <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                        <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                        <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="keyword2" placeholder="Cari...">
+                                        <button hidden type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
                                             Cari
                                         </button>
                                     </form>
@@ -205,7 +212,7 @@
                                 <ul class="nav justify-content-end">
                                     <form method="GET">
                                         <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                        <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                        <button hidden type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
                                             Cari
                                         </button>
                                     </form>
@@ -220,8 +227,21 @@
                     <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                     <ul class="nav justify-content-end">
                         <form method="GET">
-                            <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                            <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                            <input
+                                id="keyword"
+                                class="cari"
+                                autocomplete="off"
+                                size="40" type="text"
+                                name="keyword"
+                                placeholder="Cari..."
+                            >
+                            <button
+                                hidden
+                                id="tombol-cari"
+                                type="submit"
+                                name="cari"
+                                class="btn btn-sm btn-outline-light mb-1"
+                            >
                                 Cari
                             </button>
                         </form>
@@ -242,10 +262,17 @@
                                     <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
-                                            <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                            <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                        <input
+                                            id="keyword2"
+                                            class="cari"
+                                            autocomplete="off"
+                                            size="40" type="text"
+                                            name="keyword"
+                                            placeholder="Cari..."
+                                        >
+                                            <!-- <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
                                                 Cari
-                                            </button>
+                                            </button> -->
                                         </form>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
                                         <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
@@ -260,10 +287,10 @@
                                     <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
-                                            <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                            <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                            <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="keyword2" placeholder="Cari...">
+                                            <!-- <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
                                                 Cari
-                                            </button>
+                                            </button> -->
                                         </form>
                                         <a href="?p=admin" class="nav-link text-white">Admin</a>
                                         <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
@@ -422,10 +449,22 @@
                         <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                         <ul class="nav justify-content-end">
                             <form method="GET">
-                                <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                <input
+                                    id="keyword"
+                                    class="cari"
+                                    autocomplete="off"
+                                    size="40" type="text"
+                                    name="keyword"
+                                    placeholder="Cari..."
+                                >
+                                <!-- <button
+                                    id="tombol-cari"
+                                    type="submit"
+                                    name="cari"
+                                    class="btn btn-sm btn-outline-light mb-1"
+                                >
                                     Cari
-                                </button>
+                                </button> -->
                             </form>
                             <a href="?p=admin" class="nav-link text-white">Admin</a>
                             <a onclick="return confirm('Apakah anda yakin?')" href="?p=logout" class="nav-link text-white">Keluar</a>
@@ -442,10 +481,17 @@
                                     <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
-                                            <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                            <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                            <input
+                                                id="keyword2"
+                                                class="cari"
+                                                autocomplete="off"
+                                                size="40" type="text"
+                                                name="keyword"
+                                                placeholder="Cari..."
+                                            >
+                                            <!-- <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
                                                 Cari
-                                            </button>
+                                            </button> -->
                                         </form>
                                         <a href="?p=keranjang" class="text-white nav-link">Keranjang</a>
                                         <a href="?p=profil" class="text-white nav-link">Profil</a>
@@ -463,7 +509,8 @@
                                     <a href="inc/.." class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></a>
                                     <ul class="nav justify-content-end">
                                     <form method="GET">
-                                        <input 
+                                        <input
+                                            id="keyword2"
                                             class="cari"
                                             autocomplete="off"
                                             size="40"
@@ -471,13 +518,13 @@
                                             name="keyword"
                                             placeholder="Cari..."
                                         >
-                                        <button 
+                                        <!-- <button
                                             type="submit"
                                             name="cari"
                                             class="btn btn-sm btn-outline-light mb-1"
                                         >
                                             Cari
-                                        </button>
+                                        </button> -->
                                     </form>
                                     <a href="?p=keranjang" class="text-white nav-link">Keranjang</a>
                                     <a href="?p=profil" class="text-white nav-link">Profil</a>
@@ -660,9 +707,9 @@
                                     <ul class="nav justify-content-end">
                                         <form method="GET">
                                             <input class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                            <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                            <!-- <button type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
                                                 Cari
-                                            </button>
+                                            </button> -->
                                         </form>
                                         <a href="?p=keranjang" class="text-white nav-link">Keranjang</a>
                                         <a href="?p=profil" class="text-white nav-link">Profil</a>
@@ -678,8 +725,21 @@
                         <span class="navbar-brand ms-3 h1 mb-0 text-white"><img src="assets/img/logo4.png" height="50px"></span>
                         <ul class="nav justify-content-end">
                             <form method="GET">
-                                <input id="keyword" class="cari" autocomplete="off" size="40" type="text" name="keyword" id="" placeholder="Cari...">
-                                <button id="tombol-cari" type="submit" name="cari" class="btn btn-sm btn-outline-light mb-1">
+                                <input
+                                    id="keyword"
+                                    class="cari"
+                                    autocomplete="off"
+                                    size="40" type="text"
+                                    name="keyword"
+                                    placeholder="Cari..."
+                                >
+                                <button
+                                    hidden
+                                    id="tombol-cari"
+                                    type="submit"
+                                    name="cari"
+                                    class="btn btn-sm btn-outline-light mb-1"
+                                >
                                     Cari
                                 </button>
                             </form>

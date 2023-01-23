@@ -1,6 +1,5 @@
 <?php
     ob_start();
-
     // memasukkan file fungsi
     require "includes/functions.php";
 ?>
@@ -31,9 +30,47 @@
         include "inc/header.php";
         include "inc/main.php";
         include "inc/footer.php";
-        include "inc/backToTop.php";
     ?>
+
+    <div class='back-to-top'>
+        <svg viewBox="0 0 20 20">
+            <polyline points="4 13 10 7 16 13"></polyline>
+        </svg>
+    </div>
+
     <script type="text/javascript">
+        // untuk tombol back to the top
+        var backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (this.scrollY >= 100) {
+                backToTop.classList.add('show');
+
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0 });
+                })
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // validasi form
+        $(document).ready(function() {
+            // ketika disubmit, mengambil dari class form
+            $('.validasiForm').submit(function() {
+                // deklarasi variabel nama dan panjang nya
+                var username = $('#username').val().length;	
+                var password = $('#password').val().length;	
+                // cek jika tidak diisi
+                if(username == 0){
+                    $(".pesan-username").css('display','block');
+                    return false;
+                }if(password == 0){
+                    $(".pesan-password").css('display','block');
+                    return false;
+                }
+            });
+        });
+
         <?php
             // scroll logic
             if(@$_GET){
@@ -58,28 +95,51 @@
             }
         ?>
 
-        // ambil elemen-elemen yang dibutuhkan
-        var keyword = document.getElementById('keyword');
-        var tombolCari = document.getElementById('tombol-cari');
-        var bungkus = document.getElementById('bungkus');
+        // var tombolCari = document.getElementById('tombol-cari');
 
-        // tambahkan event ketika keyword ditulis
-        keyword.addEventListener('keyup', function(){
-            // buat objek ajax (asynchronus javascript and xml)
-            var xhr = new XMLHttpRequest();
-
-            // cek kesiapan ajax
-            xhr.onreadystatechange = function(){
-                if(xhr.readyState == 4 && xhr.status == 200){
-                    bungkus.innerHTML = xhr.responseText;
+        <?php
+            if(@$_GET){
+                if(isset($_GET['hal'])){
+                    echo"
+                        var keyword2 = document.getElementById('keyword2');
+                        keyword2.addEventListener('mouseover', function(){
+                            document.location.href = 'inc/..';
+                        });
+                    ";
                 }
             }
+        ?>
 
-            // eksekusi ajax
-            xhr.open('GET', './assets/ajax/hasilSearch.php?keyword=' + keyword.value, true); /*parameter 1 metode nya post atau get, parameter 2 sumber
-            datanya dari mana, parameter 3 true atau false, true untuk asinkornus dan false untuk sinkronus*/
-            xhr.send();
-        });
+        <?php
+            if(!@$_GET){
+                echo"
+                    // ambil elemen-elemen yang dibutuhkan
+                    var keyword = document.getElementById('keyword');
+                    var bungkus = document.getElementById('bungkus');
+                    // tambahkan event ketika keyword ditulis
+                    keyword.addEventListener('keyup', function(){
+                        // buat objek ajax (asynchronus javascript and xml)
+                        var xhr = new XMLHttpRequest();
+        
+                        // cek kesiapan ajax
+                        xhr.onreadystatechange = function(){
+                            if(xhr.readyState == 4 && xhr.status == 200){
+                                bungkus.innerHTML = xhr.responseText;
+                            }
+                        }
+        
+                        // eksekusi ajax
+                        xhr.open('GET', './assets/ajax/hasilSearch.php?keyword=' + keyword.value, true); /*parameter 1 metode nya post atau get, parameter 2 sumber
+                        datanya dari mana, parameter 3 true atau false, true untuk asinkornus dan false untuk sinkronus*/
+                        xhr.send();
+        
+                        // scroll
+                        document.getElementById('scroll').scrollIntoView();
+                    });
+                ";
+            }
+        ?>
+
 
         <?php
             // memasukkan custom javascript
@@ -88,3 +148,4 @@
     </script>
 </body>
 </html>
+<?php ob_end_flush(); ?>

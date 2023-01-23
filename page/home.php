@@ -51,20 +51,20 @@
             <br> Kamu bisa mendapatkan barang hanya dengan sekali tekan, dan kami akan <span id="scroll"></span> mengirimkan barang yang kamu pesan dihari yang sama, jangan khawatir, toko kami gratis pengiriman keseluruh Indonesia.
         </p>
     </div>
-    <div class="row">
-        <?php
-            if(@$_GET){
-                if(isset($_GET["cari"])){?>
-                    <h2 class="text-huruf mb-4 text-center">Hasil Pencarian</h2><?php
-                }else{?>
-                    <h2 class="text-huruf mb-4 text-center">Semua Produk</h2><?php    
-                }
-            }else{?>
-                <h2 class="text-huruf mb-4 text-center">Semua Produk</h2><?php
-            }
-        ?>
-    </div>
     <div id="bungkus">
+        <div class="row">
+            <?php
+                if(@$_GET){
+                    if(isset($_GET["cari"])){?>
+                        <h2 class="text-huruf mb-4 text-center">Hasil Pencarian</h2><?php
+                    }else{?>
+                        <h2 class="text-huruf mb-4 text-center">Semua Produk</h2><?php    
+                    }
+                }else{?>
+                    <h2 class="text-huruf mb-4 text-center">Semua Produk</h2><?php
+                }
+            ?>
+        </div>
         <div class="row">
             <?php
                 $data = tampilkan("SELECT * FROM produk LIMIT $awalData, $jumlahDataPerHalaman");
@@ -110,111 +110,111 @@
                 }
             ?>
         </div>
+        <!-- navigasi -->
+        <nav aria-label="...">
+            <ul class="pagination justify-content-center
+                <?php
+                    if(isset($_SESSION["level"])){
+                        if($_SESSION['level'] == 1){
+                            echo"mb-5";
+                        }
+                    }
+                ?>
+            ">
+                <!-- tombol awal -->
+                <li class="page-item">
+                    <a href="
+                    <?php
+                        if(!isset($_GET["keyword"])){
+                            echo"?p=&hal=1";
+                        }else{
+                            echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=1";
+                        }
+                    ?>
+                    " class="page-link">awal</a>
+                </li>
+                <!-- tombol kurang -->
+                <li class="page-item">
+                    <a href="
+                    <?php
+                        if(!isset($_GET["keyword"])){
+                            echo"?p=&hal=".($halamanAktif - 1)."";
+                        }else{
+                            echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".($halamanAktif - 1)."";
+                        }
+                    ?>
+                    " class="page-link
+                    <?php
+                        if($halamanAktif == 1){
+                            echo"disabled";
+                        }
+                    ?>
+                    ">&laquo;</a>
+                </li>
+                <?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                    <?php if($i == $halamanAktif) : ?>
+                        <!-- halaman aktif -->
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="
+                            <?php
+                                if(!isset($_GET["keyword"])){
+                                    echo"?p=&hal=".$i."";
+                                }else{
+                                    echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".$i."";
+                                }
+                            ?>
+                            "><?= $i; ?></a>
+                        </li>
+                    <?php else : ?>
+                        <!-- halaman biasa -->
+                        <li class="page-item">
+                            <a class="page-link" href="
+                            <?php
+                                if(!isset($_GET["keyword"])){
+                                    echo"?p=&hal=".$i."";
+                                }else{
+                                    echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".$i."";
+                                }
+                            ?>
+                            "><?= $i; ?></a>
+                        </li>
+                    <?php endif; ?>
+                <?php endfor; ?>
+                <!-- tombol tambah -->
+                <li class="page-item">
+                    <a href="
+                    <?php
+                        if(!isset($_GET["keyword"])){
+                            echo"?p=&hal=".($halamanAktif + 1)."";
+                        }else{
+                            echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".($halamanAktif + 1)."";
+                        }
+                    ?>
+                    " class="page-link
+                    <?php
+                        if($halamanAktif == $jumlahHalaman){
+                            echo"disabled";
+                        }else if(empty($data)){
+                            echo"disabled";
+                        }
+                    ?>
+                    ">&raquo;</a>
+                </li>
+                <!-- tombol akhir -->
+                <li class="page-item">
+                    <a href="
+                    <?php
+                        if(!isset($_GET["keyword"])){
+                            echo"?p=&hal=".$jumlahHalaman."";
+                        }else if(empty($data)){
+                            echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=1";
+                        }else{
+                            echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".$jumlahHalaman."";
+                        }
+                    ?>
+                    " class="page-link">akhir</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <!-- navigasi -->
-    <nav aria-label="...">
-        <ul class="pagination justify-content-center
-            <?php
-                if(isset($_SESSION["level"])){
-                    if($_SESSION['level'] == 1){
-                        echo"mb-5";
-                    }
-                }
-            ?>
-        ">
-            <!-- tombol awal -->
-            <li class="page-item">
-                <a href="
-                <?php
-                    if(!isset($_GET["keyword"])){
-                        echo"?p=&hal=1";
-                    }else{
-                        echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=1";
-                    }
-                ?>
-                " class="page-link">awal</a>
-            </li>
-            <!-- tombol kurang -->
-            <li class="page-item">
-                <a href="
-                <?php
-                    if(!isset($_GET["keyword"])){
-                        echo"?p=&hal=".($halamanAktif - 1)."";
-                    }else{
-                        echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".($halamanAktif - 1)."";
-                    }
-                ?>
-                " class="page-link
-                <?php
-                    if($halamanAktif == 1){
-                        echo"disabled";
-                    }
-                ?>
-                ">&laquo;</a>
-            </li>
-            <?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
-                <?php if($i == $halamanAktif) : ?>
-                    <!-- halaman aktif -->
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="
-                        <?php
-                            if(!isset($_GET["keyword"])){
-                                echo"?p=&hal=".$i."";
-                            }else{
-                                echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".$i."";
-                            }
-                        ?>
-                        "><?= $i; ?></a>
-                    </li>
-                <?php else : ?>
-                    <!-- halaman biasa -->
-                    <li class="page-item">
-                        <a class="page-link" href="
-                        <?php
-                            if(!isset($_GET["keyword"])){
-                                echo"?p=&hal=".$i."";
-                            }else{
-                                echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".$i."";
-                            }
-                        ?>
-                        "><?= $i; ?></a>
-                    </li>
-                <?php endif; ?>
-            <?php endfor; ?>
-            <!-- tombol tambah -->
-            <li class="page-item">
-                <a href="
-                <?php
-                    if(!isset($_GET["keyword"])){
-                        echo"?p=&hal=".($halamanAktif + 1)."";
-                    }else{
-                        echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".($halamanAktif + 1)."";
-                    }
-                ?>
-                " class="page-link
-                <?php
-                    if($halamanAktif == $jumlahHalaman){
-                        echo"disabled";
-                    }else if(empty($data)){
-                        echo"disabled";
-                    }
-                ?>
-                ">&raquo;</a>
-            </li>
-            <!-- tombol akhir -->
-            <li class="page-item">
-                <a href="
-                <?php
-                    if(!isset($_GET["keyword"])){
-                        echo"?p=&hal=".$jumlahHalaman."";
-                    }else if(empty($data)){
-                        echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=1";
-                    }else{
-                        echo"?keyword=".($_GET['keyword'])."&cari=&p=&hal=".$jumlahHalaman."";
-                    }
-                ?>
-                " class="page-link">akhir</a>
-            </li>
-        </ul>
-    </nav>
 </div>
