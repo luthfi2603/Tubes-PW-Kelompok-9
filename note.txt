@@ -1,0 +1,7 @@
+Note
+
+akun admin
+username : admin
+password : admin123
+
+nama database : kyuudent_store
