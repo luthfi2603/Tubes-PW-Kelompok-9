@@ -100,7 +100,7 @@
                     ";
                 }
             }else{
-                echo"
+                /* echo"
                     // ambil elemen-elemen yang dibutuhkan
                     var keyword = document.getElementById('keyword');
                     var bungkus = document.getElementById('bungkus');
@@ -118,12 +118,31 @@
         
                         // eksekusi ajax
                         xhr.open('GET', './assets/ajax/hasilSearch.php?keyword=' + keyword.value, true); /*parameter 1 metode nya post atau get, parameter 2 sumber
-                        datanya dari mana, parameter 3 true atau false, true untuk asinkornus dan false untuk sinkronus*/
+                        datanya dari mana, parameter 3 true atau false, true untuk asinkornus dan false untuk sinkronus
                         xhr.send();
         
                         // scroll
                         document.getElementById('scroll').scrollIntoView();
                     });
+                "; */
+
+                // jQuery tolong carikan saya elemen yang id nya keyword
+                echo"
+                    $('#keyword').on('keyup', () => {
+                        // memunculkan elemen
+                        // $(.loader).show();
+
+                        // ajax dengan load
+                        // $('#bungkus').load('./assets/ajax/hasilSearch.php?keyword=' + $('#keyword').val());
+
+                        // ajax dengan get()
+                        $.get('./assets/ajax/hasilSearch.php?keyword=' + $('#keyword').val(), (data) => {
+                            $('#bungkus').html(data);
+                        });
+
+                        document.getElementById('scroll').scrollIntoView();
+                    });
+
                 ";
             }
 
