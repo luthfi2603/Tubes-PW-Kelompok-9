@@ -31,13 +31,11 @@
         include "inc/main.php";
         include "inc/footer.php";
     ?>
-
     <div class='back-to-top'>
         <svg viewBox="0 0 20 20">
             <polyline points="4 13 10 7 16 13"></polyline>
         </svg>
     </div>
-
     <script type="text/javascript">
         // untuk tombol back to the top
         var backToTop = document.querySelector('.back-to-top');
@@ -92,13 +90,7 @@
                         document.getElementById('scroll').scrollIntoView();
                     ";
                 }
-            }
-        ?>
 
-        // var tombolCari = document.getElementById('tombol-cari');
-
-        <?php
-            if(@$_GET){
                 if(isset($_GET['hal'])){
                     echo"
                         var keyword2 = document.getElementById('keyword2');
@@ -107,11 +99,7 @@
                         });
                     ";
                 }
-            }
-        ?>
-
-        <?php
-            if(!@$_GET){
+            }else{
                 echo"
                     // ambil elemen-elemen yang dibutuhkan
                     var keyword = document.getElementById('keyword');
@@ -138,10 +126,7 @@
                     });
                 ";
             }
-        ?>
 
-
-        <?php
             // memasukkan custom javascript
             include "assets/js/js.php";
         ?>
